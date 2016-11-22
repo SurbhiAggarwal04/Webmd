@@ -1,9 +1,12 @@
 package course.dv.webmd.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import course.dv.webmd.service.TestService;
@@ -13,10 +16,18 @@ public class MainController {
 	@Autowired
 	TestService testService;
 
-	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/", "/welcome**","/logout" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage() {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("login");
+		return model;
+
+	}
+	@RequestMapping(value = "login", method = RequestMethod.POST)
+	public ModelAndView defaultPageAfterLogin(HttpServletRequest request,@RequestParam("username") String username,@RequestParam("password") String password) {
+		request.getSession().setAttribute("user", username);
+		ModelAndView model = new ModelAndView();
+		model.setViewName("afterLogin");
 		return model;
 
 	}

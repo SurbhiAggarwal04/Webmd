@@ -36,23 +36,6 @@
     </head>
 
     <body>
-
-		<!-- Top menu -->
-		<!--  <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
-		 	<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.html">Bootstrap Multi Step Registration Form Template</a>
-				</div>
-			</div> 
-		</nav>-->
-
-        <!-- Top content -->
         <div class="top-content">
         	<div></div>
             <div class="inner-bg">
@@ -73,13 +56,11 @@
                         	<form name='loginForm' action="<c:url value='/login' />" method='POST' class="registration-form" >       		
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<p>Login Screen </p>
-		                            		<!-- <p>Enter the details below:</p> -->
+		                        			<p>Home Screen </p>
+ 		                            		<p>Enter the details below:</p>
+ 		                        		</div>
+		                        		<div class="form-top-right">		                
 		                        		</div>
-		                        		<div class="form-top-right">
-		                 
-<%-- 		                        		<img src="${pageContext.request.contextPath}/resources/img/Lincus_Logo.jpg" width="350px" height="100px" align="middle"/>
- --%>		                        		</div>
 		                            </div>
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
@@ -91,12 +72,10 @@
 				                        	<input data-toggle="tooltip" title="Password" type="password"  name="password" placeholder="Password..." 
 				                        				class="form-control">
 				                        </div>
-				                        <input type="submit" class="btn btn-primary btn-lg" value="Login" style="float: right;">
-				                        <input type="button" class="btn btn-primary btn-lg"  onclick="location.href='${pageContext.request.contextPath}/register'" value="Register">
-				                    </div>
+				                        <input type="submit" class="btn btn-primary btn-lg" value="Login" ">
+ <%-- 				                        <input type="button" class="btn btn-primary btn-lg"  onclick="location.href='${pageContext.request.contextPath}/register'" value="Register">
+  --%>				                    </div>
 			                    
-		                    <input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
 		                    </form>
 		                    
                         </div>
