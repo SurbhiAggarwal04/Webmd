@@ -20,6 +20,7 @@
 		<servletapi.version>2.5</servletapi.version>
 		<postgresql.version>9.4.1210.jre7</postgresql.version>
 		<jackson.version>2.7.5</jackson.version>
+		<es.version>2.4.1</es.version>
 	</properties>
 
 	<dependencies>
@@ -157,7 +158,37 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.10</version>
 		</dependency>
+<!-- 		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+			<version>1.19</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.19</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-multipart</artifactId>
+			<version>1.19</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.sendgrid</groupId>
+			<artifactId>sendgrid-java</artifactId>
+			<version>3.1.0</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>${es.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
