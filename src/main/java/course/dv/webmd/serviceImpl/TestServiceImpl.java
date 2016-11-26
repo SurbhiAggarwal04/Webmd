@@ -9,7 +9,6 @@ import course.dv.webmd.model.User;
 import course.dv.webmd.service.TestService;
 
 @Service("testService")
-@Transactional
 public class TestServiceImpl implements TestService{
 
 	@Autowired
