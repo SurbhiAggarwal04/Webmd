@@ -1,39 +1,35 @@
 package course.dv.webmd.dao;
 
-import static org.elasticsearch.index.query.QueryBuilders.termQuery;
-
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.lucene.search.TermQuery;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 
-import com.cedarsoftware.util.io.JsonWriter;
-
 import course.dv.webmd.common.InitiateTransportClient;
 
-public class TopicsDAO {
+public class AnswersDAO {
 
 	private static final TransportClient client = InitiateTransportClient.client;
 
-	public static Map<String, String> getAllTopics() {
-		
-		/*QueryBuilder qb = QueryBuilders.termQuery(
-			    "topicId",    
-			    "drugquestions"   
-			);*/
+	/**
+	 * There are two files on server "answer" and "answers". We are using "answer"
+	 * because it has more filtered data with more number of answers present.
+	 * 
+	 * @return
+	 */
+	public static Map<String, String> getAllAnswers() {
+
 		SearchResponse response = client.prepareSearch("webmd")
-				.setTypes("topics2")
+				.setTypes("answer")
 				.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
 				.setQuery(QueryBuilders.matchAllQuery())
 				//.setQuery(qb)
 				.addFields("topicId","topicName")
-				.setSize(1703)
+				.setSize(65000)
 				.execute()
 				.actionGet();
 
@@ -46,7 +42,8 @@ public class TopicsDAO {
 		return result;	
 	}
 	
-	/*public static void main(String[] args) {
-		getAllTopics();
-	}*/
+	
+	public static void main(String[] args) {
+		getAllAnswers();
+	}
 }
