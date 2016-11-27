@@ -1,118 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page session="true"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>welcome</title>
+<title>welcome</title>
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery-ui.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/jquery-ui.css">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="${pageContext.request.contextPath}/resources/admincss/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link
+	href="${pageContext.request.contextPath}/resources/admincss/bootstrap.min.css"
+	rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="${pageContext.request.contextPath}/resources/admincss/sb-admin.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link
+	href="${pageContext.request.contextPath}/resources/admincss/sb-admin.css"
+	rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="${pageContext.request.contextPath}/resources/admincss/plugins/morris.css" rel="stylesheet">
+<!-- Morris Charts CSS -->
+<link
+	href="${pageContext.request.contextPath}/resources/admincss/plugins/morris.css"
+	rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="${pageContext.request.contextPath}/resources/adminfont-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Custom Fonts -->
+<link
+	href="${pageContext.request.contextPath}/resources/adminfont-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<c:url value="/logout" var="logoutUrl" />
-    <div id="wrapper">
+	<c:url value="/logout" var="logoutUrl" />
+	<div id="wrapper">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">User:${user}</a>
-            </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li>
-                    <a href="${pageContext.request.contextPath}/welcome" ><i class="fa fa-home fa-2x" ></i></a>
-                   
-                </li>
-                <li>
-                            <a href="${logoutUrl}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-            </ul>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse container">
-                <ul class="nav navbar-nav side-nav">
-                <br>
-                 <br>             
-                    <li class="active">
-                        <a href="${pageContext.request.contextPath}/topicsByPopularity"><i class="fa fa-fw fa-info-circle""></i>Topics By Popularity</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/NewCustomerUtility"><i class="fa fa-fw fa-info-circle"></i>  Utility Information</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/NewCustomerBuilding"><i class="fa fa-fw fa-info-circle""></i> Building Information</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/NewCustomerArch"><i class="fa fa-fw fa-info-circle""></i> Architecture</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-info-circle""></i> Direct Install</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-info-circle""></i> Lighting</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-info-circle""></i>  HVAC <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-info-circle""></i> Water Heating</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-info-circle""></i> Refrigeration</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-info-circle""></i> Other</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-info-circle""></i> Water Conservation</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-info-circle""></i> Renewables</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </nav>
+		<!-- header -->
+		<jsp:include page="header.jsp"></jsp:include>
 
-<%--         <div id="page-wrapper">
+		<%--         <div id="page-wrapper">
 
             <div class="container-fluid">
 
@@ -221,65 +157,32 @@
             <!-- /.container-fluid -->
 
         </div>
- --%>        <!-- /#page-wrapper -->
+ --%>
+		<!-- /#page-wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+	</div>
+	<!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="${pageContext.request.contextPath}/resources/adminjs/jquery.js"></script>
+	<!-- jQuery -->
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="${pageContext.request.contextPath}/resources/adminjs/bootstrap.min.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/bootstrap.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/raphael.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris-data.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
- <!-- <script>
-  $(document).ready(function() {
-    $("#datepicker").datepicker();
-  });
-  </script> -->
-  <script>
-function myFunction() {
-    document.getElementById("datepicker").disabled = true;
-}
-$('input[type=text][name=name]').tooltip({
-    placement: "right",
-    trigger: "focus"
-});
-$('input[type=text][name=projectName]').tooltip({
-    placement: "right",
-    trigger: "focus"
-});
-$('input[type=text][name=address]').tooltip({
-    placement: "right",
-    trigger: "focus"
-});
-$('input[type=text][name=city]').tooltip({
-    placement: "right",
-    trigger: "focus"
-});
-$('input[type=text][name=state]').tooltip({
-    placement: "right",
-    trigger: "focus"
-});
-$('input[type=text][name=zip]').tooltip({
-    placement: "right",
-    trigger: "focus"
-});
-$('input[type=text][name=phone]').tooltip({
-    placement: "right",
-    trigger: "focus"
-});
-$('input[type=text][name=emailID]').tooltip({
-    placement: "right",
-    trigger: "focus"
-});
-</script>
+	<!-- Morris Charts JavaScript -->
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/raphael.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris-data.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+
 </body>
 
 </html>
