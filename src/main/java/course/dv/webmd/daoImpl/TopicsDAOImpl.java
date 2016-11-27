@@ -3,12 +3,16 @@ package course.dv.webmd.daoImpl;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.lucene.search.TermQuery;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
+
+import com.cedarsoftware.util.io.JsonWriter;
 
 import course.dv.webmd.common.InitiateTransportClient;
 
