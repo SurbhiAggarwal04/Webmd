@@ -1,4 +1,4 @@
-package course.dv.webmd.serviceImpl;
+package course.dv.webmd.service;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -6,10 +6,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import course.dv.webmd.daoImpl.TopicQuestionCountImpl;
-import course.dv.webmd.daoImpl.TopicsDAOImpl;
+import course.dv.webmd.dao.TopicQuestionCountDAO;
+import course.dv.webmd.dao.TopicsDAO;
 
-public class PopularTopicsServiceImpl {	
+public class PopularTopicsService {	
 	static TreeMap<String,Long> topicCountMap=new TreeMap<>();
 	static Map<String,Long> mostPopularMap=new LinkedHashMap<>();
 	static Map<String,Long> mediocreLevelTopicMap=new LinkedHashMap<>();
@@ -18,8 +18,8 @@ public class PopularTopicsServiceImpl {
 
 	public static void init()
 	{
-		Map<String,String> topicMap=TopicsDAOImpl.getAllTopics();
-		topicCountMap=TopicQuestionCountImpl.getAllTopicQuestionsCount(topicMap);
+		Map<String,String> topicMap=TopicsDAO.getAllTopics();
+		topicCountMap=TopicQuestionCountDAO.getAllTopicQuestionsCount(topicMap);
 		
 		Iterator<Entry<String,Long>> it=topicCountMap.entrySet().iterator();
 		while(it.hasNext())

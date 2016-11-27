@@ -1,4 +1,4 @@
-package course.dv.webmd.daoImpl;
+package course.dv.webmd.dao;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -14,7 +14,7 @@ import org.elasticsearch.index.query.QueryBuilders;
 
 import course.dv.webmd.common.InitiateTransportClient;
 
-public class TopicQuestionCountImpl {
+public class TopicQuestionCountDAO {
 	private static final TransportClient client = InitiateTransportClient.client;
 
 	public static Long getQuestionCount(String topicId)

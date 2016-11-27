@@ -1,4 +1,4 @@
-package course.dv.webmd.daoImpl;
+package course.dv.webmd.dao;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ import com.cedarsoftware.util.io.JsonWriter;
 
 import course.dv.webmd.common.InitiateTransportClient;
 
-public class TopicsDAOImpl {
+public class TopicsDAO {
 
 	private static final TransportClient client = InitiateTransportClient.client;
 
