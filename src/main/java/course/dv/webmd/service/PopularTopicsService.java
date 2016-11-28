@@ -1,13 +1,10 @@
 package course.dv.webmd.service;
 
-import java.io.InputStream;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
-
-import javax.servlet.ServletContext;
 
 import course.dv.webmd.dao.TopicQuestionCountDAO;
 import course.dv.webmd.dao.TopicsDAO;

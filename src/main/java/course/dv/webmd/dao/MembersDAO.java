@@ -1,8 +1,5 @@
 package course.dv.webmd.dao;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
@@ -17,7 +14,9 @@ public class MembersDAO {
 
 	/**
 	 * Fetches information for member Id passed as parameter.
+	 * 
 	 * @param memberId
+	 * @return Member
 	 */
 	public static Member getMemberForMemberId(String memberId) {
 		SearchResponse response = client.prepareSearch("webmd")

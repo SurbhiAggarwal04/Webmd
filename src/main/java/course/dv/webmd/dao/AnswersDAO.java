@@ -43,6 +43,29 @@ public class AnswersDAO {
 	}
 	
 	
+//Reference: http://stackoverflow.com/questions/15114481/return-all-records-in-one-query-in-elastic-search
+	//For fetching document larger than 10000
+/*	public List<Map<String, Object>> getAllDocs(){
+		int scrollSize = 1000;
+		List<Map<String,Object>> esData = new ArrayList<Map<String,Object>>();
+		SearchResponse response = null;
+		int i = 0;
+		while( response == null || response.getHits().hits().length != 0){
+			response = client.prepareSearch(indexName)
+					.setTypes(typeName)
+					.setQuery(QueryBuilders.matchAllQuery())
+					.setSize(scrollSize)
+					.setFrom(i * scrollSize)
+					.execute()
+					.actionGet();
+			for(SearchHit hit : response.getHits()){
+				esData.add(hit.getSource());
+			}
+			i++;
+		}
+		return esData;
+	}*/
+	
 	public static void main(String[] args) {
 		getAllAnswers();
 	}
