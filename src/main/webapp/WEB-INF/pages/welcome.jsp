@@ -8,6 +8,9 @@
 <html lang="en">
 
 <head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script
+	src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,122 +45,137 @@
 </head>
 
 <body>
+    <spring:url value="/resources/topicPopularity.csv" var="csvFile" />
 	<c:url value="/logout" var="logoutUrl" />
 	<div id="wrapper">
 
 		<!-- header -->
 		<jsp:include page="header.jsp"></jsp:include>
 
-		<%--         <div id="page-wrapper">
+		<div id="page-wrapper">
 
-            <div class="container-fluid">
+			<div class="container-fluid">
 
-                <!-- Page Heading -->
-               
-                <div class="row col-md-12">
-                <h1 class="page-header">
-                            Customer Information
-                        </h1>
-                    <div class="col-md-4">
-                        
-                        <form:form role="form" action='${pageContext.request.contextPath}/NewCustomer'  method="post" class="registration-form" modelAttribute="customer">
-                       
-                       
-                        <div class="inner-addon left-addon">
-                       
-                        </div>
-                     
-                        <div class="inner-addon left-addon">
-                         <i class="glyphicon glyphicon-asterisk"></i>
-                         <form:input data-toggle="tooltip" title="Customer Name" type="text" class="form-control" style="" placeholder="Customer Name...." name="name" id="name" path="name"/>               
-                         <c:if test="${ name != null}">
-                         <div class="alert alert-danger" style="">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                             <i class="fa fa-info-circle"></i>  <strong>${name}</strong>
-                        </div>
-                         </c:if>
-                         <br>
-                        </div>
-                         <div class="inner-addon left-addon" disabled>
-                         <i class="glyphicon glyphicon-calendar"></i>
-                         <input type="text" class="form-control" style="" placeholder="${date}" name="datepicker" id="disabledInput" disabled>
-                         <br>
-                         </div>
-                       <!--  <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="glyphicon glyphicon-info-sign"></i> Project ID
-                            </li>
-                        </ol>  -->
-                        <div class="inner-addon left-addon">
-                         <i class="glyphicon glyphicon-briefcase"></i>
-                         <form:input data-toggle="tooltip" title="Project Name" type="text" class="form-control" style="" placeholder="Project Name...." name="projectName" id="projectName" path="projectName"/>
-                         <c:if test="${projectName != null}">
-                         <div class="alert alert-danger">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                             <i class="fa fa-info-circle"></i>  <strong>${projectName}</strong>
-                        </div>
-                         </c:if>
-                         <br>
-                        </div>
-                        <div class="inner-addon left-addon">
-                         <i class="glyphicon glyphicon-map-marker"></i>
-                         <input data-toggle="tooltip" title="Customer Street Address" type="text" class="form-control" style="" placeholder="Customer Street Address...." name="address" id="address"/>
-                         <br>
-                        </div>
-                       <div class="inner-addon left-addon">
-                         <i class="glyphicon glyphicon-map-marker"></i>
-                         <input data-toggle="tooltip" title="City" type="text" class="form-control" style="" placeholder="City...." name="city" id="city"/>
-                         <br>
-                        </div>
-                       <div class="inner-addon left-addon">
-                         <i class="glyphicon glyphicon-map-marker"></i>
-                         <input data-toggle="tooltip" title="State" type="text" class="form-control" style="" placeholder="State...." name="state" id="state"/>
-                         <br>
-                        </div>
-                        <div class="inner-addon left-addon">
-                         <i class="glyphicon glyphicon-map-marker"></i>
-                         <input data-toggle="tooltip" title="Zip Code" type="text" class="form-control" style="" placeholder="Zip Code...." name="zip" id="zip"/>
-                         <br>
-                        </div>
-                       <div class="inner-addon left-addon">
-                         <i class="glyphicon glyphicon-phone"></i>
-                         <form:input data-toggle="tooltip" title="Phone" type="text" class="form-control" style="" placeholder="Phone...." name="phone" id="phone" path="phone"/>
-                         <c:if test="${phone != null}">
-                         <div class="alert alert-danger" style="">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                             <i class="fa fa-info-circle"></i>  <strong>${phone}</strong>
-                        </div>
-                         </c:if>
-                         <br>
-                        </div>
-                         <div class="inner-addon left-addon">
-                         <i class="glyphicon glyphicon-envelope"></i>
-                         <form:input data-toggle="tooltip" title="Email" type="text" class="form-control"  placeholder="Email...." name="emailID" id="emailID" path="emailID"/>
-                         <c:if test="${email != null}">
-                         <div class="alert alert-danger" style="">
-                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                             <i class="fa fa-info-circle"></i>  <strong>${email}</strong>
-                        </div>
-                         </c:if>
-                         <br>
-                        </div>
-                        <input type="submit" class="btn btn-primary btn-lg" value="Next" style="margin-left:100px;margin-right:auto;display:block;margin-top:0%;margin-bottom:0%;width:120px">
-                        <input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
-                        </form:form>
-                    </div>
-                  
-              
-                </div>
-                <!-- /.row -->
+				<!-- Page Heading -->
 
-                
+				<div class="row col-md-12">
+					<h1 class="page-header"></h1>
+					<div class="col-md-4">
+						<script>
+							var diameter = 500, //max size of the bubbles
+							color = d3.scale.category20(); //color category
 
-            </div>
-            <!-- /.container-fluid -->
+							var bubble = d3.layout.pack().sort(null).size(
+									[ diameter, diameter ]).padding(50);
 
-        </div>
- --%>
+							var svg = d3.select("body").append("svg").attr(
+									"width", diameter).attr("height", diameter)
+									.attr("class", "bubble");
+
+							d3
+									.csv(
+											"${csvFile}",
+											function(error, data) {
+
+												//convert numerical values from strings to numbers
+												data = data.map(function(d) {
+													d.value = +d["value"];
+													return d;
+												});
+
+												//bubbles needs very specific format, convert data to this.
+												var nodes = bubble.nodes({
+													children : data
+												}).filter(function(d) {
+													return !d.children;
+												});
+
+												//setup the chart
+
+												var bubbles = svg
+														.append("g")
+														.attr("transform",
+																"translate(0,0)")
+														.selectAll(".bubble")
+														.data(nodes).enter();
+
+												//create the bubbles
+												bubbles
+														.append("circle")
+														.attr("r", function(d) {
+															return d.r;
+														})
+														.attr("cx",
+																function(d) {
+																	return d.x;
+																})
+														.attr("cy",
+																function(d) {
+																	return d.y;
+																})
+														.style(
+																"fill",
+																function(d) {
+																	return color(d.value);
+																});
+
+												//format the text for each bubble
+												bubbles
+														.append("text")
+														.attr("x", function(d) {
+															return d.x;
+														})
+														.attr("y", function(d) {
+															return d.y + 5;
+														})
+														.attr("text-anchor",
+																"middle")
+														.html(function(d) {
+															return d["id"];
+														})
+														.style(
+																{
+																	"fill" : "white",
+																	"font-family" : "Helvetica Neue, Helvetica, Arial, san-serif",
+																	"font-size" : "12px"
+																});
+												bubbles
+														.append("text")
+														.attr("x", function(d) {
+															return d.x;
+														})
+														.attr("y", function(d) {
+															return d.y + 20;
+														})
+														.attr("text-anchor",
+																"middle")
+														.html(
+																function(d) {
+																	return "No. of Topics "
+																			+ d["value"];
+																})
+														.style(
+																{
+																	"fill" : "white",
+																	"font-family" : "Helvetica Neue, Helvetica, Arial, san-serif",
+																	"font-size" : "12px"
+																});
+											})
+						</script>
+
+					</div>
+
+
+				</div>
+				<!-- /.row -->
+
+
+
+			</div>
+			<!-- /.container-fluid -->
+
+		</div>
+
 		<!-- /#page-wrapper -->
 
 	</div>

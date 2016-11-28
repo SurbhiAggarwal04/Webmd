@@ -20,20 +20,20 @@ public class MainController {
 
 	@RequestMapping(value = { "/", "/welcome**","/logout" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage(HttpServletRequest request) {
-		filepath=request.getSession().getServletContext().getRealPath("/WEB-INF/csv");
-		System.out.println(filepath);
-		PopularTopicsService.init();
-		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
-		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
-		Long leastPopularSize=(long) PopularTopicsService.getLeastPopularTopics().size();
-		Map<String,Long> topicMap=new HashMap<>();
-		topicMap.put("Most Popular Topics", mostPopularSize);
-		topicMap.put("Mediocre Topics", mediocreSize);
-		topicMap.put("Least Popular Topics", leastPopularSize);
-		GenerateCSVFile.getCsvFromHashMap(topicMap, filepath,"topicPopularity.csv");
-		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
-		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
-		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
+//		filepath=request.getSession().getServletContext().getRealPath("/WEB-INF/csv");
+//		System.out.println(filepath);
+//		PopularTopicsService.init();
+//		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
+//		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
+//		Long leastPopularSize=(long) PopularTopicsService.getLeastPopularTopics().size();
+//		Map<String,Long> topicMap=new HashMap<>();
+//		topicMap.put("Most Popular Topics", mostPopularSize);
+//		topicMap.put("Mediocre Topics", mediocreSize);
+//		topicMap.put("Least Popular Topics", leastPopularSize);
+//		GenerateCSVFile.getCsvFromHashMap(topicMap, filepath,"topicPopularity.csv");
+//		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
+//		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
+//		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
 
 		ModelAndView model = new ModelAndView();
 		
