@@ -52,115 +52,82 @@
 		<!-- header -->
 		<jsp:include page="header.jsp"></jsp:include>
 
-		<div id="page-wrapper">
+		<div id="page-wrapper" style="margin-top: 0px">
 
 			<div class="container-fluid">
 
 				<!-- Page Heading -->
 
-				<div class="row col-md-12">
-					<h1 class="page-header"></h1>
+				<div>
+					<h1 class="page-header">dgfhjhgueryuefnj</h1>
+					hfghegfuyerhfj
 					<div class="col-md-4">
 						<script>
-							var diameter = 500, //max size of the bubbles
-							color = d3.scale.category20(); //color category
+						var margin = {top: 20, right: 100, bottom: 20, left: 400};
+						var diameter = 1000-margin.left-margin.right; //max size of the bubbles
+											  var  color    = d3.scale.category20(); //color category
 
-							var bubble = d3.layout.pack().sort(null).size(
-									[ diameter, diameter ]).padding(50);
+											var bubble = d3.layout.pack()
+											    .sort(null)
+											    .size([diameter, diameter])
+											    .padding(50);
 
-							var svg = d3.select("body").append("svg").attr(
-									"width", diameter).attr("height", diameter)
-									.attr("class", "bubble");
+											var svg = d3.select("body")
+											    .append("svg")
+											    .attr("width", 1000)
+											    .attr("height", 1000)
+											    .attr("class", "bubble");
 
-							d3
-									.csv(
-											"${csvFile}",
-											function(error, data) {
+											d3.csv("${csvFile}", function(error, data){
 
-												//convert numerical values from strings to numbers
-												data = data.map(function(d) {
-													d.value = +d["value"];
-													return d;
-												});
+											    //convert numerical values from strings to numbers
+											    data = data.map(function(d){ d.value = +d["value"]; return d; });
 
-												//bubbles needs very specific format, convert data to this.
-												var nodes = bubble.nodes({
-													children : data
-												}).filter(function(d) {
-													return !d.children;
-												});
+											    //bubbles needs very specific format, convert data to this.
+											    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
 
-												//setup the chart
+											    //setup the chart
+											    var bubbles = svg.append("g")
+											        .attr("transform","translate(" + margin.left + "," + margin.top + ")")
+											        .selectAll(".bubble")
+											        .data(nodes)
+											        .enter();
 
-												var bubbles = svg
-														.append("g")
-														.attr("transform",
-																"translate(0,0)")
-														.selectAll(".bubble")
-														.data(nodes).enter();
+											    //create the bubbles
+											    bubbles.append("circle")
+											        .attr("r", function(d){ return d.r; })
+											        .attr("cx", function(d){ return d.x; })
+											        .attr("cy", function(d){ return d.y; })
+											        .style("fill", function(d) { return color(d.value); })
+											        .on("click", function() {
+											           alert("rect")});
 
-												//create the bubbles
-												bubbles
-														.append("circle")
-														.attr("r", function(d) {
-															return d.r;
-														})
-														.attr("cx",
-																function(d) {
-																	return d.x;
-																})
-														.attr("cy",
-																function(d) {
-																	return d.y;
-																})
-														.style(
-																"fill",
-																function(d) {
-																	return color(d.value);
-																});
+											    //format the text for each bubble
+											    bubbles.append("text")
+											        .attr("x", function(d){ return d.x; })
+											        .attr("y", function(d){ return d.y + 5; })
+											        .attr("text-anchor", "middle")
+											        .html(function(d){ return d["id"]; })
+											        .style({
+											            "fill":"white", 
+											            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+											            "font-size": "12px"
+											        });
+											            bubbles.append("text")
+											        .attr("x", function(d){ return d.x; })
+											        .attr("y", function(d){ return d.y + 20; })
+											        .attr("text-anchor", "middle")
+											        .html(function(d){ return "No. of Topics " + d["value"]; })
+											        .style({
+											            "fill":"white", 
+											            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
+											            "font-size": "12px"
+											        });
 
-												//format the text for each bubble
-												bubbles
-														.append("text")
-														.attr("x", function(d) {
-															return d.x;
-														})
-														.attr("y", function(d) {
-															return d.y + 5;
-														})
-														.attr("text-anchor",
-																"middle")
-														.html(function(d) {
-															return d["id"];
-														})
-														.style(
-																{
-																	"fill" : "white",
-																	"font-family" : "Helvetica Neue, Helvetica, Arial, san-serif",
-																	"font-size" : "12px"
-																});
-												bubbles
-														.append("text")
-														.attr("x", function(d) {
-															return d.x;
-														})
-														.attr("y", function(d) {
-															return d.y + 20;
-														})
-														.attr("text-anchor",
-																"middle")
-														.html(
-																function(d) {
-																	return "No. of Topics "
-																			+ d["value"];
-																})
-														.style(
-																{
-																	"fill" : "white",
-																	"font-family" : "Helvetica Neue, Helvetica, Arial, san-serif",
-																	"font-size" : "12px"
-																});
+											        bubbles.append("title")
+											      .text(function(d) { return  d.value; });
 											})
+
 						</script>
 
 					</div>
