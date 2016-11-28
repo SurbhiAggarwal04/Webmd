@@ -26,13 +26,13 @@ public class MainController {
 		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
 		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
 		Long leastPopularSize=(long) PopularTopicsService.getLeastPopularTopics().size();
-		Map<String,Object> topicMap=new HashMap<>();
+		Map<String,Long> topicMap=new HashMap<>();
 		topicMap.put("Most Popular Topics", mostPopularSize);
 		topicMap.put("Mediocre Topics", mediocreSize);
 		topicMap.put("Least Popular Topics", leastPopularSize);
-		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
+		GenerateCSVFile.getCsvFromHashMap(topicMap, filepath,"topicPopularity.csv");
 		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
-
+		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
 		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
 
 		ModelAndView model = new ModelAndView();

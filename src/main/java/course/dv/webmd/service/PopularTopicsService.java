@@ -30,8 +30,8 @@ public class PopularTopicsService {
 			Entry<String, Long> topic=it.next();
 			String topicName=topic.getKey();
 			Long count=topic.getValue();
-			if(count>=400)mostPopularMap.put(topicName, count);
-			else if(count<400 && count>=200)mediocreLevelTopicMap.put(topicName, count);
+			if(count>=250)mostPopularMap.put(topicName, count);
+			else if(count<250 && count>=100)mediocreLevelTopicMap.put(topicName, count);
 			else leastPopularTopicMap.put(topicName, count);
 		}
 	}
