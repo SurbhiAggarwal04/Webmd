@@ -17,7 +17,7 @@ public class TopicQuestionAnswerMemberDAO {
 	private static final TransportClient client = InitiateTransportClient.client;
 	
 	/**
-	 * This method gives me question ids for each topic from
+	 * This method gives question ids for each topic from
 	 * relatedTopics2 document from elasticsearch.
 	 * 
 	 * @param topic
@@ -39,7 +39,12 @@ public class TopicQuestionAnswerMemberDAO {
 		return result;
 	}
 	
-	public static SearchHits getAllAnswersForAQuestions(String questionId) {
+	/**
+	 * This method fetches all answers for given question id.
+	 * @param questionId
+	 * @return
+	 */
+	public static SearchHits getAllAnswersForAQuestion(String questionId) {
 		SearchResponse response = client.prepareSearch("webmd")
 				.setTypes("answer")
 				.setSearchType(SearchType.DFS_QUERY_AND_FETCH)

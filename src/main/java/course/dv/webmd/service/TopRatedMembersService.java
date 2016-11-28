@@ -1,14 +1,11 @@
 package course.dv.webmd.service;
 
-import static course.dv.webmd.dao.TopicQuestionAnswerMemberDAO.*;
-import static course.dv.webmd.dao.MembersDAO.*;
+import static course.dv.webmd.common.SortMapByValue.sortByValue;
+import static course.dv.webmd.dao.MembersDAO.getMemberForMemberId;
+import static course.dv.webmd.dao.TopicQuestionAnswerMemberDAO.getAllAnswersForAQuestion;
+import static course.dv.webmd.dao.TopicQuestionAnswerMemberDAO.getAllQuestionsForTopic;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import org.elasticsearch.search.SearchHit;
@@ -29,7 +26,7 @@ public class TopRatedMembersService {
 	public static Map<String, Integer> createMemberDictionaryFromQuestionAnswers(String topic) {
 		Map<String, Integer> memberHelpfulVoteCount = new HashMap<String, Integer>();
 		for(String questionId : getAllQuestionsForTopic(topic)) {
-			for(SearchHit answer : getAllAnswersForAQuestions(questionId)) {
+			for(SearchHit answer : getAllAnswersForAQuestion(questionId)) {
 				String memberId = answer.field("answerMemberId").getValue();
 				int ansVoteNum = 0;
 				try { 
@@ -49,27 +46,7 @@ public class TopRatedMembersService {
 		return sortByValue(memberHelpfulVoteCount);
 	}
 
-	/**
-	 * This method sorts Map<String, Integer> by value in descending order.
-	 * @param unsortMap
-	 * @return Map<String, Integer>
-	 */
-	private static Map<String, Integer> sortByValue(Map<String, Integer> unsortMap) {
-		List<Map.Entry<String, Integer>> list =
-				new LinkedList<Map.Entry<String, Integer>>(unsortMap.entrySet());
-		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
-			public int compare(Map.Entry<String, Integer> o1,
-					Map.Entry<String, Integer> o2) {
-				return (o2.getValue()).compareTo(o1.getValue());
-			}
-		});
-		Map<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();
-		for (Map.Entry<String, Integer> entry : list) {
-			sortedMap.put(entry.getKey(), entry.getValue());
-		}
-		return sortedMap;
-	}
-
+	
 	public static Map<Member, Integer> getTopRatedMembersData(Map<String, Integer> memberIdAndCount) {
 		Map<Member, Integer> topRatedMemberData = new HashMap<Member, Integer>();
 		int count = 0;

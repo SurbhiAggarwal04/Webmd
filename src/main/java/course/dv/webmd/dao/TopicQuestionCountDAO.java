@@ -17,6 +17,11 @@ import course.dv.webmd.common.InitiateTransportClient;
 public class TopicQuestionCountDAO {
 	private static final TransportClient client = InitiateTransportClient.client;
 
+	/**
+	 * Returns number of questions for given topic.
+	 * @param topicId
+	 * @return
+	 */
 	public static Long getQuestionCount(String topicId)
 	{
 		SearchResponse response = client.prepareSearch("webmd")
@@ -28,6 +33,12 @@ public class TopicQuestionCountDAO {
 		return response.getHits().getTotalHits();
 	}
 	
+	/**
+	 * Uses the HashMap of TopicDAO getAllTopics() and returns count of questions 
+	 * for each topic. Return Map<topicId, countOfQuestions>
+	 * @param topicMap
+	 * @return
+	 */
 	public static TreeMap<String,Long> getAllTopicQuestionsCount(Map<String,String> topicMap)
 	{
 		Map<String,Long> topicCountMap=new HashMap<>();

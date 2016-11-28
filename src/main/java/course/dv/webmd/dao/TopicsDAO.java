@@ -15,6 +15,11 @@ public class TopicsDAO {
 
 	private static final TransportClient client = InitiateTransportClient.client;
 
+	/**
+	 * Fetches all topics from elasticsearch server
+	 * and returns Map of topicId,topicName.
+	 * @return
+	 */
 	public static Map<String, String> getAllTopics() {
 		
 		/*QueryBuilder qb = QueryBuilders.termQuery(
@@ -25,7 +30,6 @@ public class TopicsDAO {
 				.setTypes("topics2")
 				.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
 				.setQuery(QueryBuilders.matchAllQuery())
-				//.setQuery(qb)
 				.addFields("topicId","topicName")
 				.setSize(1703)
 				.execute()
