@@ -1,5 +1,8 @@
 package course.dv.webmd.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -8,12 +11,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import course.dv.webmd.common.GenerateCSVFile;
+import course.dv.webmd.service.PopularTopicsService;
+
 @Controller
 public class MainController {
+	String filepath;
 
 	@RequestMapping(value = { "/", "/welcome**","/logout" }, method = RequestMethod.GET)
-	public ModelAndView defaultPage() {
+	public ModelAndView defaultPage(HttpServletRequest request) {
+		filepath=request.getSession().getServletContext().getRealPath("/WEB-INF/csv");
+		System.out.println(filepath);
+		PopularTopicsService.init();
+		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
+		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
+		Long leastPopularSize=(long) PopularTopicsService.getLeastPopularTopics().size();
+		Map<String,Object> topicMap=new HashMap<>();
+		topicMap.put("Most Popular Topics", mostPopularSize);
+		topicMap.put("Mediocre Topics", mediocreSize);
+		topicMap.put("Least Popular Topics", leastPopularSize);
+		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
+		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
+
+		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
+
 		ModelAndView model = new ModelAndView();
+		
 		model.setViewName("welcome");
 		return model;
 
