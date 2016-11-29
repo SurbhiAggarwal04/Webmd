@@ -68,7 +68,8 @@ public class RecommendTopicsBasedOnClikedQuestionService {
 		}
 		Map<String, Integer> recomendedTopicsQuestionCount = new HashMap<String, Integer>();
 		for(String topicId : recomendedTopics) {
-			recomendedTopicsQuestionCount.put(topicId, Integer.parseInt(""+getQuestionCount(topicId)));
+			if(topicId != null && !topicId.equals("null"))
+				recomendedTopicsQuestionCount.put(topicId, Integer.parseInt(""+getQuestionCount(topicId)));
 		}
 		return recomendedTopicsQuestionCount;
 	}

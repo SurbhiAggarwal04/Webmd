@@ -1,6 +1,5 @@
 package course.dv.webmd.controller;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,11 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import course.dv.webmd.service.PopularTopicsService;
-import course.dv.webmd.service.TopQuestionsForATopicService;
-import course.dv.webmd.common.GenerateCSVFile;
 import course.dv.webmd.common.GenerateJsonFile;
 import course.dv.webmd.model.Member;
+import course.dv.webmd.service.TopQuestionsForATopicService;
 import course.dv.webmd.service.TopRatedMembersService;
 
 @Controller
@@ -36,7 +33,7 @@ public class MainController {
 		 * Uncomment to generate csvs' dynamically 
 		 */
 		filepath=request.getSession().getServletContext().getRealPath("/resources/json");
-		System.out.println(filepath);
+		/*System.out.println(filepath);
 		PopularTopicsService.init();
 		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
 		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
@@ -48,7 +45,8 @@ public class MainController {
 		GenerateCSVFile.getCsvForTopicPopularityFromHashMap(topicMap, filepath,"topicPopularity.csv");
 		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
 		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
-		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
+		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");*/
+		
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "topicPopularity.csv");
 		model.addObject("pageTitle", "Welcome");		
