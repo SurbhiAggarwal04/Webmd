@@ -25,8 +25,7 @@ public class TopicsDAO {
 	 * and returns Map of topicId,topicName.
 	 * @return
 	 */
-	public static Map<String, String> getAllTopics() {
-		
+	public static Map<String, String> getAllTopics() {		
 		/*QueryBuilder qb = QueryBuilders.termQuery(
 			    "topicId",    
 			    "drugquestions"   
@@ -39,7 +38,6 @@ public class TopicsDAO {
 				.setSize(1703)
 				.execute()
 				.actionGet();
-
 		Map<String, String> result = new HashMap<String, String>();
 		for (SearchHit hit : response.getHits()) {
 			String topicId = hit.field("topicId").getValue();
@@ -48,8 +46,28 @@ public class TopicsDAO {
 		}
 		return result;	
 	}
-	
+
+	/**
+	 * Finds a topic for a question.
+	 * @param questionId
+	 * @return
+	 */
+	public static String getTopicForAQuestion(String questionId) {
+		SearchResponse response = client.prepareSearch("webmd")
+				.setTypes("relatedTopics2")
+				.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+				.setQuery(QueryBuilders.termQuery("questionId", questionId))
+				.addFields("topicId")
+				.execute()
+				.actionGet();
+		for (SearchHit hit : response.getHits()) {
+			return hit.field("topicId").getValue();
+		}
+		return null;
+	}
+
 	/*public static void main(String[] args) {
-		getAllTopics();
+		//getAllTopics();
+		//System.out.println(getTopicForAQuestion("11667530"));
 	}*/
 }

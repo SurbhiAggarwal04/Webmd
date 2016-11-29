@@ -4,15 +4,16 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
 
 import course.dv.webmd.common.InitiateTransportClient;
+import course.dv.webmd.model.Answer;
 
 
 
@@ -24,6 +25,7 @@ public class AnswersDAO {
 	 * There are two files on server "answer" and "answers". We are using "answer"
 	 * because it has more filtered data with more number of answers present.
 	 * 
+	 * TODO - METHOD NOT WORKING
 	 * @return
 	 */
 	public static Map<String, String> getAllAnswers() {
@@ -72,6 +74,47 @@ public class AnswersDAO {
 	}*/
 	
 	/**
+	 * This method takes a question Id and fetches all answers.
+	 * 
+	 * @param questionId
+	 * @return
+	 */
+	
+	public static Set<Answer> getAnswersForAQuestion(String questionId) {
+		
+		SearchResponse response = client.prepareSearch("webmd")
+				.setTypes("answer")
+				.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+				.setQuery(QueryBuilders.termQuery("questionId", questionId))
+				.addFields("answerId",
+						   "questionId",
+						   "answerQuestionURL",
+						   "answerMemberId",
+						   "answerContent",
+						   "answerPostDate",
+						   "answerHelpfulNum",
+						   "answerVoteNum")
+				.execute()
+				.actionGet();
+		Set<Answer> result = new HashSet<Answer>();
+		for (SearchHit hit : response.getHits()) {
+			Answer a = new Answer();
+			a.setAnswerId(hit.field("answerId").getValue());
+			a.setQuestionId(hit.field("questionId").getValue());
+			a.setAnswerQuestionURL(hit.field("answerQuestionURL").getValue());
+			a.setAnswerMemberId(hit.field("answerMemberId").getValue());
+			a.setAnswerContent(hit.field("answerContent").getValue());
+			a.setAnswerPostDate(hit.field("answerPostDate").getValue());
+			a.setAnswerHelpfulNum(hit.field("answerHelpfulNum").getValue());
+			a.setAnswerVoteNum(hit.field("answerVoteNum").getValue());
+			result.add(a);
+		}
+		return result;
+	}
+	
+	
+	
+	/**
 	 * Based on the query submitted, this method queries answer content
 	 * and fetches top 50 question ids. (Based on elasticsearch scoring)
 	 * 
@@ -79,9 +122,7 @@ public class AnswersDAO {
 	 * @return
 	 */
 	public static Set<String> getQuestionIdsBasedOnQueryingAnswerContent(String query) {
-		
 		QueryBuilder qb = QueryBuilders.commonTermsQuery("answerContent", query);
-
 		SearchResponse response = client.prepareSearch("webmd")
 				.setTypes("answer")
 				.setSearchType(SearchType.DFS_QUERY_AND_FETCH)
@@ -91,7 +132,6 @@ public class AnswersDAO {
 				//.setMinScore(1)
 				.execute()
 				.actionGet();
-		
 		int count = 0;
 		if(response.getHits().getTotalHits() < 50) count = (int) response.getHits().getTotalHits();
 		else count = 50;
@@ -100,7 +140,7 @@ public class AnswersDAO {
 		int tempC = 0;
 		for(SearchHit hit : response.getHits()) {
 			if(tempC == count) break;
-			relevantQuestions.add(hit.field("questionId").getValue().toString() + ":" + hit.score());
+			relevantQuestions.add(hit.field("questionId").getValue().toString());
 			tempC++;
 		}
 		return relevantQuestions;
@@ -108,10 +148,10 @@ public class AnswersDAO {
 	
 	public static void main(String[] args) {
 		//getAllAnswers();
-		Set<String> a = getQuestionIdsBasedOnQueryingAnswerContent("warnings drug Desoxyn");
+		/*Set<String> a = getQuestionIdsBasedOnQueryingAnswerContent("warnings drug Desoxyn");
 		for(String hit : a)
-			System.out.println(hit);
-		
-		
+			System.out.println(hit);*/
+		//5049966
+		//System.out.println(getAnswersForAQuestion("5049966"));
 	}
 }
