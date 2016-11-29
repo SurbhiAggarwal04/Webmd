@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import course.dv.webmd.common.GenerateCSVFile;
@@ -24,7 +23,7 @@ public class MainController {
 		System.out.println(filepath);
 		
 		/*
-		 * Uncomment to generate csvs' dynamically
+		 * Uncomment to generate csvs' dynamically 
 		 */
 //		PopularTopicsService.init();
 //		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();

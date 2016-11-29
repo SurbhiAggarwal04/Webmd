@@ -1,1424 +1,201 @@
 id,value
-Noodle,2
-Recipe,10
-Intrauterine Insemination,3
-Deformity,3
-Gender,11
-Vertigo,38
-Sleep Disorder,5
-Thyroid Disease,4
-Mineral Water,1
-Neurological Disease,1
-Detached Retina,5
-Exposure,39
-Triglyceride,24
-Egg Whites,7
-Coronary Artery Bypass,0
-Massage,36
-Urethritis,2
-Porphyria,1
-Laparoscopic Surgery,4
-Beta Thalassemia,1
-Adenoma,1
-Nodule,4
-Dyspnea,2
-Irritable Bowel Syndrome,20
-Trachea,1
-Spinal Cord Injury,2
-Edema,11
-Oxygen,28
-Watermelon,2
-Uterine Fibroid,3
-Inflammation,35
-Night Terror,3
-Epiglottitis,1
-Walnut,5
-Duodenitis,1
-Cooking,34
-Mesothelioma,1
-Foreskin Restoration,2
-Pain Relief,7
-Black Eye,3
-Liver Spots,2
-Tapeworm Infection,3
-Thirst,17
-Congestive Heart Failure,26
-Albinism,1
-Hyperthyroidism,4
-Benign,19
-Binge Drinking,1
-Flour,5
-Plantar Fasciitis,7
-Chemotherapy,30
-Stomatitis,1
-Vasectomy,32
-Almond,15
-South Beach Diet,1
-Pacemaker,18
-Prolapsed Bladder,1
-Ingrown Nail,1
-Dialysis,7
-Shoulder Bursitis,1
-Erythema,1
-Laparotomy,1
-Stomach Cancer,10
-Fiber,27
-Leprosy,1
-Watery Eyes,6
-Alabama,2
-Broken Bone,7
-Colorado,4
-Tension Headache,5
-Weight Loss Pill,6
-Obamacare,12
-Cherry Angioma,2
-New York,1
-Dysplasia,3
-Artificial Insemination,1
-Atopic Dermatitis,17
-Lubricants,4
-Aggressive Behavior,2
-Food Allergy,11
-Aloe Vera,5
-Pressure Ulcer,3
-Heart Aneurysm,1
-Vomiting Blood,1
-Kiwi,1
-Cauliflower Ear,1
-Gasoline,2
-Toenail,13
-Electroconvulsive Therapy,1
-Yellow Fever,1
-Emphysema,6
-Torso,13
-Social Phobia,1
-Melatonin,24
-Insect Bite,5
-Cellulose,2
-Pernicious Anemia,1
-Fasciotomy,1
-Psychosis,8
-Facial Paralysis,2
-Hepatitis,15
-Clitoris,39
-Bow Leg,2
-Delayed Ejaculation,5
-Body Mass Index,2
-Coughing Up Blood,2
-LapBand Surgery,1
-Alcohol Withdrawal,1
-Kentucky,1
-Cheekbones,4
-Perioral Dermatitis,1
-Pilates,3
-Typhoid,1
-Snorer,12
-Fifth Disease,1
-Screening,21
-Crohns Disease,7
-Arthropathy,2
-Broken Foot,1
-Rehabilitation,7
-Poison Ivy,36
-Virginia,2
-Deep Vein Thrombosis,4
-Erythema Nodosum,1
-Little Finger,3
-Basal Body Temperature,1
-Kale,5
-Squash,3
-Tailbone,4
-Seizure Disorder,5
-Canker Sore,18
-Domestic Violence,1
-Gastroparesis,3
-Premature Ejaculation,13
-Anterior Cruciate Ligament Injury,2
-BiPap,1
-Hypoglycemia,7
-Zinc,15
-methicillin resistant staphylococcus aureus,34
-Castor Oil,7
-Conversion Disorder,1
-Failure To Thrive,1
-Cerebral Palsy,3
-Vision Problems,1
-Car Sickness,2
-Egg Yolks,1
-Laser Therapy,2
-Libido,30
-Eyebrow,16
-Alcohol Abuse,4
-Epidermal Cyst,1
-Motion Sickness,2
-Shrimp,3
-Peripheral Neuropathy,12
-preexisting condition,7
-Iodine,11
-Toxic Shock Syndrome,3
-Baldness,6
-Salmon,3
-Contact Dermatitis,7
-Diabetic Coma,1
-Mercury Poisoning,1
-Splinter,7
-Ear Canal,4
-Systematic Desensitization,1
-Stem Cell Treatment,1
-Hemorrhoidectomy,1
-Piercing,22
-NAFLD,2
-Irritability,9
-Kidney Disease,20
-Ring Finger,13
-Adenoidectomy,1
-Chloride,2
-Eyeball,10
-Swimmers Ear,5
-Jaundice,7
-Geographic Tongue,1
-Index Finger,15
-Lentil,1
-Endometrial Cancer,1
-Trigeminal Neuralgia,4
-Acute Respiratory Distress Syndrome,1
-Fainting,1
-Cavity,29
-Pituitary Tumor,1
-Aging,22
-Hike,10
-Myasthenia Gravis,3
-Cradle Cap,3
-Morbid Obesity,4
-LeggCalvePerthes Disease,1
-Ovulation Calculator,2
-Dry Macular Degeneration,1
-Bladder Spasm,1
-ProstateSpecific Antigen Test,13
-Disc Herniation,2
-Concussion,27
-Trichomoniasis,21
-Hot Dog,3
-Seborrheic Dermatitis,1
-Palate,2
-Osteoarthritis,16
-Varicose Vein,13
-Callus,3
-Carrot,13
-Osteotomy,1
-Septic Shock,2
-Health Food,1
-Degenerative Disc Disease,7
-Tonsillitis,6
-Menieres Disease,1
-Dopamine,2
-Plantar Wart,1
-Sarcoma,1
-Urinary Tract Infection,39
-Morning After Pill,16
-Embolism,1
-Ichthyosis,1
-Luteinizing Hormone,1
-Slipped Disc,1
-Tooth Decay,6
-Peppermint Oil,1
-Frozen Yogurt,1
-Ganglion,1
-Granuloma Annulare,1
-Radical Prostatectomy,1
-Keratoconus,1
-Lice,15
-Hormone Imbalance,7
-High Cholesterol,21
-Reconstructive Surgery,1
-Otitis Media With Effusion,1
-Rotator Cuff Injury,4
-Exercise Stress Test,20
-Melanoma,13
-Stem Cell,5
-Aortic Dissection,1
-Lipid,3
-Yoga,9
-Hearing Loss,18
-Aortic Aneurysm,1
-Meningococcal,1
-Rickets,1
-Encephalopathy,1
-Measles,4
-Mastectomy,2
-Ulcer,39
-Rye,1
-Teething,12
-Sciatica,19
-Orchitis,2
-Ovulation Chart,1
-Menstrual,38
-Popcorn,3
-Sadness,24
-Hemmorhoid,6
-Pink Eye,34
-Addiction,14
-Abdominal Surgery,2
-Whiplash,2
-Puncture,5
-Zinc Oxide,2
-Swallowing Problem,1
-Coma,5
-Asbestosis,1
-Blood Loss,7
-Lung Disease,1
-Dessert,1
-Utah,1
-Vitamin A,10
-Liver Function Test,4
-Vitamin E,7
-Metabolic Syndrome,1
-Vitamin C,6
-Acute Bronchitis,5
-Horners Syndrome,1
-Atrial Fibrillation,4
-Vitamin K,6
-Connective Tissue Disease,2
-Constriction,1
-Temporomandibular Joint Disorder,1
-Prolapsed Uterus,2
-Vasovagal Episode,1
-Connecticut,1
-Pubic Lice,1
-Fatty Liver Disease,11
-Cervical Spine,3
-Melasma,4
-Urinalysis,16
-SelfExam,2
-Thoracotomy,1
-Hiccup,7
-Infusion,8
-Coccydynia,1
-Vasculitis,2
-Coronary Disease,1
-Red Raspberry,1
-Spinach,3
-Uterine Prolapse,1
-Concentration,26
-NASH,2
-LASIK,3
-Dourine,1
-Mitochondrial Myopathy,1
-Physical Therapy,26
-Lazy Eye,4
-Low Hemoglobin Level,1
-Toothache,12
-Meditation,6
-Sternum,6
-Small Cell Lung Cancer,2
-Paronychia,1
-Staph Infection,24
-Rice Milk,1
-Arthroscopy,1
-In Vitro Fertilization,4
-Immunotherapy,6
-Bacterial Meningitis,1
-Hydrocodone,30
-Asthma Attack,7
-Breast Enlargement,3
-Conception,27
-Scarlet Fever,4
-Hypothyroidism,32
-Impulsiveness,1
-Roast,1
-Fuzziness,7
-Human Growth Hormone,3
-Bioidentical Hormone,5
-Scabies,27
-Hallucination,16
-Tea Tree Oil,5
-Colectomy,1
-Hip Pain,9
-Lime,2
-Stiff Person Syndrome,1
-Bacterial Sexually Transmitted Disease,1
-Adrenal Tumor,1
-Limb,10
-Meningitis,8
-Neuritis,1
-Carbohydrate,7
-HIV Test,4
-Male Pattern Baldness,2
-Athletes Foot,6
-Gynecomastia,4
-Implant Radiation,1
-Fig,1
-Hamstring,7
-Fast Food,7
-Lactose,10
-Skull,19
-Jelly,10
-Collapsed Lung,2
-Red Wine,4
-Parenting,1
-Wine,31
-Transfusion,11
-Metastasis,1
-Bone Spurs,15
-Apathy,1
-Cervical Disk,1
-Cold Cream,1
-Allergic Conjunctivitis,1
-Graft,5
-Pelvic Exam,7
-Western Blot Test,1
-Erosion,6
-Acute Pancreatitis,4
-California,2
-Heat Stroke,1
-Eye Socket,3
-Bedbug,11
-Perforated Eardrum,4
-B Complex Vitamins,2
-Herb,12
-Tuna,4
-Tonsillectomy,6
-Infertility,27
-Preeclampsia,1
-Typhoid Vaccine,1
-Laboratory Test,4
-Hearing Test,5
-Nasal Spray,16
-Labor,14
-Coronary Angioplasty,1
-Rocky Mountain Spotted Fever,1
-Lettuce,4
-Intestine,32
-Shallot,1
-Pilonidal Cyst,11
-Pedialyte,3
-Hepatocellular Carcinoma,1
-Merkel Cell Carcinoma,1
-Allergic Asthma,1
-Autism,15
-Thyroid Nodule,2
-Knee Pain,25
-Polycystic Ovarian Syndrome,17
-Ginseng,1
-Lumbar Spinal Stenosis,1
-Plaque,12
-Wyoming,1
-Stuffy Nose,17
-Polio,4
-Scapula,1
-Essential Tremor,4
-Hypoventilation,1
-Radial Keratotomy,2
-Aorta,7
-Toxic Epidermal Necrolysis,1
-Primary Biliary Cirrhosis,3
-Left Ventricular Hypertrophy,2
-Dermabrasion,1
-Fasciitis,2
-ANA Test,2
-Sepsis,13
-Sunflower,4
-Hypothermia,2
-Seeds,11
-Dislocation,10
-Endoscopy,27
-Ketogenic Diet,1
-Healthy Eating,31
-Welt,11
-Fudge,1
-Grains,5
-Lactose Intolerance,7
-Lymphoma,6
-DNA Test,2
-Cholera,1
-Occupational Therapy,5
-E  Coli,2
-CharcotMarieTooth Disease,1
-LiFraumeni Syndrome,1
-Grayness,11
-Dyslipidemia,1
-Stillbirth,1
-Radiculopathy,1
-Salivary Gland,6
-Dermatitis,10
-Pecan,2
-Cervical Biopsy,3
-Sweet Potato,3
-Pudding,1
-Dysphonia,1
-Specific Phobias,1
-Chiari Malformation,2
-Sausage,2
-Pear,4
-Potassium Chloride,1
-Florida,3
-Broken Arm,2
-Poison Oak,4
-Neurogenic Bladder,1
-Olive,18
-Myomectomy,2
-Grape,3
-Lens,6
-Tendon,19
-SIDS,5
-Leukemia,3
-Cervical Spinal Stenosis,1
-Benign Paroxysmal Positional Vertigo,1
-Puncture Wound,5
-Muscular Dystrophy,2
-Peanut,16
-Separation Anxiety,1
-Mineral Oil,3
-Electrogastrogram,22
-Hodgkins Lymphoma,1
-Sunburn,19
-Sunscreen,23
-Spinal Cord,4
-Soy,15
-Esophageal Spasm,3
-Potassium,33
-Organ,35
-Gout,20
-AntiInflammatory,7
-Dehydration,29
-Gingivitis,3
-Down Syndrome,3
-Hyperkalemia,1
-Fried Chicken,1
-Digestive System,6
-Tick,17
-Essential Hypertension,1
-Medicaid,38
-Lumpectomy,1
-Heart Valve,5
-Peppermint,2
-Thrombosis,1
-Balanitis,6
-Anal Cancer,1
-Acupuncture,6
-Secondary Amenorrhea,1
-Sigmoidoscopy,1
-Hyperactivity,2
-Makeup,14
-Estrogen,39
-Vertebra,6
-Testicular Cancer,15
-Hydrocortisone,10
-Toenail Fungus,5
-Salad Dressing,1
-Heel Spur,2
-Dysentery,2
-Cat Scratch Disease,3
-Low SelfEsteem,2
-Spitting Up,6
-Scleroderma,2
-Delusions,4
-Insulin Resistance,2
-Baby Bottle Tooth Decay,1
-Salpingectomy,1
-Gonorrhea,18
-Skin Tag,9
-Tachycardia,6
-Whooping Cough,27
-Central Nervous System,1
-Spider Vein,6
-Craniotomy,1
-Pharyngitis,8
-Thermometer,7
-Ileostomy,1
-Head Lice,10
-Frostbite,2
-Carotid Artery,7
-Post Nasal Drip,7
-Range Of Motion,5
-Stent,35
-Amyotrophic Lateral Sclerosis,3
-Bulimia Nervosa,2
-Mononucleosis,23
-ObsessiveCompulsive Disorder,3
-Spasm,33
-Sty,19
-Severe Allergic Reaction,1
-Niacin,13
-flaxseed oil,3
-Tear Duct,3
-Georgia,1
-Pepperoni,1
-Shock,13
-flaxseed,4
-Eyelid,38
-Heart Murmur,11
-Suicide,25
-Posterior Cruciate Ligament Injury,1
-Priapism,6
-Nightmare,15
-Serotonin,5
-Blood Thinner,30
-Mushroom,5
-Cystoscopy,3
-Blood In Urine,1
-Hoarseness,8
-Hemangioma,3
-Electrolyte,1
-Oyster,6
-Morning Sickness,15
-Pulmonary Embolism,5
-Third Trimester,8
-Indigestion,14
-Meningioma,1
-Drug Overdose,11
-Potato,8
-Paraplegia,4
-Blood Disorder,1
-Amputation,4
-Giddiness,2
-Osteopenia,2
-Polyp,20
-Broken Finger,1
-Malaria,3
-Vaginal Hysterectomy,4
-AIDS,25
-Bronchiolitis,1
-PostConcussion Syndrome,1
-Alopecia,3
-Gestational Diabetes,6
-Poppy Seed,4
-Diverticulosis,7
-Poisoning,10
-Cornea,4
-Barium Swallow,1
-Thermal Ablation,1
-Soy Milk,4
-Angina,6
-Skin Cancer,10
-Forearm,37
-Wrist Pain,3
-Ultrasonography,1
-Tennis Elbow,6
-Colposcopy,4
-Electrocution,2
-Gallbladder Cancer,1
-Cortisone,25
-Blood Donation,11
-Ammonia,19
-Broken Tooth,2
-Dark Chocolate,5
-Anal Fissure,7
-Catheter,13
-Ginger,8
-Torticollis,2
-Salicylic Acid,3
-Immune System,29
-Trigger Finger,4
-Inhaler,23
-Spinal Injury,1
-Premenstrual Syndrome,4
-Graves Disease,1
-Mashed Potato,1
-Sleep Apnea,13
-Hymen,10
-Stomachache,3
-Mood Swing,36
-Hypogonadism,1
-Bacterial Vaginosis,27
-Bee Sting,5
-Air Quality,1
-Turkey,26
-Periodontitis,1
-Palpation,5
-Candidiasis,2
-Fingernail,21
-Ringworm,29
-Peripheral Vascular Disease,1
-Chai,1
-Mitral Valve Prolapse,3
-Hyperactive Behavior,1
-Ribcage,23
-Echocardiogram,12
-Malnutrition,3
-Genital Wart,5
-Hypertrophic Cardiomyopathy,1
-CAT Scan,30
-Developmental Delay,1
-Birth Defect,2
-Urethral Stricture,1
-Pets,10
-Herniated Disc,14
-Blindness,10
-Closed Head Injury,1
-Chronic Obstructive Pulmonary Disease,26
-Herniated Disk,8
-Large Intestine,3
-Transvaginal Ultrasound,4
-Health Insurance Marketplace,14
-Lactate,5
-Vitamin D Deficiency,7
-Osteonecrosis,1
-Menstrual Cramp,8
-Shaving,22
-Naproxen,21
-Target Heart Rate,1
-Chigger,3
-Pericarditis,1
-Drug Abuse,15
-Hand Foot And Mouth Disease,7
-Transcutaneous Electric Nerve Stimulation,4
-Sexual Assault,2
-Endometriosis,15
-Heart Block,1
-Tubal Reversal,4
-Placenta,5
-Fine Needle Aspiration,2
-Mania,1
-Hyperthermia,1
-Open Heart Surgery,4
-Oregon,2
-Nail Fungus,4
-Kidney Infection,21
-Autoimmune Disorder,2
-Oxycodone,31
-Type 2 Diabetes,38
-LEEP,4
-Mango,2
-Hay Fever,5
-Dyshidrotic Eczema,1
-Heat Intolerance,1
-Spaghetti,1
-Dry Socket,3
-Hyperpigmentation,3
-Cardiovascular Disease,1
-Hyponatremia,1
-Keloid,7
-Stress Fracture,10
-Tubal Ligation,34
-Subconjunctival Hemorrhage,2
-Brain Aneurysm,4
-Complex Regional Pain Syndrome,2
-Intrauterine Device,5
-Raspberry,4
-Sour Cream,1
-Brain Hemorrhage,2
-Splint,8
-Adult Acne,7
-Bowel Incontinence,1
-Aneurysm,7
-Mental Health,6
-Vaccines,28
-Monoamine Oxidase Inhibitor,3
-Iris,4
-Preservative,1
-Tumor,33
-Breast Pump,1
-Heart Rhythm Disorder,1
-Folic Acid,12
-Learning Disability,2
-Infant Formula,2
-Trench Foot,1
-Appendix,33
-Gastritis,14
-Skull Fracture,3
-Endometrial Ablation,4
-Undescended Testicle,4
-Eye Allergy,1
-Tendinitis,3
-Lithotripsy,3
-Alternative Medicine,1
-St  Johns Wort,2
-Kidney Cancer,7
-Hyperventilation,3
-Wound Care,2
-Lung Cancer,15
-Calamine,3
-Lithium,14
-Tricuspid Regurgitation,1
-Subdural Hematoma,2
-Vitiligo,13
-Fluoride,2
-Brain Tumor,6
-Amnesia,1
-Icing,12
-Sinus Bradycardia,2
-Earwax Blockage,1
-Lactase,1
-CK,1
-Michigan,2
-Tic,3
-Breast Fibroadenoma,1
-Hyperhidrosis,7
-Benzoyl Peroxide,6
-Cluster Headache,1
-Coconut Oil,13
-Ginkgo Biloba,1
-Margarine,1
-Rheumatic Fever,1
-Collarbone,11
-Bladder Stone,2
-Bunion,6
-Angiogram,1
-Hip Replacement,12
-Child Abuse,1
-Typhus,1
-West Nile Virus,1
-Retinitis Pigmentosa,1
-Lymphedema,11
-Klinefelters Syndrome,1
-Ulcerative Colitis,7
-Hemoglobin,11
-Beta Blocker,16
-Lupus,27
-Razor Burn,1
-Achilles Tendon,4
-Cervical Cancer,17
-Double Vision,4
-Mint,2
-Bulging Disc,3
-Shoulder Blade,24
-Oatmeal,18
-Fissure,1
-Spondylitis,2
-Viral Pneumonia,3
-Genetic Disorder,1
-Adolescent,1
-Proton Pump Inhibitor,5
-Painkiller,13
-Dementia,22
-Myelogram,1
-Eating Disorder,7
-Hydrocephalus,1
-Motor Neuron Disease,1
-Laminotomy,2
-Laminectomy,1
-Spinal Fusion,8
-First Aid,4
-Narcolepsy,4
-Egg White Cervical Mucus,1
-Talc,1
-Lower Jaw,5
-Pea,28
-Bacterial Pneumonia,3
-Pizza,2
-Premature Menopause,1
-Platelet,7
-Diaper Rash,11
-Eosinophilic Esophagitis,1
-North Carolina,1
-Delirium,1
-Anal Wart,2
-Anorexia,6
-Colloid Cyst,1
-Narcotic,23
-Disorientation,8
-Mite,8
-Okra,2
-Cartilage,10
-Apnea,4
-Occulta,1
-Painful Urination,1
-Radish,2
-Inflammatory Bowel Disease,1
-Aspiration,5
-Ear Drum,21
-Pancreatic Cancer,17
-Sea Sickness,1
-Artery,39
-Corn Oil,1
-Sexual Abuse,2
-Restless Legs Syndrome,3
-Newborn Jaundice,1
-Cereal,27
-Trichinosis,2
-CPAP,4
-Electroencephalogram,1
-Care Giver,2
-Oral Cancer,6
-Peptic Ulcer,1
-Glycerin,4
-Ovarian Cancer,14
-LH Level,1
-Drug Eruption,1
-Bicep,11
-Photophobia,2
-Bone Marrow,4
-Belch,4
-Stress Incontinence,1
-Mouth Ulcers,1
-Brown Rice,1
-Pie,2
-Type 1 Diabetes,6
-Thyroid Cancer,3
-Obstructive Sleep Apnea,4
-Diaphragm,3
-Pituitary Gland,1
-Bed Sore,1
-Blepharitis,1
-Dry Mouth,19
-Histrionic Personality Disorder,1
-Seafood,2
-Tomato,6
-Body Building,1
-Chondromalacia Patella,2
-Waist,33
-Food Poisoning,11
-Interstitial Cystitis,2
-Photosensitivity,2
-Jalapeno,1
-Mayonnaise,1
-Sodium,25
-Whitehead,15
-Mastoiditis,2
-Arrhythmias,1
-Circumcision,39
-Grief,31
-Chalazion,2
-Bloodshot Eye,4
-Breast Augmentation,6
-Epilepsy,13
-Anal Abscess,1
-Mozzarella,1
-Yogurt,30
-Lice Infestation,2
-Tracheotomy,2
-Chronic Fatigue Syndrome,4
-Hormone Replacement Therapy,15
-SecondHand Smoke,4
-Bursitis,13
-Diet Pills,15
-Tremor,16
-Lactic Acid,2
-Anastomosis,1
-Eustachian Tube Dysfunction,1
-Hematoma,6
-Impetigo,14
-Varicocele,5
-Indiana,1
-Rotator Cuff,19
-Retina,6
-Cataract Surgery,5
-Systemic,3
-PreSchool,3
-Ischemia,3
-Hematospermia,1
-Colon Resection,1
-Gallbladder Disease,1
-Ace Inhibitor,2
-Hyperlipidemia,1
-Phlebotomy,2
-Immunodeficiency,1
-Soup,6
-Tuberculosis,5
-Actinic Keratosis,1
-Complete Blood Count,4
-High Protein Diet,1
-Gum Disease,1
-Yam,1
-Drowning,4
-Bacitracin,1
-Castration,1
-Larynx,3
-Pineapple,3
-Encephalitis,1
-Cataract,5
-Peanut Butter,9
-Myoclonus,1
-Antibiotic Use,2
-Collagen,5
-PostTraumatic Stress Disorder,9
-Overactive Bladder,5
-Ice Cream,11
-Femur,11
-Arrhythmia,11
-Cardiomyopathy,2
-Pumpkin,2
-Morphine,23
-Ruptured Eardrum,3
-Cellulitis,11
-Memory Loss,21
-Tibia,7
-Vascular Dementia,2
-Corpectomy,1
-Esophagitis,1
-Childhood Obesity,1
-Esophagus,12
-Cuts,31
-Temper Tantrums,1
-Texas,2
-Nicotine,20
-Ovarian Cyst,1
-Yeast,32
-Reactive Attachment Disorder,1
-Referred Pain,1
-Ebola Hemorrhagic Fever,1
-Abdominal Muscles,2
-Celiac Disease,8
-Broken Shoulder,2
-Heat Rash,10
-Endometrium,7
-Oral Glucose Tolerance Test,1
-High Fructose Corn Syrup,1
-Bladder Repair,1
-Prenatal Vitamin,22
-Abstinence,1
-Dilated Cardiomyopathy,1
-Travelers Diarrhea,12
-Pot Roast,1
-Cesarean Section,8
-Ingrown Toenail,4
-Pasta,9
-Wool,1
-Adrenal Gland,6
-Pickle,2
-Angioplasty,7
-Tai Chi,1
-Colostomy,2
-Fistula,6
-Retrograde Ejaculation,1
-Paraphimosis,3
-Reflux,5
-Autoimmune Disease,6
-HenochSchonlein Purpura,1
-Stretch Mark,9
-Perimenopause,16
-Ataxia,1
-Worm,33
-Insect Sting,2
-Thyroiditis,2
-Obesity,34
-Pelvic Inflammatory Disease,1
-Knocked Out Tooth,1
-Metabolism,19
-Palpitation,15
-Tobacco,15
-Chancroid,1
-Lotion,28
-Biofeedback,1
-Parsley,1
-Calcium Channel Blocker,1
-Ventricular Tachycardia,1
-Molluscum Contagiosum,3
-Appendectomy,3
-Thymoma,1
-Hydrocele,3
-Internal Bleeding,3
-Personality Disorder,1
-Optic Nerve,1
-Atrophy,5
-Protein S Deficiency,3
-Fallopian Tube,9
-Sulfur,2
-Chronic Pain,14
-Rosacea,8
-H  Pylori,11
-Poppy,1
-Auscultation,1
-Tryptophan,1
-Senility,1
-Epididymitis,6
-ShortTerm Memory Loss,2
-Hissing,1
-Prostatectomy,3
-Uterine Cancer,6
-Head Injury,8
-Ligament,16
-Growth Hormone Deficiency,1
-Carpal,1
-Psychotherapy,5
-Sprain,34
-Keratosis Pilaris,4
-Magnesium,6
-Consumption,13
-Hirsutism,1
-Liposuction,6
-EhlersDanlos Syndrome,1
-Cellulite,3
-Infection,22
-Sexual Problem,8
-Middle Ear,5
-Croup,2
-Astigmatism,3
-Spinal Meningitis,1
-Schizophrenia,16
-Postpartum Depression,6
-NonSmall Cell Lung Cancer,1
-Cephalexin,18
-Alcoholic Beverage,9
-Uterine Fibroids,1
-Paralysis,6
-Brain Cancer,2
-Fetal Alcohol Syndrome,1
-Manic Depressive,9
-Hypersensitivity,1
-Therapeutic,4
-Seborrhea,3
-Macadamia,1
-Pyelonephritis,1
-Roseola,1
-Rhinoplasty,6
-Iron Deficiency Anemia,2
-Cystic Acne,3
-Pepper,8
-Atrial Flutter,2
-Pain Management,17
-Craving,22
-Riboflavin,1
-Nebulization,5
-Sacroiliac Joint,1
-Neuropathy,23
-Vinegar,36
-Adenomyosis,1
-Osteoporosis,15
-Second Trimester,5
-Colon Cancer,25
-Basal Cell Carcinoma,1
-Mumps,9
-Bruxism,1
-Heart Disease,33
-Urea,1
-Ostomy,1
-Esophagogastroduodenoscopy,1
-Spit,25
-Atrophic Vaginitis,1
-Cosmetic Surgery,9
-Abdominal Obesity,6
-Incontinence,14
-Electromyography,1
-Whole Wheat,3
-General Anesthesia,4
-Psoriatic Arthritis,2
-ACA,7
-Aggression,10
-Short Attention Span,1
-Tetanus,25
-Hookworm,2
-Neuralgia,1
-Raynauds Phenomenon,3
-Dairy Product,5
-Runny Nose,31
-Benign Prostatic Hyperplasia,9
-Birthmark,8
-Contusion,2
-Tattoo,23
-Facial Nerve,1
-Paresthesia,1
-Myeloma,4
-Tofu,2
-Transplant,11
-Hamburger,3
-Low Red Blood Cell Count,1
-Cardiac Catheterization,1
-Hand Surgery,1
-Emaciation,1
-Renal Cell Carcinoma,2
-Ketchup,1
-Anemia,31
-Precocious Puberty,1
-Puffiness,25
-Folliculitis,3
-Breast Self Exam,1
-Enema,9
-Parkinsons Disease,20
-Cirrhosis,17
-Transient Ischemia Attack,2
-Pore,16
-Pork,8
-Broken Toe,4
-Cardiovascular Sys,3
-Electric Shock,3
-Trichotillomania,1
-Herpes Simplex,7
-Atherosclerosis,2
-Dyslexia,2
-Fetus,17
-Gallbladder,29
-Colon,31
-Pancreas,12
-Spider Bite,9
-Salad,16
-Rice,21
-Nutrition,11
-Molar,12
-Ovulation Prediction Kit,1
-Snack,14
-Drool,1
-Pelvic Area,33
-Insomnia,32
-Uric Acid,3
-Ohio,2
-Infarction,1
-Amyloidosis,1
-First Trimester,11
-Soft Tissue,7
-AntiAging,11
-HighRisk Pregnancy,2
-Rhinitis,3
-Vascular Ring,1
-Hydrogen Peroxide,10
-Cubital Tunnel Syndrome,1
-Rapid Strep Test,1
-Multiple Sclerosis,24
-Painful Ovulation,4
-Compulsive Eater,1
-Hyperglycemia,1
-Dental Injury,1
-Prostatitis,9
-Breast Biopsy,4
-Positron Emission Tomography Scan,2
-Onion,4
-Laparoscopy,8
-Otitis Externa,3
-Decompression Sickness,2
-Bradycardia,2
-Lobster,2
-Flat Feet,4
-Diabetic Neuropathy,5
-Cervical Conization,1
-Fever Blister,4
-Aortic Stenosis,2
-Venous Insufficiency,1
-PostMenopause,11
-Jock Itch,12
-Alzheimers Disease,15
-Generalized Epilepsy,1
-Wisdom Tooth,38
-Dairy,12
-Shift Work Sleep Disorder,1
-Penile Cancer,5
-Creatinine,10
-Pinched Nerve,11
-Cholecystectomy,1
-Puberty,23
-Restless Leg Syndrome,7
-Hemochromatosis,2
-Cystic Fibrosis,2
-Catheterization,2
-Oral Herpes,5
-Forgetfulness,11
-Vaginitis,7
-LongTerm Effect,15
-Mastoidectomy,1
-Sexual Dysfunction,5
-Lumbar Puncture,3
-Purpura,2
-Heat Exhaustion,3
-Vocal Cord,3
-Acetone,2
-Fitness,9
-Vulvar Cancer,1
-Hypospadias,1
-Tooth Abscess,1
-Cortisol,3
-Hernia Repair,2
-Panic Disorder,4
-Low Carb Diet,6
-Nephrectomy,1
-Scoliosis,29
-Strawberry,3
-Furuncle,1
-Urinary Incontinence,7
-Kernel,2
-Scrape,11
-Colic,4
-Abscess,19
-Dry Skin,30
-Fluoroscopy,1
-Trauma,31
-Chemical Pneumonia,1
-Polymyositis,1
-Bad Breath,8
-Spina Bifida,3
-Nsaid,9
-Blinking,10
-Gastroenteritis,15
-Blind Loop Syndrome,1
-Stool Culture,1
-Kidney Failure,10
-Preterm Labor,1
-Treadmill,9
-Pupil,7
-DepoProvera,25
-Staphylococcus Aureus,1
-Bells Palsy,5
-Beverages,5
-Gastric Bypass Surgery,27
-B12,18
-Alcoholism,32
-Caterpillar,1
-Newborn,30
-Hammertoe,1
-Instability,7
-Ventricle,2
-Wheat Bran,1
-Hepatitis C,21
-Broken Leg,1
-Hepatitis A,7
-Valley Fever,1
-Hepatitis B,10
-Myopathy,1
-Tar Syndrome,1
-Rectal Prolapse,1
-Resection,5
-Nerve Block,1
-Laryngitis,6
-Jet Lag,5
-Zucchini}],1
-Seasoning,1
-Epistaxis,13
-Phobia,7
-Second Degree Burn,1
-Hepatobiliary Iminodiacetic Acid Scan,2
-Ganglion Cyst,2
-Sushi,4
-Bone Density Test,2
-Wheat,9
-Circulation,24
-Pectoral Muscle,1
-Mammogram,21
-Syphilis,7
-Lyme Disease,3
-Pulmonary Hypertension,4
-Underactive Thyroid,1
-Health Insurance Exchange,16
-Vegetable,31
-Familial Combined Hyperlipidemia,1
-Enlarged Heart,1
-Quit Smoking,30
-Carbon Dioxide,2
-Cosmetic Procedures,4
-Urostomy,1
-Garlic,12
-Shin,26
-Small Intestine,5
-Genetic Testing,3
-Carcinoma,2
-Shellfish,13
-Hyperplasia,1
-Lemon,19
-Syrup,14
-Cocoa,2
-Swine Flu,21
-Pelvic Pain,11
-Pervasive Development Disorders,1
-Mold,18
-Immunization,10
-Sleepwalking,2
-Consciousness,5
-Pancreatitis,22
-Testicular Torsion,3
-Anatomy,1
-Hormonal Therapy,1
-Fibrosis,2
-Hirschsprungs Disease,1
-Glaucoma,7
-Peach,4
-Tick Bite,2
-Bmp Blood Test,1
-Abortion,25
-Hair Loss,30
-Abdominal Hernia,1
-Plant,11
-Anaphylaxis,5
-Clavicle,2
-Urodynamic Test,1
-Pleurisy,5
-Restlessness,14
-Easily Distracted,1
-Epidural,10
 Psoriasis,39
-Tinea Versicolor,1
-Parasite,10
-Tardive Dyskinesia,1
-Heart Surgery,10
-Amino Acids,2
-Spinal Stenosis,8
-Cocaine,21
-Fecal Incontinence,2
-Macular Degeneration,4
-Bundle Nerve Branch Block,1
-Acute Sinusitis,1
-Cardioversion,1
-Hiatal Hernia,11
-Thallium Stress Test,2
-Methadone,25
-Orange,30
-Metatarsalgia,1
-Bee Pollen,1
-Anesthesia,12
-Severe Morning Sickness,1
+Circumcision,39
+Artery,39
+Estrogen,39
+Ulcer,39
+Urinary Tract Infection,39
+Clitoris,39
+Exposure,39
+Wisdom Tooth,38
+Type 2 Diabetes,38
+Eyelid,38
+Medicaid,38
+Menstrual,38
+Vertigo,38
+Forearm,37
 Caffeine,36
-Choking,13
-STD Test,8
-Cranberry,13
-Ankle Pain,3
-Honey,22
-Pellagra,1
-Paranoia,3
-Diverticulitis,22
-Electrocardiogram,13
-Cardiac Arrest,2
-Colitis,6
-Anger Management,1
-Leukoplakia,1
-Necrosis,1
-flax,4
-Grip,7
-Deviated Septum,2
-Goiter,4
-Beta Carotene,2
-Bartholin Cyst,5
-Neural Tube Defect,1
-Freckle,4
-Sodium Chloride,1
-Metamucil,5
-Vaginal Yeast Infection,16
+Vinegar,36
+Mood Swing,36
+Poison Ivy,36
+Massage,36
+Stent,35
+Organ,35
+Inflammation,35
+Sprain,34
+Obesity,34
+Tubal Ligation,34
+Pink Eye,34
+methicillin resistant staphylococcus aureus,34
+Cooking,34
 Chickenpox,33
-Sphincter,4
-Pinworm,5
-Hydronephrosis,1
-Corneal Abrasion,1
-Urinary Tract,3
-Rabies,6
-Anaphylactic Shock,1
-Louisiana,1
-SGPT,1
-Aloe,4
-Cervical Mucus,1
-Plastic Surgery,5
-Radiation Sickness,2
-Low Blood Pressure,14
-Carpal Tunnel Syndrome,20
-Borderline Personality Disorder,6
-Dental Abscess,1
-Lockjaw,2
-Autoimmune Hepatitis,4
-Flashback,2
-Meniscus,7
-Unstable Angina,1
-Mental Breakdown,3
-Appendicitis,8
-Herpetic Whitlow,1
-Canola,1
-Ablation,11
-Thyroidectomy,4
-Orchiectomy,1
-Vaginismus,1
-Kyphosis,1
-Impotence,8
-Rhabdomyosarcoma,1
-Peripheral Artery Disease,1
-Nostril,17
-Tendonitis,12
-Ectopic Pregnancy,7
-Feta Cheese,1
-Grapefruit,15
-Maple,1
-Epinephrine,2
+Pelvic Area,33
+Heart Disease,33
+Worm,33
+Waist,33
+Appendix,33
+Tumor,33
+Spasm,33
+Potassium,33
+Alcoholism,32
+Insomnia,32
+Yeast,32
+Intestine,32
+Hypothyroidism,32
+Vasectomy,32
 Rheumatoid Arthritis,31
-Gallbladder Removal,7
-Pastry,1
-Bladder Cancer,4
-Omega3,4
-Lithotomy,1
-Bone Cancer,3
+Vegetable,31
+Trauma,31
+Colon,31
+Anemia,31
+Runny Nose,31
+Cuts,31
+Grief,31
+Oxycodone,31
+Healthy Eating,31
+Wine,31
+Orange,30
+Hair Loss,30
+Quit Smoking,30
+Newborn,30
+Dry Skin,30
+Yogurt,30
+CAT Scan,30
+Blood Thinner,30
+Hydrocodone,30
+Libido,30
+Chemotherapy,30
+Scoliosis,29
+Gallbladder,29
+Ringworm,29
+Immune System,29
+Dehydration,29
+Cavity,29
+Lotion,28
+Pea,28
+Vaccines,28
+Oxygen,28
+Gastric Bypass Surgery,27
+Cereal,27
+Lupus,27
+Bacterial Vaginosis,27
+Whooping Cough,27
+Endoscopy,27
+Infertility,27
+Scabies,27
+Conception,27
+Concussion,27
+Fiber,27
+Shin,26
+Chronic Obstructive Pulmonary Disease,26
+Turkey,26
+Physical Therapy,26
+Concentration,26
+Congestive Heart Failure,26
+Methadone,25
+Abortion,25
+DepoProvera,25
+Puffiness,25
+Tetanus,25
+Spit,25
+Colon Cancer,25
+Sodium,25
+Cortisone,25
+AIDS,25
+Suicide,25
+Knee Pain,25
+Circulation,24
+Multiple Sclerosis,24
+Shoulder Blade,24
+Staph Infection,24
+Sadness,24
+Melatonin,24
+Triglyceride,24
 Gallstone,23
-Cholesteatoma,1
-Multivitamins,2
-Lobectomy,1
+Puberty,23
+Tattoo,23
+Neuropathy,23
+Morphine,23
+Narcotic,23
+Ribcage,23
+Inhaler,23
+Mononucleosis,23
+Sunscreen,23
+Diverticulitis,22
+Honey,22
+Pancreatitis,22
+Craving,22
+Infection,22
+Prenatal Vitamin,22
+Dementia,22
+Shaving,22
+Electrogastrogram,22
+Aging,22
+Piercing,22
+Cocaine,21
+Swine Flu,21
+Mammogram,21
+Hepatitis C,21
+Rice,21
+Memory Loss,21
+Ear Drum,21
+Kidney Infection,21
+Naproxen,21
+Fingernail,21
+High Cholesterol,21
+Trichomoniasis,21
+Screening,21
+Carpal Tunnel Syndrome,20
+Parkinsons Disease,20
+Nicotine,20
+Polyp,20
+Gout,20
+Exercise Stress Test,20
+Kidney Disease,20
+Irritable Bowel Syndrome,20
+Lemon,19
+Abscess,19
+Metabolism,19
+Rotator Cuff,19
+Dry Mouth,19
+Ammonia,19
+Sty,19
+Sunburn,19
+Tendon,19
+Skull,19
+Sciatica,19
+Benign,19
+Mold,18
+B12,18
+Cephalexin,18
+Oatmeal,18
+Gonorrhea,18
+Olive,18
+Hearing Loss,18
+Canker Sore,18
+Pacemaker,18
+Nostril,17
+Fetus,17
+Cirrhosis,17
+Pain Management,17
+Pancreatic Cancer,17
+Cervical Cancer,17
+Tick,17
+Stuffy Nose,17
+Polycystic Ovarian Syndrome,17
+Atopic Dermatitis,17
+Thirst,17
+Vaginal Yeast Infection,16
+Health Insurance Exchange,16
+Salad,16
+Pore,16
+Schizophrenia,16
+Ligament,16
+Perimenopause,16
+Tremor,16
+Beta Blocker,16
+Peanut,16
+Nasal Spray,16
+Hallucination,16
+Urinalysis,16
+Morning After Pill,16
