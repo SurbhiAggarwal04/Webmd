@@ -15,8 +15,8 @@ public class GenerateCSVFile {
 
 		File file = new File(filepath, filename);
 		FileWriter writer = null;
-		if(!file.exists())
-		{
+		//if(!file.exists())
+		//{
 		try {
 			writer = new FileWriter(file.getAbsoluteFile());
 			writer.append(FILE_HEADER.toString());
@@ -39,7 +39,7 @@ public class GenerateCSVFile {
 				e.printStackTrace();
 			}
 		}
-	}
+	//}
 	}
 
 }

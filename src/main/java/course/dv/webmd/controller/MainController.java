@@ -1,5 +1,8 @@
 package course.dv.webmd.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -8,14 +11,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import course.dv.webmd.common.GenerateCSVFile;
+import course.dv.webmd.service.PopularTopicsService;
+
 @Controller
 public class MainController {
 	String filepath;
 
 	@RequestMapping(value = { "/", "/welcome**","/logout" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage(HttpServletRequest request) {
-//		filepath=request.getSession().getServletContext().getRealPath("/WEB-INF/csv");
-//		System.out.println(filepath);
+		filepath=request.getSession().getServletContext().getRealPath("/resources/csv");
+		System.out.println(filepath);
+		
+		/*
+		 * Uncomment to generate csvs' dynamically
+		 */
 //		PopularTopicsService.init();
 //		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
 //		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
@@ -30,7 +40,6 @@ public class MainController {
 //		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
 
 		ModelAndView model = new ModelAndView();
-		
 		model.setViewName("welcome");
 		return model;
 
@@ -42,21 +51,4 @@ public class MainController {
 		return model;
 
 	}
-	
-	@RequestMapping(value = "login", method = RequestMethod.POST)
-	public ModelAndView defaultPageAfterLogin(HttpServletRequest request,@RequestParam("username") String username,@RequestParam("password") String password) {
-		request.getSession().setAttribute("user", username);
-		ModelAndView model = new ModelAndView();
-		model.setViewName("afterLogin");
-		return model;
-
-	}
-	@RequestMapping(value = "register", method = RequestMethod.GET)
-	public ModelAndView register() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("register");
-		return model;
-
-	}
-
 }

@@ -8,9 +8,30 @@
 <html lang="en">
 
 <head>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script
 	src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+		<script
+		src="${pageContext.request.contextPath}/resources/adminjs/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/bootstrap.min.js"></script>
+
+	<!-- Morris Charts JavaScript -->
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/raphael.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris-data.js"></script>
+
+	
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,7 +84,7 @@
 					hfghegfuyerhfj
 					<div class="col-md-4">
 						<script>
-						var margin = {top: 20, right: 100, bottom: 20, left: 400};
+						var margin = {top: 10, right: 50, bottom: 20, left: 300};
 						var diameter = 1000-margin.left-margin.right; //max size of the bubbles
 											  var  color    = d3.scale.category20(); //color category
 
@@ -99,8 +120,17 @@
 											        .attr("cx", function(d){ return d.x; })
 											        .attr("cy", function(d){ return d.y; })
 											        .style("fill", function(d) { return color(d.value); })
-											        .on("click", function() {
-											           alert("rect")});
+											        .on("click", function(d) {	
+											        	var url;
+											        	if(d.id.match(/Most.*/))
+												        	url = "${pageContext.request.contextPath}/topicsByPopularity";
+												        if(d.id.match(/Mediocre.*/))
+													        url = "${pageContext.request.contextPath}/topicsByPopularity";
+													    if(d.id.match(/Least.*/))
+														    url = "${pageContext.request.contextPath}/topicsByPopularity";											    		
+									                    $(location).attr('href', url);
+									                    window.location = url;
+											           });
 
 											    //format the text for each bubble
 											    bubbles.append("text")
@@ -149,25 +179,6 @@
 	<!-- /#wrapper -->
 
 	<!-- jQuery -->
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/bootstrap.min.js"></script>
-
-	<!-- Morris Charts JavaScript -->
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/raphael.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris-data.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
-
 </body>
 
 </html>

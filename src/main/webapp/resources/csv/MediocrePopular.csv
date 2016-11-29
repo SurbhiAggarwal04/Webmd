@@ -1,62 +1,175 @@
 id,value
-Blood Sugar,101
-Irregularity,102
-Nipple,103
-Bloating,104
-Sexually Transmitted Disease,106
-Ibuprofen,109
-Brain,110
-Menopause,112
-Toe,114
+Vein,56
+Magnetic Resonance Imaging,42
+Arthritis,68
+Urethra,41
+Orgasm,97
+Bipolar Disorder,54
 Weight Loss,118
-Thigh,119
-Cyst,120
+Panic Attack,51
+Armpit,52
+Antidepressant,51
+Blood Sugar,101
+Uterus,85
+Sexually Transmitted Disease,106
+Lung,86
+Sinus,97
+Flatulence,41
+Health insurance,54
+Drainage,87
+Jaw,67
+Wound,57
+Paranoid Behavior,41
+Genitalia,40
+Vaginal Discharge,42
+Testosterone,78
+Biopsy,48
+Tongue,94
+Heel,43
+Miscarriage,80
+Fracture,87
+Medicare,83
+Prostate,59
+Menopause,112
+Vitamin D,42
+Erectile Dysfunction,48
+Cold,85
+Abdominal Pain,56
+Coffee,62
+Wrist,77
+Short Stature,101
+Strep Throat,46
+Seizure,69
+Breast Cancer,51
+Sinus Infection,68
+Anger,46
+Infant,53
+Salt,57
+Genital Herpes,92
+Workout,71
+Feeding,71
+Blood Clot,67
+Spine,68
+Nervousness,60
+Bloating,104
+Penicillin,47
+Kidney Stone,64
+Nipple,103
+Vaccination,44
 Sperm,121
-Ovary,123
+Sting,48
+Juice,50
+Pap Test,49
+Amoxicillin,70
+Colonoscopy,61
+Bronchitis,48
+Thumb,55
+Numbness,86
+Belly Button,53
+Big Toe,42
+Oil,74
+Weakness,99
+Steroid,65
+Stroke,62
+Wart,84
+Human Papillomavirus,49
+Mucus,83
+Thigh,119
+Birth,71
+Bacterium,101
+Tonsil,61
+HIV,68
+Meal,94
+Meat,42
+Soda,48
+Fruit,62
+Foreskin,55
+Tea,54
+Prostate Cancer,48
+Marijuana,67
+Irregularity,102
+Elbow,73
+Emergency Room,52
+Multivitamin,42
+Supplement,76
+Taste,78
+Breastfeed,52
+Iron,55
+Xray,65
+Brain,110
+Crying,77
+Nerve,85
+Toe,114
+Hysterectomy,114
+Affordable Care Act,40
+Stitches,40
+Acetaminophen,86
+Cyst,120
+Dental,62
+Heart Attack,52
+Sore,56
+Pelvis,60
+Ibuprofen,109
+Sleepiness,40
 Fatigue,124
-High Blood Pressure,127
-Milk,128
-Kidney,132
-Liver,133
-Lip,137
-Ankle,139
-Anus,144
-Testicle,147
-Shingles,148
-Birth Control Pill,151
-Ovulation,153
-Bruise,154
-Allergy,160
-Injury,168
-Sweating,169
-Back Pain,171
-Shoulder,172
-Blood Test,173
-Depression,178
-Smell,180
-Fear,181
-Vomit,183
-Over The Counter,184
-Herpes,186
-Yeast Infection,187
-Smoking,190
-Pressure,191
-Family,192
-Diarrhea,195
-Condom,198
-Dizziness,200
-Flu,202
-Anxiety,203
-Healing,210
-Lump,213
-Rash,215
-Stress,216
-Urination,219
-Cramps,224
-Finger,229
-Throat,230
-Spotting,234
-Cancer,237
-Knee,239
-Running,240
-Mouth,242
+Calcium,40
+Ear Infection,71
+Cervix,55
+Lightheadedness,63
+Rectum,58
+Fish,49
+Cholesterol,97
+Scar,70
+Hot Flash,47
+Hives,51
+Buttocks,43
+Asthma,69
+Hunger,84
+Migraine,97
+Ovary,123
+Weight Gain,82
+Constipation,76
+Temperature,63
+Bladder,93
+Lymph Node,61
+Confusion,91
+Tinnitus,51
+Fibromyalgia,78
+Scrotum,43
+Swallow,97
+Chlamydia,86
+Ultrasound,81
+Calorie,61
+Sore Throat,101
+Fertility,81
+Hormone,84
+Thrush,41
+Insulin,58
+Toddler,50
+Drowsiness,106
+Heartburn,64
+Hemorrhoid,40
+Height,79
+Scalp,47
+Attention Deficit Hyperactivity Disorder,43
+Nail,65
+Thyroid,123
+Tightness,93
+Tampon,56
+Pneumonia,64
+Drug Test,86
+Boil,62
+Hernia,65
+Aspirin,50
+Calf,43
+Reaction,75
+Mole,42
+Travel,52
+Wrinkle,48
+Forehead,40
+Cats,92
+Cold Sore,60
+Corpulence,66
+Protein,43
+Allergic Reaction,50
+Pulse,45

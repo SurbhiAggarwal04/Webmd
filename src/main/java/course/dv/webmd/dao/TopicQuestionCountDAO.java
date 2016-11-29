@@ -46,8 +46,8 @@ public class TopicQuestionCountDAO {
 
 			@Override
 			public int compare(String o1, String o2) {
-				// TODO Auto-generated method stub
-				return topicCountMap.get(o1).compareTo(topicCountMap.get(o2));
+				if(topicCountMap.get(o2)-topicCountMap.get(o1)>0)return 1;
+				else return -1;
 			}
 		});
 		
