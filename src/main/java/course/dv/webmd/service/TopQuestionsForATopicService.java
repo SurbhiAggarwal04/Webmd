@@ -9,11 +9,9 @@ import java.util.Set;
 public class TopQuestionsForATopicService {
 
 	/**
-	 * Given a topic, this method fetches all question ids from relatedTopics2
-	 * (elastic search) and for each question id, it fetches answer count and 
-	 * stores it in a HashMap<QuestionId, NumOfAnswersCount>.
-	 * Returns the HashMap after sorting it by value of HashMap in descending order.
-	 *  
+	 * Given a topic, this method fetches all question ids and question title 
+	 * from questions2 (elasticsearch) and returns HashMap<QuestionId, QuestionTitle>.
+	 * 
 	 * @param topic
 	 * @return HashMap<QuestionId, NumOfAnswersCount>
 	 */
