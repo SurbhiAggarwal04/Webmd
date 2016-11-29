@@ -6,6 +6,9 @@ import static course.dv.webmd.common.SortMapByValue.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+
+import org.springframework.stereotype.Service;
+@Service("topQuestionsForATopicService")
 public class TopQuestionsForATopicService {
 
 	/**
@@ -15,7 +18,7 @@ public class TopQuestionsForATopicService {
 	 * @param topic
 	 * @return HashMap<QuestionId, NumOfAnswersCount>
 	 */
-	public static Map<String, String> getTopFifteenQuestionsForATopic(String topic) {
+	public Map<String, String> getTopFifteenQuestionsForATopic(String topic) {
 		Map<String, String> allQuestionAndTitles = getAllQuestionsForTopic(topic);
 		Set<String> allQuestions = allQuestionAndTitles.keySet();
 		Map<String, Integer> questionCount = new HashMap<String, Integer>();
@@ -31,10 +34,5 @@ public class TopQuestionsForATopicService {
 			count++;
 		}
 		return top15Questions;
-	}
-
-	public static void main(String[] args) {
-		Object a = getTopFifteenQuestionsForATopic("periodquestions");
-		System.out.println(a);
 	}
 }

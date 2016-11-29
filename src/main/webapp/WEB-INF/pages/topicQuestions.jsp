@@ -112,7 +112,10 @@
 					<h1 class="page-header">dgfhjhgueryuefnj</h1>
 					hfghegfuyerhfj
 					<div class="col-md-4">
-
+							<c:forEach items="${questionMap}" var="question">
+							<a href="#">${question.value}</a>
+<%--    									 Key = ${entry.key}, value = ${entry.value}<br>
+ --%>							</c:forEach>
 					</div>
 
 
