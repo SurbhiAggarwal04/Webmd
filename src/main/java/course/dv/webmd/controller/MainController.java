@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import course.dv.webmd.service.TopQuestionsForATopicService;
+import course.dv.webmd.common.GenerateJsonFile;
+import course.dv.webmd.model.Member;
+import course.dv.webmd.service.TopRatedMembersService;
 
 @Controller
 public class MainController {
@@ -22,12 +25,15 @@ public class MainController {
 
 	@RequestMapping(value = { "/", "/welcome**","/logout" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage(HttpServletRequest request) {
+
 		filepath=request.getSession().getServletContext().getRealPath("/resources/csv");
 		System.out.println(filepath);
 		
 		/*
 		 * Uncomment to generate csvs' dynamically 
 		 */
+		filepath=request.getSession().getServletContext().getRealPath("/resources/json");
+//		System.out.println(filepath);
 //		PopularTopicsService.init();
 //		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
 //		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
@@ -40,7 +46,6 @@ public class MainController {
 //		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
 //		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
 //		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
-
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "topicPopularity.csv");
 		model.addObject("pageTitle", "Welcome");		
@@ -48,6 +53,7 @@ public class MainController {
 		return model;
 
 	}
+	
 	@RequestMapping(value = "topicsByPopularity", method = RequestMethod.GET)
 	public ModelAndView topicsByPopularity() {
 		ModelAndView model = new ModelAndView();
@@ -55,7 +61,16 @@ public class MainController {
 		model.addObject("pageTitle", "Topics by Popularity");		
 		model.setViewName("welcome");
 		return model;
-
+	}
+	
+	@RequestMapping(value = "membersByTopics", method = RequestMethod.GET)
+	public ModelAndView membersByTopics() {
+		Map<String, Integer> p = TopRatedMembersService.createMemberDictionaryFromQuestionAnswers("periodquestions");
+		Map<Member, Integer> map = TopRatedMembersService.getTopRatedMembersData(p);
+		GenerateJsonFile.generateJsonFile(map,filepath);
+		ModelAndView model = new ModelAndView();
+		model.setViewName("membersByTopics");
+		return model;
 	}
 	
 	@RequestMapping(value = "mostPopularTopics", method = RequestMethod.GET)

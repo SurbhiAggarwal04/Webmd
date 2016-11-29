@@ -53,13 +53,8 @@ public class TopRatedMembersService {
 		for(String memberId : memberIdAndCount.keySet()) {
 			if(count == 10) break;
 			topRatedMemberData.put(getMemberForMemberId(memberId) , memberIdAndCount.get(memberId));
-			count ++;
+			count++;
 		}
 		return topRatedMemberData;
 	}
-	/*public static void main(String[] args) {
-		Map<String, Integer> p = createMemberDictionaryFromQuestionAnswers("periodquestions");
-		Object a = getTopRatedMembersData(p);
-		System.out.println(a);
-	}*/
 }

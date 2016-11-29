@@ -87,33 +87,26 @@
 						var margin = {top: 10, right: 50, bottom: 20, left: 300};
 						var diameter = 1000-margin.left-margin.right; //max size of the bubbles
 											  var  color    = d3.scale.category20(); //color category
-
 											var bubble = d3.layout.pack()
 											    .sort(null)
 											    .size([diameter, diameter])
 											    .padding(50);
-
 											var svg = d3.select("body")
 											    .append("svg")
 											    .attr("width", 1000)
 											    .attr("height", 1000)
 											    .attr("class", "bubble");
-
 											d3.csv("${csvFile}", function(error, data){
-
 											    //convert numerical values from strings to numbers
 											    data = data.map(function(d){ d.value = +d["value"]; return d; });
-
 											    //bubbles needs very specific format, convert data to this.
 											    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
-
 											    //setup the chart
 											    var bubbles = svg.append("g")
 											        .attr("transform","translate(" + margin.left + "," + margin.top + ")")
 											        .selectAll(".bubble")
 											        .data(nodes)
 											        .enter();
-
 											    //create the bubbles
 											    bubbles.append("circle")
 											        .attr("r", function(d){ return d.r; })
@@ -131,7 +124,6 @@
 									                    $(location).attr('href', url);
 									                    window.location = url;
 											           });
-
 											    //format the text for each bubble
 											    bubbles.append("text")
 											        .attr("x", function(d){ return d.x; })
@@ -153,9 +145,7 @@
 											            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
 											            "font-size": "12px"
 											        });
-
 											})
-
 						</script>
 
 					</div>
