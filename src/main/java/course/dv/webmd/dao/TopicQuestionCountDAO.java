@@ -58,7 +58,7 @@ public class TopicQuestionCountDAO {
 			String topicId=topic.getKey();
 			String topicName=topic.getValue();
 			Long count=getQuestionCount(topicId);
-			topicCountMap.put(topicName, count);
+			topicCountMap.put(topicId+"-"+topicName, count);
 			
 		}
 		sortedTopicCount.putAll(topicCountMap);

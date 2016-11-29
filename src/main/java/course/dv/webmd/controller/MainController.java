@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,12 +34,13 @@ public class MainController {
 //		topicMap.put("Most Popular Topics", mostPopularSize);
 //		topicMap.put("Mediocre Topics", mediocreSize);
 //		topicMap.put("Least Popular Topics", leastPopularSize);
-//		GenerateCSVFile.getCsvFromHashMap(topicMap, filepath,"topicPopularity.csv");
+//		GenerateCSVFile.getCsvForTopicPopularityFromHashMap(topicMap, filepath,"topicPopularity.csv");
 //		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
 //		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
 //		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
 
 		ModelAndView model = new ModelAndView();
+		model.addObject("csv", "topicPopularity.csv");
 		model.setViewName("welcome");
 		return model;
 
@@ -46,8 +48,42 @@ public class MainController {
 	@RequestMapping(value = "topicsByPopularity", method = RequestMethod.GET)
 	public ModelAndView topicsByPopularity() {
 		ModelAndView model = new ModelAndView();
+		model.addObject("csv", "topicPopularity.csv");
 		model.setViewName("topicsByPopularity");
 		return model;
 
 	}
+	
+	@RequestMapping(value = "mostPopularTopics", method = RequestMethod.GET)
+	public ModelAndView mostPopularTopics() {
+		ModelAndView model = new ModelAndView();
+		model.addObject("csv", "MostPopular.csv");
+		model.addObject("pageTitle", "Most Popular Topics");		
+		model.setViewName("popularTopics");
+		return model;
+
+	}
+	
+	@RequestMapping(value = "leastPopularTopics", method = RequestMethod.GET)
+	public ModelAndView leastPopularTopics() {
+		ModelAndView model = new ModelAndView();
+		model.addObject("csv", "LeastPopular.csv");
+		model.addObject("pageTitle", "Least Popular Topics");		
+		model.setViewName("popularTopics");
+		return model;
+
+	}
+
+	
+	@RequestMapping(value = "mediocrePopularTopics", method = RequestMethod.GET)
+	public ModelAndView mediocrePopularTopics() {
+		ModelAndView model = new ModelAndView();
+		model.addObject("csv", "MediocrePopular.csv");
+		model.addObject("pageTitle", "Mediocre Popular Topics");		
+		model.setViewName("popularTopics");
+		return model;
+
+	}
+
+
 }

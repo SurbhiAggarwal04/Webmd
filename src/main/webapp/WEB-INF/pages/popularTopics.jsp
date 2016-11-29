@@ -8,30 +8,30 @@
 <html lang="en">
 
 <head>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script
 	src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-		<script
-		src="${pageContext.request.contextPath}/resources/adminjs/jquery.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/bootstrap.min.js"></script>
 
-	<!-- Morris Charts JavaScript -->
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/raphael.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris-data.js"></script>
+<!-- Morris Charts JavaScript -->
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/raphael.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris-data.js"></script>
 
-	
+
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>welcome</title>
+<title>${pageTitle}</title>
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/jquery-ui.css">
@@ -63,10 +63,40 @@
 <link
 	href="${pageContext.request.contextPath}/resources/adminfont-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
+<style type="text/css">
+.d3-tip {
+	line-height: 1;
+	font-weight: bold;
+	padding: 12px;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+	box-sizing: border-box;
+	display: inline;
+	font-size: 10px;
+	width: 100%;
+	line-height: 1;
+	color: rgba(0, 0, 0, 0.8);
+	content: "\25BC";
+	position: absolute;
+	text-align: center;
+}
+
+.d3-tip.n:after {
+	margin: -1px 0 0 0;
+	top: 100%;
+	left: 0;
+}
+</style>
 </head>
 
 <body>
-    <spring:url value="/resources/${csv}" var="csvFile" />
+
+	<spring:url value="/resources/${csv}" var="csvFile" />
 	<c:url value="/logout" var="logoutUrl" />
 	<div id="wrapper">
 
@@ -84,21 +114,27 @@
 					hfghegfuyerhfj
 					<div class="col-md-4">
 						<script>
-						var margin = {top: 10, right: 50, bottom: 20, left: 300};
-						var diameter = 1000-margin.left-margin.right; //max size of the bubbles
+						var margin = {top: 0, right: 0, bottom: 20, left: 300};
+						var diameter = 1100-margin.left-margin.right; //max size of the bubbles
+						var tip = d3.tip()
+						  .attr('class', 'd3-tip')
+						  .offset([-10, 0])
+						  .html(function(d) {
+						    return "<strong>"+d.name+"</strong> <span style='color:red'> | " + d.value + "</span>";
+						  })
 											  var  color    = d3.scale.category20(); //color category
 
 											var bubble = d3.layout.pack()
 											    .sort(null)
 											    .size([diameter, diameter])
-											    .padding(1.5);
+											    .padding(3);
 
 											var svg = d3.select("body")
 											    .append("svg")
-											    .attr("width", 1000)
-											    .attr("height", 1000)
+											    .attr("width", 1100)
+											    .attr("height", 1100)
 											    .attr("class", "bubble");
-
+											svg.call(tip);
 											d3.csv("${csvFile}", function(error, data){
 
 											    //convert numerical values from strings to numbers
@@ -120,14 +156,10 @@
 											        .attr("cx", function(d){ return d.x; })
 											        .attr("cy", function(d){ return d.y; })
 											        .style("fill", function(d) { return color(d.value); })
+											        .on('mouseover', tip.show)
+                                                    .on('mouseout', tip.hide)
 											        .on("click", function(d) {	
-											        	var url;
-											        	if(d.id.match(/Most.*/))
-												        	url = "${pageContext.request.contextPath}/mostPopularTopics";
-												        if(d.id.match(/Mediocre.*/))
-													        url = "${pageContext.request.contextPath}/mediocrePopularTopics";
-													    if(d.id.match(/Least.*/))
-														    url = "${pageContext.request.contextPath}/leastPopularTopics";											    		
+											        	var url= "${pageContext.request.contextPath}/topicsByPopularity";											    		
 									                    $(location).attr('href', url);
 									                    window.location = url;
 											           });
@@ -137,25 +169,12 @@
 											        .attr("x", function(d){ return d.x; })
 											        .attr("y", function(d){ return d.y + 5; })
 											        .attr("text-anchor", "middle")
-											        .html(function(d){ return d["id"]; })
+											        .html(function(d){ return d["name"]; })
 											        .style({
 											            "fill":"white", 
 											            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
 											            "font-size": "12px"
 											        });
-											            bubbles.append("text")
-											        .attr("x", function(d){ return d.x; })
-											        .attr("y", function(d){ return d.y + 20; })
-											        .attr("text-anchor", "middle")
-											        .html(function(d){ return "No. of Topics " + d["value"]; })
-											        .style({
-											            "fill":"white", 
-											            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
-											            "font-size": "12px"
-											        });
-
-											        bubbles.append("title")
-											      .text(function(d) { return  d.value; });
 											})
 
 						</script>
