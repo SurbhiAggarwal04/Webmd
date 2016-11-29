@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import course.dv.webmd.common.GenerateCSVFile;
@@ -41,6 +42,7 @@ public class MainController {
 
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "topicPopularity.csv");
+		model.addObject("pageTitle", "Welcome");		
 		model.setViewName("welcome");
 		return model;
 
@@ -49,7 +51,8 @@ public class MainController {
 	public ModelAndView topicsByPopularity() {
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "topicPopularity.csv");
-		model.setViewName("topicsByPopularity");
+		model.addObject("pageTitle", "Topics by Popularity");		
+		model.setViewName("welcome");
 		return model;
 
 	}
@@ -81,6 +84,15 @@ public class MainController {
 		model.addObject("csv", "MediocrePopular.csv");
 		model.addObject("pageTitle", "Mediocre Popular Topics");		
 		model.setViewName("popularTopics");
+		return model;
+
+	}
+	
+	@RequestMapping(value = "getQuestions", method = RequestMethod.GET)
+	public ModelAndView getQuestions(@RequestParam("id") String id) {
+		ModelAndView model = new ModelAndView();
+		model.addObject("pageTitle", "Questions");		
+		model.setViewName("topicQuestions");
 		return model;
 
 	}

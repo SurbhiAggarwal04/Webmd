@@ -39,7 +39,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>welcome</title>
+<title>${pageTitle}</title>
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/jquery-ui.css">
@@ -67,7 +67,7 @@
 
 <body>
     <spring:url value="/resources/${csv}" var="csvFile" />
-	<c:url value="/logout" var="logoutUrl" />
+    
 	<div id="wrapper">
 
 		<!-- header -->
@@ -91,7 +91,7 @@
 											var bubble = d3.layout.pack()
 											    .sort(null)
 											    .size([diameter, diameter])
-											    .padding(1.5);
+											    .padding(50);
 
 											var svg = d3.select("body")
 											    .append("svg")
@@ -154,8 +154,6 @@
 											            "font-size": "12px"
 											        });
 
-											        bubbles.append("title")
-											      .text(function(d) { return  d.value; });
 											})
 
 						</script>

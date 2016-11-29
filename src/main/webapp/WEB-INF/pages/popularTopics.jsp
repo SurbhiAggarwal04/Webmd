@@ -40,6 +40,8 @@
 <meta name="author" content="">
 
 <title>${pageTitle}</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/custom.css">
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/css/jquery-ui.css">
@@ -64,40 +66,12 @@
 	href="${pageContext.request.contextPath}/resources/adminfont-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 <style type="text/css">
-.d3-tip {
-	line-height: 1;
-	font-weight: bold;
-	padding: 12px;
-	background: rgba(0, 0, 0, 0.8);
-	color: #fff;
-	border-radius: 2px;
-}
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-	box-sizing: border-box;
-	display: inline;
-	font-size: 10px;
-	width: 100%;
-	line-height: 1;
-	color: rgba(0, 0, 0, 0.8);
-	content: "\25BC";
-	position: absolute;
-	text-align: center;
-}
-
-.d3-tip.n:after {
-	margin: -1px 0 0 0;
-	top: 100%;
-	left: 0;
-}
 </style>
 </head>
 
 <body>
 
 	<spring:url value="/resources/${csv}" var="csvFile" />
-	<c:url value="/logout" var="logoutUrl" />
 	<div id="wrapper">
 
 		<!-- header -->
@@ -159,7 +133,7 @@
 											        .on('mouseover', tip.show)
                                                     .on('mouseout', tip.hide)
 											        .on("click", function(d) {	
-											        	var url= "${pageContext.request.contextPath}/topicsByPopularity";											    		
+											        	var url= "${pageContext.request.contextPath}/getQuestions?id="+d.id;											    		
 									                    $(location).attr('href', url);
 									                    window.location = url;
 											           });
