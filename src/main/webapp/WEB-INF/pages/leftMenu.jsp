@@ -9,7 +9,7 @@
 			href="${pageContext.request.contextPath}/topicsByPopularity"><i
 				class="fa fa-fw fa-info-circle""></i>Topics By Popularity</a></li>
 		<li><a
-			href="${pageContext.request.contextPath}/membersByTopics"><i
+			href="${pageContext.request.contextPath}/memberTopicsByPopularity"><i
 				class="fa fa-fw fa-info-circle"></i>Popular Members by Topics</a></li>
 		<li><a
 			href="${pageContext.request.contextPath}/NewCustomerBuilding"><i

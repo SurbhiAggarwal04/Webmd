@@ -1,5 +1,6 @@
 package course.dv.webmd.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import course.dv.webmd.service.PopularTopicsService;
 import course.dv.webmd.service.TopQuestionsForATopicService;
+import course.dv.webmd.common.GenerateCSVFile;
 import course.dv.webmd.common.GenerateJsonFile;
 import course.dv.webmd.model.Member;
 import course.dv.webmd.service.TopRatedMembersService;
@@ -33,19 +36,19 @@ public class MainController {
 		 * Uncomment to generate csvs' dynamically 
 		 */
 		filepath=request.getSession().getServletContext().getRealPath("/resources/json");
-//		System.out.println(filepath);
-//		PopularTopicsService.init();
-//		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
-//		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
-//		Long leastPopularSize=(long) PopularTopicsService.getLeastPopularTopics().size();
-//		Map<String,Long> topicMap=new HashMap<>();
-//		topicMap.put("Most Popular Topics", mostPopularSize);
-//		topicMap.put("Mediocre Topics", mediocreSize);
-//		topicMap.put("Least Popular Topics", leastPopularSize);
-//		GenerateCSVFile.getCsvForTopicPopularityFromHashMap(topicMap, filepath,"topicPopularity.csv");
-//		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
-//		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
-//		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
+		System.out.println(filepath);
+		PopularTopicsService.init();
+		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
+		Long mediocreSize=(long) PopularTopicsService.getMediocreTopics().size();
+		Long leastPopularSize=(long) PopularTopicsService.getLeastPopularTopics().size();
+		Map<String,Long> topicMap=new HashMap<>();
+		topicMap.put("Most Popular Topics", mostPopularSize);
+		topicMap.put("Mediocre Topics", mediocreSize);
+		topicMap.put("Least Popular Topics", leastPopularSize);
+		GenerateCSVFile.getCsvForTopicPopularityFromHashMap(topicMap, filepath,"topicPopularity.csv");
+		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMediocreTopics(), filepath,"MediocrePopular.csv");
+		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getMostPopularTopics(), filepath,"MostPopular.csv");
+		GenerateCSVFile.getCsvFromHashMap(PopularTopicsService.getLeastPopularTopics(), filepath,"LeastPopular.csv");
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "topicPopularity.csv");
 		model.addObject("pageTitle", "Welcome");		
@@ -63,13 +66,12 @@ public class MainController {
 		return model;
 	}
 	
-	@RequestMapping(value = "membersByTopics", method = RequestMethod.GET)
-	public ModelAndView membersByTopics() {
-		Map<String, Integer> p = TopRatedMembersService.createMemberDictionaryFromQuestionAnswers("periodquestions");
-		Map<Member, Integer> map = TopRatedMembersService.getTopRatedMembersData(p);
-		GenerateJsonFile.generateJsonFile(map,filepath);
+	@RequestMapping(value = "memberTopicsByPopularity", method = RequestMethod.GET)
+	public ModelAndView memberTopicsByPopularity() {
 		ModelAndView model = new ModelAndView();
-		model.setViewName("membersByTopics");
+		model.addObject("csv", "topicPopularity.csv");
+		model.addObject("pageTitle", "Topics by Popularity");		
+		model.setViewName("memberWelcome");
 		return model;
 	}
 	
@@ -80,7 +82,6 @@ public class MainController {
 		model.addObject("pageTitle", "Most Popular Topics");		
 		model.setViewName("popularTopics");
 		return model;
-
 	}
 	
 	@RequestMapping(value = "leastPopularTopics", method = RequestMethod.GET)
@@ -90,7 +91,6 @@ public class MainController {
 		model.addObject("pageTitle", "Least Popular Topics");		
 		model.setViewName("popularTopics");
 		return model;
-
 	}
 
 	
@@ -101,7 +101,34 @@ public class MainController {
 		model.addObject("pageTitle", "Mediocre Popular Topics");		
 		model.setViewName("popularTopics");
 		return model;
+	}
+	
+	@RequestMapping(value = "memberMostPopularTopics", method = RequestMethod.GET)
+	public ModelAndView memberMostPopularTopics() {
+		ModelAndView model = new ModelAndView();
+		model.addObject("csv", "MostPopular.csv");
+		model.addObject("pageTitle", "Most Popular Topics");		
+		model.setViewName("memberPopularTopics");
+		return model;
+	}
+	
+	@RequestMapping(value = "memberLeastPopularTopics", method = RequestMethod.GET)
+	public ModelAndView memberLeastPopularTopics() {
+		ModelAndView model = new ModelAndView();
+		model.addObject("csv", "LeastPopular.csv");
+		model.addObject("pageTitle", "Least Popular Topics");		
+		model.setViewName("memberPopularTopics");
+		return model;
+	}
 
+	
+	@RequestMapping(value = "memberMediocrePopularTopics", method = RequestMethod.GET)
+	public ModelAndView memberMediocrePopularTopics() {
+		ModelAndView model = new ModelAndView();
+		model.addObject("csv", "MediocrePopular.csv");
+		model.addObject("pageTitle", "Mediocre Popular Topics");		
+		model.setViewName("memberPopularTopics");
+		return model;
 	}
 	
 	@RequestMapping(value = "getQuestions", method = RequestMethod.GET)
@@ -112,7 +139,16 @@ public class MainController {
 		model.addObject("pageTitle", "Questions");		
 		model.setViewName("topicQuestions");
 		return model;
-
+	}
+	
+	@RequestMapping(value = "membersByTopics", method = RequestMethod.GET)
+	public ModelAndView membersByTopics(@RequestParam("id") String topic) {
+		Map<String, Integer> p = TopRatedMembersService.createMemberDictionaryFromQuestionAnswers(topic);
+		Map<Member, Integer> map = TopRatedMembersService.getTopRatedMembersData(p);
+		GenerateJsonFile.generateJsonFile(map,filepath);
+		ModelAndView model = new ModelAndView();
+		model.setViewName("membersByTopics");
+		return model;
 	}
 
 

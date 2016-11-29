@@ -28,17 +28,17 @@ public class GenerateJsonFile {
 				JSONObject innerChild = new JSONObject();
 				if(i ==0){
 					innerChild.put("name", entry.getKey().getMemberType());
-					innerChild.put("note", "Member Type : "+entry.getKey().getMemberType());
+					innerChild.put("address", "Member Type : "+entry.getKey().getMemberType());
 				}
 
 				if(i ==1){
 					innerChild.put("name", entry.getKey().getMemberHelpfulVotes());
-					innerChild.put("note", "Member Helpful Votes : "+entry.getKey().getMemberHelpfulVotes());
+					innerChild.put("address", "Member Helpful Votes : "+entry.getKey().getMemberHelpfulVotes());
 				}
 
 				if(i ==2){
 					innerChild.put("name", entry.getKey().getMemberFollowerNumber());
-					innerChild.put("note", "Member Follower Number : "+entry.getKey().getMemberFollowerNumber());
+					innerChild.put("address", "Member Follower Number : "+entry.getKey().getMemberFollowerNumber());
 				}
 
 				innerChildArray.add(innerChild);

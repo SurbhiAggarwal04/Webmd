@@ -188,9 +188,6 @@
                 .attr("cursor","pointer")
                 .style("opacity",0.5)
                 .style("fill", "#eee")
-                .on("click", function(d,i) {
-                window.open(d.address);                 
-              })
             .on("mouseover", function(d,i) {
               //window.alert("say something");
               var noteText = "";
@@ -199,7 +196,6 @@
               } else {
                 noteText = d.note;
               }
-              d3.select("#bubbleItemNote").text(noteText);
               })
             .append("svg:title")
             .text(function(d) { return d.address; });   
@@ -215,10 +211,7 @@
                 .attr("cursor","pointer")
                 .attr("dominant-baseline", "middle")
             .attr("alignment-baseline", "middle")
-                .text(function(d) {return d.name})      
-                .on("click", function(d,i) {
-                window.open(d.address);
-                }); 
+                .text(function(d) {return d.name});      
  
         }
  

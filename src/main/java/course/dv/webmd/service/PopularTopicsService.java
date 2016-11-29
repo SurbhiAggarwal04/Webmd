@@ -46,13 +46,5 @@ public class PopularTopicsService {
 	public static Map<String, Long> getLeastPopularTopics() {
 		return leastPopularTopicMap;
 	}
-	// public static void main(String[] args) {
-	// ServletContext context = null;
-	// InputStream path =
-	// context.getResourceAsStream("/WEB-INF/pages/login.jsp");
-	// System.out.println(path.toString());
-	// //init();
-	//
-	// }
-	//
+	
 }
