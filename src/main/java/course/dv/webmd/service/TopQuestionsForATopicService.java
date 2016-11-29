@@ -17,18 +17,19 @@ public class TopQuestionsForATopicService {
 	 * @param topic
 	 * @return HashMap<QuestionId, NumOfAnswersCount>
 	 */
-	public static Map<String, Integer> getTopFifteenQuestionsForATopic(String topic) {
-		Set<String> allQuestions = getAllQuestionsForTopic(topic);
+	public static Map<String, String> getTopFifteenQuestionsForATopic(String topic) {
+		Map<String, String> allQuestionAndTitles = getAllQuestionsForTopic(topic);
+		Set<String> allQuestions = allQuestionAndTitles.keySet();
 		Map<String, Integer> questionCount = new HashMap<String, Integer>();
 		for(String questionId : allQuestions) {
 			questionCount.put(questionId, Integer.parseInt(""+getAllAnswersForAQuestion(questionId).getTotalHits()));
 		}
 		questionCount = sortByValue(questionCount);
-		HashMap<String, Integer> top15Questions = new HashMap<String, Integer>();
+		HashMap<String, String> top15Questions = new HashMap<String, String>();
 		int count=0;
 		for(String questionId : questionCount.keySet()) {
 			if(count == 15) break;
-			top15Questions.put(questionId,questionCount.get(questionId));
+			top15Questions.put(questionId,allQuestionAndTitles.get(questionId));
 			count++;
 		}
 		return top15Questions;

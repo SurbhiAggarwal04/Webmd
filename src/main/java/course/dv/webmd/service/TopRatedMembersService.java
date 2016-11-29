@@ -25,7 +25,7 @@ public class TopRatedMembersService {
 	 */
 	public static Map<String, Integer> createMemberDictionaryFromQuestionAnswers(String topic) {
 		Map<String, Integer> memberHelpfulVoteCount = new HashMap<String, Integer>();
-		for(String questionId : getAllQuestionsForTopic(topic)) {
+		for(String questionId : getAllQuestionsForTopic(topic).keySet()) {
 			for(SearchHit answer : getAllAnswersForAQuestion(questionId)) {
 				String memberId = answer.field("answerMemberId").getValue();
 				int ansVoteNum = 0;

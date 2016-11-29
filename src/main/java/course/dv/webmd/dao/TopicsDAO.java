@@ -11,6 +11,11 @@ import org.elasticsearch.search.SearchHit;
 
 import course.dv.webmd.common.InitiateTransportClient;
 
+/**
+ * topics, topcis2, topicRelated
+ * @author RAZOR
+ *
+ */
 public class TopicsDAO {
 
 	private static final TransportClient client = InitiateTransportClient.client;

@@ -1,6 +1,7 @@
 package course.dv.webmd.dao;
 
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import org.elasticsearch.action.search.SearchResponse;
@@ -23,18 +24,20 @@ public class TopicQuestionAnswerMemberDAO {
 	 * @param topic
 	 * @return Set<String>
 	 */
-	public static Set<String> getAllQuestionsForTopic(String topic) {
+	public static Map<String, String> getAllQuestionsForTopic(String topic) {
 		SearchResponse response = client.prepareSearch("webmd")
-				.setTypes("relatedTopics2")
+				.setTypes("questions2")
 				.setSearchType(SearchType.DFS_QUERY_AND_FETCH)
-				.setQuery(QueryBuilders.termQuery("topicId", topic))
+				.setQuery(QueryBuilders.termQuery("questionTopicId", topic))
 				.addField("questionId")
+				.addField("questionTitle")
 				.execute()
 				.actionGet();
-		Set<String> result = new HashSet<String>();
+		Map<String, String> result = new HashMap<String, String>();
 		for (SearchHit hit : response.getHits()) {
 			String questionId = hit.field("questionId").getValue();
-			result.add(questionId);
+			String questionTitle = hit.field("questionTitle").getValue();
+			result.put(questionId, questionTitle);
 		}
 		return result;
 	}
@@ -56,7 +59,7 @@ public class TopicQuestionAnswerMemberDAO {
 		return response.getHits();
 	}
 	
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		getAllQuestionsForTopic("drugquestions");
-	}*/
+	}
 }

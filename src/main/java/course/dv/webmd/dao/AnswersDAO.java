@@ -1,15 +1,20 @@
 package course.dv.webmd.dao;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
-
+import java.util.Set;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
 
 import course.dv.webmd.common.InitiateTransportClient;
+
+
 
 public class AnswersDAO {
 
@@ -66,7 +71,47 @@ public class AnswersDAO {
 		return esData;
 	}*/
 	
+	/**
+	 * Based on the query submitted, this method queries answer content
+	 * and fetches top 50 question ids. (Based on elasticsearch scoring)
+	 * 
+	 * @param query
+	 * @return
+	 */
+	public static Set<String> getQuestionIdsBasedOnQueryingAnswerContent(String query) {
+		
+		QueryBuilder qb = QueryBuilders.commonTermsQuery("answerContent", query);
+
+		SearchResponse response = client.prepareSearch("webmd")
+				.setTypes("answer")
+				.setSearchType(SearchType.DFS_QUERY_AND_FETCH)
+				//.setQuery(QueryBuilders.matchAllQuery())
+				.setQuery(qb)
+				.addFields("questionId")
+				//.setMinScore(1)
+				.execute()
+				.actionGet();
+		
+		int count = 0;
+		if(response.getHits().getTotalHits() < 50) count = (int) response.getHits().getTotalHits();
+		else count = 50;
+		
+		Set<String> relevantQuestions = new HashSet<String>();
+		int tempC = 0;
+		for(SearchHit hit : response.getHits()) {
+			if(tempC == count) break;
+			relevantQuestions.add(hit.field("questionId").getValue().toString() + ":" + hit.score());
+			tempC++;
+		}
+		return relevantQuestions;
+	}
+	
 	public static void main(String[] args) {
-		getAllAnswers();
+		//getAllAnswers();
+		Set<String> a = getQuestionIdsBasedOnQueryingAnswerContent("warnings drug Desoxyn");
+		for(String hit : a)
+			System.out.println(hit);
+		
+		
 	}
 }
