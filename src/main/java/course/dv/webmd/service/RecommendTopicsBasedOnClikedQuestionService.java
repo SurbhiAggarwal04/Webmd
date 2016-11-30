@@ -23,10 +23,13 @@ public class RecommendTopicsBasedOnClikedQuestionService {
 	
 	private static Set<String> stopWords = new HashSet<String>();
 	
-	private static void getStopWords() throws IOException
+	private static void getStopWords(String filepath) throws IOException
 	{
+		File file = null;
+		FileReader fr = null;
 		String currentLine = "";
-		FileReader fr = new FileReader(new File("stopwordslist.txt"));
+		file = new File(filepath, "stopwordslist.txt");
+		fr = new FileReader(file.getAbsoluteFile());
 		
         BufferedReader br= new BufferedReader(fr);
         while ((currentLine = br.readLine()) != null){
@@ -56,9 +59,9 @@ public class RecommendTopicsBasedOnClikedQuestionService {
 	 * @return
 	 * @throws IOException
 	 */
-	public static Map<String, Integer> getTopicsBasedOnClickedQuestions(String questionTitle) throws IOException {
+	public static Map<String, Integer> getTopicsBasedOnClickedQuestions(String questionTitle, String filepath) throws IOException {
 		//initial set up
-		getStopWords();
+		getStopWords(filepath);
 		//removeStopWords
 		String keyWords = removeStopWords(questionTitle);
 		Set<String> recomendedQuestions = getQuestionIdsBasedOnQueryingAnswerContent(keyWords);
@@ -75,7 +78,7 @@ public class RecommendTopicsBasedOnClikedQuestionService {
 	}
 	
 	/*public static void main(String[] args) throws IOException {
-		getTopicsBasedOnClickedQuestions("How do I take Celebrex");
+		getTopicsBasedOnClickedQuestions("How do I take Celebrex",);
 		
 	}*/
 }

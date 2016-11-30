@@ -69,4 +69,21 @@ public class GenerateJsonFile {
 			 
 		}
 	}
+	
+	public static String generateJsonForQuestions(Map<String, Integer> map) {
+		JSONArray innerChildArray = new JSONArray();
+		JSONObject jObj = new JSONObject();
+		
+		for(Entry<String, Integer> entry : map.entrySet()){
+			JSONObject innerObject = new JSONObject();
+			innerObject.put("text", entry.getKey());
+			innerObject.put("count", entry.getValue());
+			innerChildArray.add(innerObject);
+		}
+		jObj.put("items", innerChildArray);
+		System.out.println(jObj.toJSONString());
+		System.out.println(jObj.toJSONString().substring(1, jObj.toJSONString().length() - 1));
+		
+		return jObj.toJSONString().substring(1, jObj.toJSONString().length() - 1);
+	}
 }

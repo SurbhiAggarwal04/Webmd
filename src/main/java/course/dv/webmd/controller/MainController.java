@@ -1,5 +1,6 @@
 package course.dv.webmd.controller;
 
+import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
@@ -16,6 +17,7 @@ import course.dv.webmd.common.GenerateJsonFile;
 import course.dv.webmd.model.Answer;
 import course.dv.webmd.model.Member;
 import course.dv.webmd.service.AnswerService;
+import course.dv.webmd.service.RecommendTopicsBasedOnClikedQuestionService;
 import course.dv.webmd.service.TopQuestionsForATopicService;
 import course.dv.webmd.service.TopRatedMembersService;
 
@@ -175,6 +177,15 @@ public class MainController {
 		model.setViewName("membersByTopics");
 		return model;
 	}
-
+	
+	@RequestMapping(value = "test", method = RequestMethod.GET)
+	public ModelAndView test() throws IOException {
+		Map<String, Integer> map = RecommendTopicsBasedOnClikedQuestionService.getTopicsBasedOnClickedQuestions("How do I take Celebrex",filepath);
+		String json = GenerateJsonFile.generateJsonForQuestions(map);
+		ModelAndView model = new ModelAndView();
+		model.addObject("json",json);
+		model.setViewName("test");
+		return model;
+	}
 
 }
