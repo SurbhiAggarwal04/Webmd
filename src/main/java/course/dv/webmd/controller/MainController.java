@@ -1,6 +1,7 @@
 package course.dv.webmd.controller;
 
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import course.dv.webmd.common.GenerateJsonFile;
+import course.dv.webmd.model.Answer;
 import course.dv.webmd.model.Member;
+import course.dv.webmd.service.AnswerService;
 import course.dv.webmd.service.TopQuestionsForATopicService;
 import course.dv.webmd.service.TopRatedMembersService;
 
@@ -20,6 +23,9 @@ import course.dv.webmd.service.TopRatedMembersService;
 public class MainController {
 	@Autowired
 	TopQuestionsForATopicService topQuestionsForATopicService;
+	
+	@Autowired
+	AnswerService answerService;
 	
 	String filepath;
 
@@ -149,8 +155,8 @@ public class MainController {
 	@RequestMapping(value = "getAnswers", method = RequestMethod.GET)
 	public ModelAndView getAnswers(@RequestParam("name") String name,@RequestParam("id") String id) {
 		ModelAndView model = new ModelAndView();
-		
-		//model.addObject("answerMap", answerMap);
+		Set<Answer> answerSet=answerService.getAnswersForAQuestionId(id);
+		model.addObject("answerSet", answerSet);
 		model.addObject("csv", "");
 		model.addObject("questionName", name);
 		model.addObject("pageTitle", name+" Answers");		

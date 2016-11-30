@@ -61,6 +61,7 @@ public class Answer implements Comparable<Answer> {
 	}
 	@Override
 	public int compareTo(Answer o) {
-		return o.answerVoteNum.compareTo(this.answerVoteNum);
+		if(o.answerVoteNum.compareTo(this.answerVoteNum)>0)return -1;
+		else return 1;
 	}
 }
