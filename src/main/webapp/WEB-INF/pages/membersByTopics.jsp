@@ -9,49 +9,52 @@
 
 <head>
 <style type="text/css">
-    #mainBubble {
-      font: 10px sans-serif;
-      height: 1500px;
-      position: relative;
-      width: 80%;
-    }
-             
-    #mainBubble svg {
-      left: 0;
-      position: absolute;
-      top: 0;
-    }
-                         
-    #mainBubble circle.topBubble {
-      fill: #aaa;
-      stroke: #666;
-      stroke-width: 1.5px;
-     }
-    </style>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+#mainBubble {
+	
+	font: 10px sans-serif;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	font: 10px sans-serif;
+	display: relative;
+}
+
+#mainBubble svg {
+	left: 0;
+	position: absolute;
+	top: 100%;
+}
+
+#mainBubble circle.topBubble {
+	fill: #aaa;
+	stroke: #666;
+	stroke-width: 1.5px;
+}
+</style>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script
 	src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-		<script
-		src="${pageContext.request.contextPath}/resources/adminjs/jquery.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/bootstrap.min.js"></script>
 
-	<!-- Morris Charts JavaScript -->
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/raphael.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris-data.js"></script>
+<!-- Morris Charts JavaScript -->
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/raphael.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/adminjs/plugins/morris/morris-data.js"></script>
 
-	
+
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,26 +89,33 @@
 </head>
 
 <body>
-    <spring:url value="/resources/members.json" var="jsonFile" />
-    
+	<spring:url value="/resources/members.json" var="jsonFile" />
+
 	<div id="wrapper">
 
 		<!-- header -->
 		<jsp:include page="header.jsp"></jsp:include>
 
-		<div id="page-wrapper" style="margin-top: 0px">
+		<div id="page-wrapper" style="margin-top: 0px;">
+			<h1 class="page-header">dgfhjhgueryuefnj</h1>
+			hfghegfuyerhfj
+		</div>
 
-			<div class="container-fluid">
+		<div class="container-fluid">
 
-				<!-- Page Heading -->
+			<!-- Page Heading -->
 
-				<div>
-					<h1 class="page-header">dgfhjhgueryuefnj</h1>
-					hfghegfuyerhfj
-					<div class="col-md-4">
-						<div id="mainBubble" style="height: 724px;"><svg class="mainBubbleSVG" width="1033.6" height="1024"><text id="bubbleItemNote" x="10" y="501.79999999999995" font-size="12" dominant-baseline="middle" alignment-baseline="middle" style="fill: rgb(136, 136, 136);"></text></svg></div>
-						<script>
-   var w = window.innerWidth*0.68*0.95;
+			
+
+				<div class="col-md-4"></div>
+				<div id="mainBubble">
+					<svg class="mainBubbleSVG" width="100%" height="100%">
+								<text id="bubbleItemNote" x="10" y="501.79999999999995"
+							font-size="12" dominant-baseline="middle"
+							alignment-baseline="middle" style="fill: rgb(136, 136, 136);"></text></svg>
+				</div>
+				<script>
+   var w = window.innerWidth*0.68*1.2;
    var h = Math.ceil(w*0.7);
    var oR = 0;
    var nTop = 0;
@@ -145,7 +155,7 @@
     h = Math.ceil(w/nTop*2);
     svgContainer.style("height",h+"px");
          
-        var colVals = d3.scale.category20b();
+        var colVals = d3.scale.category10();
          
         bubbleObj.append("circle")
             .attr("class", "topBubble")
@@ -219,7 +229,7 @@
         }); 
  
     resetBubbles = function () {
-      w = window.innerWidth*0.68*0.95;
+      w = window.innerWidth*0.68*1.2;
       oR = w/(1+3*nTop);
        
       h = Math.ceil(w/nTop*2);
@@ -343,21 +353,21 @@
      
     window.onresize = resetBubbles;
 </script>
-</div>
-					</div>
 
+			
 
-				</div>
-				<!-- /.row -->
-
-
-
-			</div>
-			<!-- /.container-fluid -->
 
 		</div>
+		<!-- /.row -->
 
-		<!-- /#page-wrapper -->
+
+
+
+		<!-- /.container-fluid -->
+
+	</div>
+
+	<!-- /#page-wrapper -->
 
 	</div>
 	<!-- /#wrapper -->

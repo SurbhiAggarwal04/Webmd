@@ -82,94 +82,165 @@
 			<div class="container-fluid">
 
 				<!-- Page Heading -->
+				<h1 class="page-header">dgfhjhgueryuefnj</h1>
+				hfghegfuyerhfj
+				<div class="col-md-4">
+					<script>
 
-				<div>
-					<h1 class="page-header">dgfhjhgueryuefnj</h1>
-					hfghegfuyerhfj
-					<div class="col-md-4">
-						<script>
-						var margin = {top: 0, right: 0, bottom: 20, left: 300};
-						var diameter = 1100-margin.left-margin.right; //max size of the bubbles
-						var tip = d3.tip()
-						  .attr('class', 'd3-tip')
-						  .offset([-10, 0])
-						  .html(function(d) {
-						    return "<strong>"+d.name+"</strong> <span style='color:red'> | " + d.value + "</span>";
-						  })
-											  var  color    = d3.scale.category20(); //color category
+						var margin = {
+							top : 0,
+							right : 0,
+							bottom : 20,
+							left : 300
+						};
+						var diameter = 1100 - margin.left - margin.right; //max size of the bubbles
+						var tip = d3
+								.tip()
+								.attr('class', 'd3-tip')
+								.offset([ -10, 0 ])
+								.html(
+										function(d) {
+											return "<strong>"
+													+ d.name
+													+ "</strong> <span style='color:red'> | "
+													+ d.value + "</span>";
+										})
+						var color = d3.scale.category20(); //color category
 
-											var bubble = d3.layout.pack()
-											    .sort(null)
-											    .size([diameter, diameter])
-											    .padding(3);
+						var bubble = d3.layout.pack().sort(null).size(
+								[ diameter, diameter ]).padding(3);
 
-											var svg = d3.select("body")
-											    .append("svg")
-											    .attr("width", 1100)
-											    .attr("height", 1100)
-											    .attr("class", "bubble");
-											svg.call(tip);
-											d3.csv("${csvFile}", function(error, data){
+						var svg = d3.select("body").append("svg").attr("width",
+								1100).attr("height", 1100).attr("class",
+								"bubble");
+						svg.call(tip);
+						d3
+								.csv(
+										"${csvFile}",
+										function(error, data) {
 
-											    //convert numerical values from strings to numbers
-											    data = data.map(function(d){ d.value = +d["value"]; return d; });
+											//convert numerical values from strings to numbers
+											data = data.map(function(d) {
+												d.value = +d["value"];
+												return d;
+											});
 
-											    //bubbles needs very specific format, convert data to this.
-											    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
+											//bubbles needs very specific format, convert data to this.
+											var nodes = bubble.nodes({
+												children : data
+											}).filter(function(d) {
+												return !d.children;
+											});
 
-											    //setup the chart
-											    var bubbles = svg.append("g")
-											        .attr("transform","translate(" + margin.left + "," + margin.top + ")")
-											        .selectAll(".bubble")
-											        .data(nodes)
-											        .enter();
+											//setup the chart
+											var bubbles = svg.append("g").attr(
+													"transform",
+													"translate(" + margin.left
+															+ "," + margin.top
+															+ ")").selectAll(
+													".bubble").data(nodes)
+													.enter();
 
-											    //create the bubbles
-											    bubbles.append("circle")
-											        .attr("r", function(d){ return d.r; })
-											        .attr("cx", function(d){ return d.x; })
-											        .attr("cy", function(d){ return d.y; })
-											        .style("fill", function(d) { return color(d.value); })
-											        .on('mouseover', tip.show)
-                                                    .on('mouseout', tip.hide)
-											        .on("click", function(d) {	
-											        	var url= "${pageContext.request.contextPath}/getQuestions?id="+d.id;											    		
-									                    $(location).attr('href', url);
-									                    window.location = url;
-											           });
+											//create the bubbles
+											bubbles
+													.append("circle")
+													.attr("r", function(d) {
+														return d.r;
+													})
+													.attr("cx", function(d) {
+														return d.x;
+													})
+													.attr("cy", function(d) {
+														return d.y;
+													})
+													.style("fill", function(d) {
+														return color(d.value);
+													})
+													.on('mouseover', tip.show)
+													.on('mouseout', tip.hide)
+													.on(
+															"click",
+															function(d) {
+												                d3.selectAll("#tag"+d.id) 
+											                    .transition().duration(100)         
+											                    .style("opacity", 0.3);
 
-											    //format the text for each bubble
-											    bubbles.append("text")
-											        .attr("x", function(d){ return d.x; })
-											        .attr("y", function(d){ return d.y + 5; })
-											        .attr("text-anchor", "middle")
-											        .html(function(d){ return d["name"]; })
-											        .style({
-											            "fill":"white", 
-											            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
-											            "font-size": "12px"
-											        });
-											})
+																var url = "${pageContext.request.contextPath}/getQuestions?csv=${csv}&id="
+																		+ d.id+"&name="+d.name;
+																$(location)
+																		.attr(
+																				'href',
+																				url);
+																window.location = url;
+															})
+													.attr(
+															"id",
+															function(d) {
+																return 'tag'
+																		+ d.id
+																				.replace(
+																						/\s+/g,
+																						'');
+															});
 
-						</script>
+											//format the text for each bubble
+											bubbles
+													.append("text")
+													.attr("x", function(d) {
+														return d.x;
+													})
+													.attr("y", function(d) {
+														return d.y + 5;
+													})
+													.attr("text-anchor",
+															"middle")
+													.html(function(d) {
+														return d["name"];
+													})
+													.style(
+															{
+																"fill" : "white",
+																"font-family" : "Helvetica Neue, Helvetica, Arial, san-serif",
+																"font-size" : "12px"
+															});
+										});
+						<c:if test="${not empty id}">
+		                d3.selectAll("#tag"+"${id}") 
+	                    .transition()         
+	                    .style("opacity", 0);
+					</c:if>
 
-					</div>
-
-
+					</script>
 				</div>
-				<!-- /.row -->
-
-
-
 			</div>
+
+
+
+
+
+
+			<!-- /.row -->
+
+
+
+
 			<!-- /.container-fluid -->
 
 		</div>
 
 		<!-- /#page-wrapper -->
-
 	</div>
 	<!-- /#wrapper -->
+	<c:if test="${not empty questionMap}">
+	<div style="padding-left: 17%; display: relative; margin-top: -15%">
+	 <h4 style="color:white">${id} Questions</h4>
+	 <hr>
+		<c:forEach items="${questionMap}" var="question">
+			<a href="${pageContext.request.contextPath}/getAnswers?id=${question.key}&name=${id}" style="color: gray">${question.value}</a>
+			<hr>
+		</c:forEach>
+	</div>
+	</c:if>
 
 	<!-- jQuery -->
 </body>

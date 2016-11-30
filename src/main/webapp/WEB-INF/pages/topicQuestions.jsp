@@ -114,8 +114,7 @@
 					<div class="col-md-4">
 							<c:forEach items="${questionMap}" var="question">
 							<a href="#">${question.value}</a>
-<%--    									 Key = ${entry.key}, value = ${entry.value}<br>
- --%>							</c:forEach>
+							</c:forEach>
 					</div>
 
 

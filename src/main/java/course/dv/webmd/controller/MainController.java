@@ -76,6 +76,8 @@ public class MainController {
 	public ModelAndView mostPopularTopics() {
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "MostPopular.csv");
+		model.addObject("questionMap", null);
+		model.addObject("id", null);
 		model.addObject("pageTitle", "Most Popular Topics");		
 		model.setViewName("popularTopics");
 		return model;
@@ -85,6 +87,8 @@ public class MainController {
 	public ModelAndView leastPopularTopics() {
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "LeastPopular.csv");
+		model.addObject("questionMap", null);
+		model.addObject("id", null);
 		model.addObject("pageTitle", "Least Popular Topics");		
 		model.setViewName("popularTopics");
 		return model;
@@ -95,6 +99,8 @@ public class MainController {
 	public ModelAndView mediocrePopularTopics() {
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "MediocrePopular.csv");
+		model.addObject("questionMap", null);
+		model.addObject("id", null);
 		model.addObject("pageTitle", "Mediocre Popular Topics");		
 		model.setViewName("popularTopics");
 		return model;
@@ -129,17 +135,33 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "getQuestions", method = RequestMethod.GET)
-	public ModelAndView getQuestions(@RequestParam("id") String id) {
+	public ModelAndView getQuestions(@RequestParam("name") String name,@RequestParam("id") String id,@RequestParam("csv") String csv) {
 		ModelAndView model = new ModelAndView();
 		Map<String, String> questionMap=topQuestionsForATopicService.getTopFifteenQuestionsForATopic(id);
 		model.addObject("questionMap", questionMap);
+		model.addObject("csv", csv);
+		model.addObject("id", name);
 		model.addObject("pageTitle", "Questions");		
-		model.setViewName("topicQuestions");
+		model.setViewName("popularTopics");
 		return model;
 	}
 	
+	@RequestMapping(value = "getAnswers", method = RequestMethod.GET)
+	public ModelAndView getAnswers(@RequestParam("name") String name,@RequestParam("id") String id) {
+		ModelAndView model = new ModelAndView();
+		
+		//model.addObject("answerMap", answerMap);
+		model.addObject("csv", "");
+		model.addObject("questionName", name);
+		model.addObject("pageTitle", name+" Answers");		
+		model.setViewName("topicAnswers");
+		return model;
+	}
+
+	
 	@RequestMapping(value = "membersByTopics", method = RequestMethod.GET)
-	public ModelAndView membersByTopics(@RequestParam("id") String topic) {
+	public ModelAndView membersByTopics(HttpServletRequest request,@RequestParam("id") String topic) {
+		filepath=request.getSession().getServletContext().getRealPath("/resources/json");
 		Map<String, Integer> p = TopRatedMembersService.createMemberDictionaryFromQuestionAnswers(topic);
 		Map<Member, Integer> map = TopRatedMembersService.getTopRatedMembersData(p);
 		GenerateJsonFile.generateJsonFile(map,filepath);
