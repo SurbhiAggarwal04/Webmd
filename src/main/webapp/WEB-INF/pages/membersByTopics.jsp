@@ -97,8 +97,7 @@
 		<jsp:include page="header.jsp"></jsp:include>
 
 		<div id="page-wrapper" style="margin-top: 0px;">
-			<h1 class="page-header">dgfhjhgueryuefnj</h1>
-			hfghegfuyerhfj
+			<h3 class="page-header" style="margin-top: 0%">${pageTitle}</h3>
 		</div>
 
 		<div class="container-fluid">

@@ -184,7 +184,7 @@
 				<!-- Page Heading -->
 
 
-				<h4 class="page-header" style="color: white">${questionName} : Top
+				<h4 class="page-header" style="color: white" >${questionName} : Top
 					Rated Answers</h4>
 				<c:if test="${not empty answerSet}">
 

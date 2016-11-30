@@ -158,7 +158,11 @@ public class MainController {
 		model.addObject("questionMap", questionMap);
 		model.addObject("csv", csv);
 		model.addObject("id", name);
-		model.addObject("pageTitle", "Questions");
+		String pageTitle="";
+		if(csv.contains("Most"))pageTitle="Most Popular Topics";
+		if(csv.contains("Least"))pageTitle="Least Popular Topics";
+		if(csv.contains("Mediocre"))pageTitle= "Mediocre Popular Topics";
+		model.addObject("pageTitle", pageTitle);
 		model.setViewName("popularTopics");
 		return model;
 	}
@@ -169,6 +173,7 @@ public class MainController {
 		 filepath = request.getSession().getServletContext().getRealPath("/resources/json");
 		 Map<String, Integer> map =recommendTopicsBasedOnClikedQuestionService.getTopicsBasedOnClickedQuestions(name,filepath);
 		 String json = GenerateJsonFile.generateJsonForQuestions(map);
+		 System.out.println(json);
 		 Set<Answer> answerSet = answerService.getAnswersForAQuestionId(id);
 		 ModelAndView model = new ModelAndView();
 		 model.addObject("answerSet", answerSet);
@@ -187,6 +192,7 @@ public class MainController {
 		Map<Member, Integer> map = TopRatedMembersService.getTopRatedMembersData(p);
 		GenerateJsonFile.generateJsonFile(map, filepath);
 		ModelAndView model = new ModelAndView();
+		model.addObject("pageTitle", "Top Rated Members");
 		model.setViewName("membersByTopics");
 		return model;
 	}

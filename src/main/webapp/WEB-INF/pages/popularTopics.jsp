@@ -82,8 +82,7 @@
 			<div class="container-fluid">
 
 				<!-- Page Heading -->
-				<h1 class="page-header">dgfhjhgueryuefnj</h1>
-				hfghegfuyerhfj
+				<h3 class="page-header" style="margin-top: 0%">${pageTitle}</h3>
 				<div class="col-md-4">
 					<script>
 
