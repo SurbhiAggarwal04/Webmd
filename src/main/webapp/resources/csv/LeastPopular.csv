@@ -1,201 +1,201 @@
-id,value
-Psoriasis,39
-Circumcision,39
-Artery,39
-Estrogen,39
-Ulcer,39
-Urinary Tract Infection,39
-Clitoris,39
-Exposure,39
-Wisdom Tooth,38
-Type 2 Diabetes,38
-Eyelid,38
-Medicaid,38
-Menstrual,38
-Vertigo,38
-Forearm,37
-Caffeine,36
-Vinegar,36
-Mood Swing,36
-Poison Ivy,36
-Massage,36
-Stent,35
-Organ,35
-Inflammation,35
-Sprain,34
-Obesity,34
-Tubal Ligation,34
-Pink Eye,34
-methicillin resistant staphylococcus aureus,34
-Cooking,34
-Chickenpox,33
-Pelvic Area,33
-Heart Disease,33
-Worm,33
-Waist,33
-Appendix,33
-Tumor,33
-Spasm,33
-Potassium,33
-Alcoholism,32
-Insomnia,32
-Yeast,32
-Intestine,32
-Hypothyroidism,32
-Vasectomy,32
-Rheumatoid Arthritis,31
-Vegetable,31
-Trauma,31
-Colon,31
-Anemia,31
-Runny Nose,31
-Cuts,31
-Grief,31
-Oxycodone,31
-Healthy Eating,31
-Wine,31
-Orange,30
-Hair Loss,30
-Quit Smoking,30
-Newborn,30
-Dry Skin,30
-Yogurt,30
-CAT Scan,30
-Blood Thinner,30
-Hydrocodone,30
-Libido,30
-Chemotherapy,30
-Scoliosis,29
-Gallbladder,29
-Ringworm,29
-Immune System,29
-Dehydration,29
-Cavity,29
-Lotion,28
-Pea,28
-Vaccines,28
-Oxygen,28
-Gastric Bypass Surgery,27
-Cereal,27
-Lupus,27
-Bacterial Vaginosis,27
-Whooping Cough,27
-Endoscopy,27
-Infertility,27
-Scabies,27
-Conception,27
-Concussion,27
-Fiber,27
-Shin,26
-Chronic Obstructive Pulmonary Disease,26
-Turkey,26
-Physical Therapy,26
-Concentration,26
-Congestive Heart Failure,26
-Methadone,25
-Abortion,25
-DepoProvera,25
-Puffiness,25
-Tetanus,25
-Spit,25
-Colon Cancer,25
-Sodium,25
-Cortisone,25
-AIDS,25
-Suicide,25
-Knee Pain,25
-Circulation,24
-Multiple Sclerosis,24
-Shoulder Blade,24
-Staph Infection,24
-Sadness,24
-Melatonin,24
-Triglyceride,24
-Gallstone,23
-Puberty,23
-Tattoo,23
-Neuropathy,23
-Morphine,23
-Narcotic,23
-Ribcage,23
-Inhaler,23
-Mononucleosis,23
-Sunscreen,23
-Diverticulitis,22
-Honey,22
-Pancreatitis,22
-Craving,22
-Infection,22
-Prenatal Vitamin,22
-Dementia,22
-Shaving,22
-Electrogastrogram,22
-Aging,22
-Piercing,22
-Cocaine,21
-Swine Flu,21
-Mammogram,21
-Hepatitis C,21
-Rice,21
-Memory Loss,21
-Ear Drum,21
-Kidney Infection,21
-Naproxen,21
-Fingernail,21
-High Cholesterol,21
-Trichomoniasis,21
-Screening,21
-Carpal Tunnel Syndrome,20
-Parkinsons Disease,20
-Nicotine,20
-Polyp,20
-Gout,20
-Exercise Stress Test,20
-Kidney Disease,20
-Irritable Bowel Syndrome,20
-Lemon,19
-Abscess,19
-Metabolism,19
-Rotator Cuff,19
-Dry Mouth,19
-Ammonia,19
-Sty,19
-Sunburn,19
-Tendon,19
-Skull,19
-Sciatica,19
-Benign,19
-Mold,18
-B12,18
-Cephalexin,18
-Oatmeal,18
-Gonorrhea,18
-Olive,18
-Hearing Loss,18
-Canker Sore,18
-Pacemaker,18
-Nostril,17
-Fetus,17
-Cirrhosis,17
-Pain Management,17
-Pancreatic Cancer,17
-Cervical Cancer,17
-Tick,17
-Stuffy Nose,17
-Polycystic Ovarian Syndrome,17
-Atopic Dermatitis,17
-Thirst,17
-Vaginal Yeast Infection,16
-Health Insurance Exchange,16
-Salad,16
-Pore,16
-Schizophrenia,16
-Ligament,16
-Perimenopause,16
-Tremor,16
-Beta Blocker,16
-Peanut,16
-Nasal Spray,16
-Hallucination,16
-Urinalysis,16
-Morning After Pill,16
+id,name,value
+urinarytractinfectionquestions,Urinary Tract Infection,39
+circumcisionquestions,Circumcision,39
+clitorisquestions,Clitoris,39
+psoriasisquestions,Psoriasis,39
+arteryquestions,Artery,39
+ulcerquestions,Ulcer,39
+exposurequestions,Exposure,39
+estrogenquestions,Estrogen,39
+type2diabetesquestions,Type 2 Diabetes,38
+vertigoquestions,Vertigo,38
+wisdomtoothquestions,Wisdom Tooth,38
+medicaid,Medicaid,38
+menstrualquestions,Menstrual,38
+eyelidquestions,Eyelid,38
+forearmquestions,Forearm,37
+caffeinequestions,Caffeine,36
+vinegarquestions,Vinegar,36
+moodswingquestions,Mood Swing,36
+massagequestions,Massage,36
+poisonivyquestions,Poison Ivy,36
+stentquestions,Stent,35
+inflammationquestions,Inflammation,35
+organquestions,Organ,35
+obesityquestions,Obesity,34
+methicillinresistantstaphylococcusaureusquestions,methicillin resistant staphylococcus aureus,34
+pinkeyequestions,Pink Eye,34
+sprainquestions,Sprain,34
+cookingquestions,Cooking,34
+tuballigationquestions,Tubal Ligation,34
+waistquestions,Waist,33
+chickenpoxquestions,Chickenpox,33
+tumorquestions,Tumor,33
+heartdiseasequestions,Heart Disease,33
+pelvicareaquestions,Pelvic Area,33
+appendixquestions,Appendix,33
+potassiumquestions,Potassium,33
+spasmquestions,Spasm,33
+wormquestions,Worm,33
+intestinequestions,Intestine,32
+yeastquestions,Yeast,32
+alcoholismquestions,Alcoholism,32
+vasectomyquestions,Vasectomy,32
+insomniaquestions,Insomnia,32
+hypothyroidismquestions,Hypothyroidism,32
+healthyeatingquestions,Healthy Eating,31
+oxycodonequestions,Oxycodone,31
+vegetablequestions,Vegetable,31
+winequestions,Wine,31
+colonquestions,Colon,31
+cutsquestions,Cuts,31
+traumaquestions,Trauma,31
+rheumatoidarthritisquestions,Rheumatoid Arthritis,31
+anemiaquestions,Anemia,31
+griefquestions,Grief,31
+runnynosequestions,Runny Nose,31
+libidoquestions,Libido,30
+newbornquestions,Newborn,30
+catscanquestions,CAT Scan,30
+yogurtquestions,Yogurt,30
+bloodthinnerquestions,Blood Thinner,30
+dryskinquestions,Dry Skin,30
+quitsmokingquestions,Quit Smoking,30
+chemotherapyquestions,Chemotherapy,30
+hydrocodonequestions,Hydrocodone,30
+hairlossquestions,Hair Loss,30
+orangequestions,Orange,30
+gallbladderquestions,Gallbladder,29
+scoliosisquestions,Scoliosis,29
+cavityquestions,Cavity,29
+dehydrationquestions,Dehydration,29
+immunesystemquestions,Immune System,29
+ringwormquestions,Ringworm,29
+vaccinesquestions,Vaccines,28
+lotionquestions,Lotion,28
+peaquestions,Pea,28
+oxygenquestions,Oxygen,28
+concussionquestions,Concussion,27
+infertilityquestions,Infertility,27
+fiberquestions,Fiber,27
+conceptionquestions,Conception,27
+gastricbypasssurgeryquestions,Gastric Bypass Surgery,27
+lupusquestions,Lupus,27
+cerealquestions,Cereal,27
+endoscopyquestions,Endoscopy,27
+scabiesquestions,Scabies,27
+whoopingcoughquestions,Whooping Cough,27
+bacterialvaginosisquestions,Bacterial Vaginosis,27
+congestiveheartfailurequestions,Congestive Heart Failure,26
+physicaltherapyquestions,Physical Therapy,26
+concentrationquestions,Concentration,26
+turkeyquestions,Turkey,26
+chronicobstructivepulmonarydiseasequestions,Chronic Obstructive Pulmonary Disease,26
+shinquestions,Shin,26
+tetanusquestions,Tetanus,25
+suicidequestions,Suicide,25
+spitquestions,Spit,25
+puffinessquestions,Puffiness,25
+methadonequestions,Methadone,25
+kneepainquestions,Knee Pain,25
+sodiumquestions,Sodium,25
+aidsquestions,AIDS,25
+cortisonequestions,Cortisone,25
+abortionquestions,Abortion,25
+depoproveraquestions,DepoProvera,25
+coloncancerquestions,Colon Cancer,25
+shoulderbladequestions,Shoulder Blade,24
+triglyceridequestions,Triglyceride,24
+circulationquestions,Circulation,24
+sadnessquestions,Sadness,24
+melatoninquestions,Melatonin,24
+staphinfectionquestions,Staph Infection,24
+multiplesclerosisquestions,Multiple Sclerosis,24
+morphinequestions,Morphine,23
+ribcagequestions,Ribcage,23
+pubertyquestions,Puberty,23
+inhalerquestions,Inhaler,23
+narcoticquestions,Narcotic,23
+tattooquestions,Tattoo,23
+mononucleosisquestions,Mononucleosis,23
+neuropathyquestions,Neuropathy,23
+sunscreenquestions,Sunscreen,23
+gallstonequestions,Gallstone,23
+infectionquestions,Infection,22
+electrogastrogramquestions,Electrogastrogram,22
+shavingquestions,Shaving,22
+prenatalvitaminquestions,Prenatal Vitamin,22
+piercingquestions,Piercing,22
+agingquestions,Aging,22
+dementiaquestions,Dementia,22
+pancreatitisquestions,Pancreatitis,22
+cravingquestions,Craving,22
+honeyquestions,Honey,22
+diverticulitisquestions,Diverticulitis,22
+swinefluquestions,Swine Flu,21
+memorylossquestions,Memory Loss,21
+naproxenquestions,Naproxen,21
+fingernailquestions,Fingernail,21
+eardrumquestions,Ear Drum,21
+cocainequestions,Cocaine,21
+ricequestions,Rice,21
+mammogramquestions,Mammogram,21
+screeningquestions,Screening,21
+highcholesterolquestions,High Cholesterol,21
+trichomoniasisquestions,Trichomoniasis,21
+kidneyinfectionquestions,Kidney Infection,21
+hepatitiscquestions,Hepatitis C,21
+kidneydiseasequestions,Kidney Disease,20
+carpaltunnelsyndromequestions,Carpal Tunnel Syndrome,20
+goutquestions,Gout,20
+parkinsonsdiseasequestions,Parkinsons Disease,20
+polypquestions,Polyp,20
+nicotinequestions,Nicotine,20
+irritablebowelsyndromequestions,Irritable Bowel Syndrome,20
+exercisestresstestquestions,Exercise Stress Test,20
+drymouthquestions,Dry Mouth,19
+sunburnquestions,Sunburn,19
+tendonquestions,Tendon,19
+sciaticaquestions,Sciatica,19
+styquestions,Sty,19
+metabolismquestions,Metabolism,19
+skullquestions,Skull,19
+ammoniaquestions,Ammonia,19
+benignquestions,Benign,19
+rotatorcuffquestions,Rotator Cuff,19
+lemonquestions,Lemon,19
+abscessquestions,Abscess,19
+hearinglossquestions,Hearing Loss,18
+olivequestions,Olive,18
+pacemakerquestions,Pacemaker,18
+gonorrheaquestions,Gonorrhea,18
+cankersorequestions,Canker Sore,18
+cephalexinquestions,Cephalexin,18
+oatmealquestions,Oatmeal,18
+b12questions,B12,18
+moldquestions,Mold,18
+thirstquestions,Thirst,17
+pancreaticcancerquestions,Pancreatic Cancer,17
+cervicalcancerquestions,Cervical Cancer,17
+cirrhosisquestions,Cirrhosis,17
+tickquestions,Tick,17
+nostrilquestions,Nostril,17
+polycysticovariansyndromequestions,Polycystic Ovarian Syndrome,17
+stuffynosequestions,Stuffy Nose,17
+fetusquestions,Fetus,17
+atopicdermatitisquestions,Atopic Dermatitis,17
+painmanagementquestions,Pain Management,17
+schizophreniaquestions,Schizophrenia,16
+tremorquestions,Tremor,16
+nasalsprayquestions,Nasal Spray,16
+morningafterpillquestions,Morning After Pill,16
+urinalysisquestions,Urinalysis,16
+betablockerquestions,Beta Blocker,16
+perimenopausequestions,Perimenopause,16
+osteoarthritisquestions,Osteoarthritis,16
+saladquestions,Salad,16
+eyebrowquestions,Eyebrow,16
+healthinsuranceexchange,Health Insurance Exchange,16
+ligamentquestions,Ligament,16
+vaginalyeastinfectionquestions,Vaginal Yeast Infection,16
+peanutquestions,Peanut,16

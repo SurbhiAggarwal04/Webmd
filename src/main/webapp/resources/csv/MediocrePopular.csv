@@ -1,175 +1,175 @@
-id,value
-Fatigue,124
-Thyroid,123
-Ovary,123
-Sperm,121
-Cyst,120
-Thigh,119
-Weight Loss,118
-Hysterectomy,114
-Toe,114
-Menopause,112
-Brain,110
-Ibuprofen,109
-Drowsiness,106
-Sexually Transmitted Disease,106
-Bloating,104
-Nipple,103
-Irregularity,102
-Sore Throat,101
-Bacterium,101
-Short Stature,101
-Blood Sugar,101
-Weakness,99
-Swallow,97
-Migraine,97
-Cholesterol,97
-Sinus,97
-Orgasm,97
-Meal,94
-Tongue,94
-Tightness,93
-Bladder,93
-Cats,92
-Genital Herpes,92
-Confusion,91
-Fracture,87
-Drainage,87
-Drug Test,86
-Chlamydia,86
-Acetaminophen,86
-Numbness,86
-Lung,86
-Nerve,85
-Cold,85
-Uterus,85
-Hormone,84
-Hunger,84
-Wart,84
-Mucus,83
-Medicare,83
-Weight Gain,82
-Fertility,81
-Ultrasound,81
-Miscarriage,80
-Height,79
-Fibromyalgia,78
-Taste,78
-Testosterone,78
-Crying,77
-Wrist,77
-Constipation,76
-Supplement,76
-Reaction,75
-Oil,74
-Elbow,73
-Ear Infection,71
-Birth,71
-Feeding,71
-Workout,71
-Scar,70
-Amoxicillin,70
-Asthma,69
-Seizure,69
-HIV,68
-Spine,68
-Sinus Infection,68
-Arthritis,68
-Marijuana,67
-Blood Clot,67
-Jaw,67
-Corpulence,66
-Hernia,65
-Nail,65
-Xray,65
-Steroid,65
-Pneumonia,64
-Heartburn,64
-Kidney Stone,64
-Temperature,63
-Lightheadedness,63
-Boil,62
-Dental,62
-Fruit,62
-Stroke,62
-Coffee,62
-Calorie,61
-Lymph Node,61
-Tonsil,61
-Colonoscopy,61
-Cold Sore,60
-Pelvis,60
-Nervousness,60
-Prostate,59
-Insulin,58
-Rectum,58
-Salt,57
-Wound,57
-Tampon,56
-Sore,56
-Abdominal Pain,56
-Vein,56
-Cervix,55
-Iron,55
-Foreskin,55
-Thumb,55
-Tea,54
-Health insurance,54
-Bipolar Disorder,54
-Belly Button,53
-Infant,53
-Travel,52
-Heart Attack,52
-Breastfeed,52
-Emergency Room,52
-Armpit,52
-Tinnitus,51
-Hives,51
-Breast Cancer,51
-Antidepressant,51
-Panic Attack,51
-Allergic Reaction,50
-Aspirin,50
-Toddler,50
-Juice,50
-Fish,49
-Human Papillomavirus,49
-Pap Test,49
-Wrinkle,48
-Prostate Cancer,48
-Soda,48
-Bronchitis,48
-Sting,48
-Erectile Dysfunction,48
-Biopsy,48
-Scalp,47
-Hot Flash,47
-Penicillin,47
-Anger,46
-Strep Throat,46
-Pulse,45
-Vaccination,44
-Protein,43
-Calf,43
-Attention Deficit Hyperactivity Disorder,43
-Scrotum,43
-Buttocks,43
-Heel,43
-Mole,42
-Multivitamin,42
-Meat,42
-Big Toe,42
-Vitamin D,42
-Vaginal Discharge,42
-Magnetic Resonance Imaging,42
-Thrush,41
-Paranoid Behavior,41
-Flatulence,41
-Urethra,41
-Forehead,40
-Hemorrhoid,40
-Calcium,40
-Sleepiness,40
-Stitches,40
-Affordable Care Act,40
-Genitalia,40
+id,name,value
+fatiguequestions,Fatigue,124
+ovaryquestions,Ovary,123
+thyroidquestions,Thyroid,123
+spermquestions,Sperm,121
+cystquestions,Cyst,120
+thighquestions,Thigh,119
+weightlossquestions,Weight Loss,118
+toequestions,Toe,114
+hysterectomyquestions,Hysterectomy,114
+menopausequestions,Menopause,112
+brainquestions,Brain,110
+ibuprofenquestions,Ibuprofen,109
+sexuallytransmitteddiseasequestions,Sexually Transmitted Disease,106
+drowsinessquestions,Drowsiness,106
+bloatingquestions,Bloating,104
+nipplequestions,Nipple,103
+irregularityquestions,Irregularity,102
+bacteriumquestions,Bacterium,101
+shortstaturequestions,Short Stature,101
+sorethroatquestions,Sore Throat,101
+bloodsugarquestions,Blood Sugar,101
+weaknessquestions,Weakness,99
+orgasmquestions,Orgasm,97
+swallowquestions,Swallow,97
+sinusquestions,Sinus,97
+migrainequestions,Migraine,97
+cholesterolquestions,Cholesterol,97
+tonguequestions,Tongue,94
+mealquestions,Meal,94
+tightnessquestions,Tightness,93
+bladderquestions,Bladder,93
+catsquestions,Cats,92
+genitalherpesquestions,Genital Herpes,92
+confusionquestions,Confusion,91
+fracturequestions,Fracture,87
+drainagequestions,Drainage,87
+chlamydiaquestions,Chlamydia,86
+drugtestquestions,Drug Test,86
+acetaminophenquestions,Acetaminophen,86
+lungquestions,Lung,86
+numbnessquestions,Numbness,86
+nervequestions,Nerve,85
+uterusquestions,Uterus,85
+coldquestions,Cold,85
+hungerquestions,Hunger,84
+hormonequestions,Hormone,84
+wartquestions,Wart,84
+medicarequestions,Medicare,83
+mucusquestions,Mucus,83
+weightgainquestions,Weight Gain,82
+ultrasoundquestions,Ultrasound,81
+fertilityquestions,Fertility,81
+miscarriagequestions,Miscarriage,80
+heightquestions,Height,79
+tastequestions,Taste,78
+testosteronequestions,Testosterone,78
+fibromyalgiaquestions,Fibromyalgia,78
+wristquestions,Wrist,77
+cryingquestions,Crying,77
+supplementquestions,Supplement,76
+constipationquestions,Constipation,76
+reactionquestions,Reaction,75
+oilquestions,Oil,74
+elbowquestions,Elbow,73
+feedingquestions,Feeding,71
+birthquestions,Birth,71
+workoutquestions,Workout,71
+earinfectionquestions,Ear Infection,71
+scarquestions,Scar,70
+amoxicillinquestions,Amoxicillin,70
+seizurequestions,Seizure,69
+asthmaquestions,Asthma,69
+sinusinfectionquestions,Sinus Infection,68
+hivquestions,HIV,68
+spinequestions,Spine,68
+arthritisquestions,Arthritis,68
+bloodclotquestions,Blood Clot,67
+marijuanaquestions,Marijuana,67
+jawquestions,Jaw,67
+corpulencequestions,Corpulence,66
+steroidquestions,Steroid,65
+xrayquestions,Xray,65
+herniaquestions,Hernia,65
+nailquestions,Nail,65
+kidneystonequestions,Kidney Stone,64
+pneumoniaquestions,Pneumonia,64
+heartburnquestions,Heartburn,64
+temperaturequestions,Temperature,63
+lightheadednessquestions,Lightheadedness,63
+dentalquestions,Dental,62
+boilquestions,Boil,62
+coffeequestions,Coffee,62
+fruitquestions,Fruit,62
+strokequestions,Stroke,62
+caloriequestions,Calorie,61
+colonoscopyquestions,Colonoscopy,61
+lymphnodequestions,Lymph Node,61
+tonsilquestions,Tonsil,61
+nervousnessquestions,Nervousness,60
+pelvisquestions,Pelvis,60
+coldsorequestions,Cold Sore,60
+prostatequestions,Prostate,59
+insulinquestions,Insulin,58
+rectumquestions,Rectum,58
+woundquestions,Wound,57
+saltquestions,Salt,57
+sorequestions,Sore,56
+abdominalpainquestions,Abdominal Pain,56
+veinquestions,Vein,56
+tamponquestions,Tampon,56
+foreskinquestions,Foreskin,55
+ironquestions,Iron,55
+thumbquestions,Thumb,55
+cervixquestions,Cervix,55
+healthinsurance,Health insurance,54
+bipolardisorderquestions,Bipolar Disorder,54
+teaquestions,Tea,54
+bellybuttonquestions,Belly Button,53
+infantquestions,Infant,53
+breastfeedquestions,Breastfeed,52
+emergencyroomquestions,Emergency Room,52
+heartattackquestions,Heart Attack,52
+travelquestions,Travel,52
+armpitquestions,Armpit,52
+tinnitusquestions,Tinnitus,51
+breastcancerquestions,Breast Cancer,51
+hivesquestions,Hives,51
+panicattackquestions,Panic Attack,51
+antidepressantquestions,Antidepressant,51
+toddlerquestions,Toddler,50
+juicequestions,Juice,50
+aspirinquestions,Aspirin,50
+allergicreactionquestions,Allergic Reaction,50
+paptestquestions,Pap Test,49
+fishquestions,Fish,49
+humanpapillomavirusquestions,Human Papillomavirus,49
+stingquestions,Sting,48
+erectiledysfunctionquestions,Erectile Dysfunction,48
+sodaquestions,Soda,48
+biopsyquestions,Biopsy,48
+bronchitisquestions,Bronchitis,48
+wrinklequestions,Wrinkle,48
+prostatecancerquestions,Prostate Cancer,48
+penicillinquestions,Penicillin,47
+scalpquestions,Scalp,47
+hotflashquestions,Hot Flash,47
+strepthroatquestions,Strep Throat,46
+angerquestions,Anger,46
+pulsequestions,Pulse,45
+vaccinationquestions,Vaccination,44
+calfquestions,Calf,43
+buttocksquestions,Buttocks,43
+heelquestions,Heel,43
+attentiondeficithyperactivitydisorderquestions,Attention Deficit Hyperactivity Disorder,43
+scrotumquestions,Scrotum,43
+proteinquestions,Protein,43
+vaginaldischargequestions,Vaginal Discharge,42
+bigtoequestions,Big Toe,42
+meatquestions,Meat,42
+vitamindquestions,Vitamin D,42
+multivitaminquestions,Multivitamin,42
+molequestions,Mole,42
+magneticresonanceimagingquestions,Magnetic Resonance Imaging,42
+thrushquestions,Thrush,41
+urethraquestions,Urethra,41
+paranoidbehaviorquestions,Paranoid Behavior,41
+flatulencequestions,Flatulence,41
+affordablecareact,Affordable Care Act,40
+stitchesquestions,Stitches,40
+sleepinessquestions,Sleepiness,40
+foreheadquestions,Forehead,40
+genitaliaquestions,Genitalia,40
+calciumquestions,Calcium,40
+hemorrhoidquestions,Hemorrhoid,40
