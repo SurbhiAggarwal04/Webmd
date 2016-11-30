@@ -133,7 +133,7 @@
 											        .on('mouseover', tip.show)
                                                     .on('mouseout', tip.hide)
 											        .on("click", function(d) {	
-											        	var url= "${pageContext.request.contextPath}/membersByTopics?id="+d.name;											    		
+											        	var url= "${pageContext.request.contextPath}/membersByTopics?id="+d.id;											    		
 									                    $(location).attr('href', url);
 									                    window.location = url;
 											           });

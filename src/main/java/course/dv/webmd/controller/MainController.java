@@ -32,7 +32,6 @@ public class MainController {
 		/*
 		 * Uncomment to generate csvs' dynamically 
 		 */
-		filepath=request.getSession().getServletContext().getRealPath("/resources/json");
 		/*System.out.println(filepath);
 		PopularTopicsService.init();
 		Long mostPopularSize=(long) PopularTopicsService.getMostPopularTopics().size();
