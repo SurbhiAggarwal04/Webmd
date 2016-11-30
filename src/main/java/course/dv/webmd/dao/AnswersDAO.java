@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
@@ -96,7 +97,7 @@ public class AnswersDAO {
 						   "answerVoteNum")
 				.execute()
 				.actionGet();
-		Set<Answer> result = new HashSet<Answer>();
+		Set<Answer> result = new TreeSet<Answer>();
 		for (SearchHit hit : response.getHits()) {
 			Answer a = new Answer();
 			a.setAnswerId(hit.field("answerId").getValue());
@@ -107,7 +108,12 @@ public class AnswersDAO {
 			a.setAnswerPostDate(hit.field("answerPostDate").getValue());
 			a.setAnswerHelpfulNum(hit.field("answerHelpfulNum").getValue());
 			a.setAnswerVoteNum(hit.field("answerVoteNum").getValue());
+			
 			result.add(a);
+		}
+		
+		for(Answer a : result) {
+			System.out.println(a.getAnswerVoteNum());
 		}
 		return result;
 	}
@@ -152,6 +158,6 @@ public class AnswersDAO {
 		for(String hit : a)
 			System.out.println(hit);*/
 		//5049966
-		//System.out.println(getAnswersForAQuestion("5049966"));
+		System.out.println(getAnswersForAQuestion("5049966"));
 	}
 }
