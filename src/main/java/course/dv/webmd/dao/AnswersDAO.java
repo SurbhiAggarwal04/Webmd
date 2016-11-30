@@ -120,15 +120,25 @@ public class AnswersDAO {
 	 * @return
 	 */
 	public static Set<String> getQuestionIdsBasedOnQueryingAnswerContent(String query) {
-		QueryBuilder qb = QueryBuilders.commonTermsQuery("answerContent", query);
+		QueryBuilder qbForAnswers = QueryBuilders.commonTermsQuery("answerContent", query);
 		SearchResponse response = client.prepareSearch("webmd")
 				.setTypes("answer")
 				.setSearchType(SearchType.DFS_QUERY_AND_FETCH)
-				.setQuery(qb)
+				.setQuery(qbForAnswers)
 				.addFields("questionId")
 				.execute()
 				.actionGet();
+		
+		/*QueryBuilder qbForQuestions = QueryBuilders.commonTermsQuery("questionTitle", query);
+		SearchResponse questionTitleResponse = client.prepareSearch("webmd")
+				.setTypes("questions2")
+				.setSearchType(SearchType.DFS_QUERY_AND_FETCH)
+				.setQuery(qbForQuestions)
+				.addFields("questionId")
+				.execute()
+				.actionGet();*/
 		int count = 0;
+
 		if(response.getHits().getTotalHits() < 15) count = (int) response.getHits().getTotalHits();
 		else count = 15;
 		
