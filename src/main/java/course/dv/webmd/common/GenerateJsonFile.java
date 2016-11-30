@@ -80,10 +80,7 @@ public class GenerateJsonFile {
 			innerObject.put("count", entry.getValue());
 			innerChildArray.add(innerObject);
 		}
-		jObj.put("items", innerChildArray);
-		System.out.println(jObj.toJSONString());
-		System.out.println(jObj.toJSONString().substring(1, jObj.toJSONString().length() - 1));
-		
+		jObj.put("items", innerChildArray);		
 		return jObj.toJSONString().substring(1, jObj.toJSONString().length() - 1);
 	}
 }

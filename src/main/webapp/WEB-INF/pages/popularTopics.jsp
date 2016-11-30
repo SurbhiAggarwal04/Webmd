@@ -236,7 +236,7 @@
 	 <h4 style="color:white">${id} Questions</h4>
 	 <hr>
 		<c:forEach items="${questionMap}" var="question">
-			<a href="${pageContext.request.contextPath}/getAnswers?id=${question.key}&name=${id}" style="color: gray">${question.value}</a>
+			<a href="${pageContext.request.contextPath}/getAnswers?id=${question.key}&name=${question.value}" style="color: gray">${question.value}</a>
 			<hr>
 		</c:forEach>
 	</div>

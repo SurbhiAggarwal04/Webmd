@@ -12,6 +12,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import org.springframework.stereotype.Service;
 /**
  * This class will be used when a user clicks on a question from the list of questions
  * listed after user selects a topic from Topic bubble.
@@ -19,6 +21,7 @@ import java.util.Set;
  * @author RAZOR
  *
  */
+@Service("recommendTopicsBasedOnClikedQuestionService")
 public class RecommendTopicsBasedOnClikedQuestionService {
 	
 	private static Set<String> stopWords = new HashSet<String>();
@@ -59,7 +62,7 @@ public class RecommendTopicsBasedOnClikedQuestionService {
 	 * @return
 	 * @throws IOException
 	 */
-	public static Map<String, Integer> getTopicsBasedOnClickedQuestions(String questionTitle, String filepath) throws IOException {
+	public  Map<String, Integer> getTopicsBasedOnClickedQuestions(String questionTitle, String filepath) throws IOException {
 		//initial set up
 		getStopWords(filepath);
 		//removeStopWords

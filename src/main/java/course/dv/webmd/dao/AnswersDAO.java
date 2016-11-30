@@ -129,8 +129,8 @@ public class AnswersDAO {
 				.execute()
 				.actionGet();
 		int count = 0;
-		if(response.getHits().getTotalHits() < 50) count = (int) response.getHits().getTotalHits();
-		else count = 50;
+		if(response.getHits().getTotalHits() < 15) count = (int) response.getHits().getTotalHits();
+		else count = 15;
 		
 		Set<String> relevantQuestions = new HashSet<String>();
 		int tempC = 0;

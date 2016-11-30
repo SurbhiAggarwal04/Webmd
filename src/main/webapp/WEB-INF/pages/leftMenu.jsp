@@ -11,6 +11,6 @@
 				class="fa fa-fw fa-info-circle""></i>Topics By Popularity</a></li>
 		<li><a
 			href="${pageContext.request.contextPath}/memberTopicsByPopularity"><i
-				class="fa fa-fw fa-info-circle"></i>Popular Members by Topics</a></li>
+				class="fa fa-fw fa-info-circle"></i>Popular Members by Topics</a></li>				
 	</ul>
 </div>
