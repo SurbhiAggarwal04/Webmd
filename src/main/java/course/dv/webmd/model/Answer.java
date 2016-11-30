@@ -1,7 +1,5 @@
 package course.dv.webmd.model;
 
-import java.util.Comparator;
-
 public class Answer implements Comparable<Answer> {
 
 	private String answerId;
@@ -61,10 +59,8 @@ public class Answer implements Comparable<Answer> {
 	public void setAnswerHelpfulNum(String answerHelpfulNum) {
 		this.answerHelpfulNum = answerHelpfulNum;
 	}
-	
 	@Override
 	public int compareTo(Answer o) {
 		return o.answerVoteNum.compareTo(this.answerVoteNum);
 	}
-	
 }

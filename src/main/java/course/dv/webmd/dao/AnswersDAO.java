@@ -82,7 +82,6 @@ public class AnswersDAO {
 	 */
 	
 	public static Set<Answer> getAnswersForAQuestion(String questionId) {
-		
 		SearchResponse response = client.prepareSearch("webmd")
 				.setTypes("answer")
 				.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
@@ -108,17 +107,10 @@ public class AnswersDAO {
 			a.setAnswerPostDate(hit.field("answerPostDate").getValue());
 			a.setAnswerHelpfulNum(hit.field("answerHelpfulNum").getValue());
 			a.setAnswerVoteNum(hit.field("answerVoteNum").getValue());
-			
 			result.add(a);
-		}
-		
-		for(Answer a : result) {
-			System.out.println(a.getAnswerVoteNum());
-		}
+		}		
 		return result;
 	}
-	
-	
 	
 	/**
 	 * Based on the query submitted, this method queries answer content
@@ -132,10 +124,8 @@ public class AnswersDAO {
 		SearchResponse response = client.prepareSearch("webmd")
 				.setTypes("answer")
 				.setSearchType(SearchType.DFS_QUERY_AND_FETCH)
-				//.setQuery(QueryBuilders.matchAllQuery())
 				.setQuery(qb)
 				.addFields("questionId")
-				//.setMinScore(1)
 				.execute()
 				.actionGet();
 		int count = 0;
@@ -152,12 +142,12 @@ public class AnswersDAO {
 		return relevantQuestions;
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		//getAllAnswers();
-		/*Set<String> a = getQuestionIdsBasedOnQueryingAnswerContent("warnings drug Desoxyn");
+		Set<String> a = getQuestionIdsBasedOnQueryingAnswerContent("warnings drug Desoxyn");
 		for(String hit : a)
-			System.out.println(hit);*/
+			System.out.println(hit);
 		//5049966
-		System.out.println(getAnswersForAQuestion("5049966"));
-	}
+		//System.out.println(getAnswersForAQuestion("5049966"));
+	}*/
 }
