@@ -2,7 +2,6 @@ package course.dv.webmd.dao;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;

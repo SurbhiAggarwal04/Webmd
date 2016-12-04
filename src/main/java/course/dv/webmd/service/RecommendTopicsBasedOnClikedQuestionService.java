@@ -1,12 +1,9 @@
 package course.dv.webmd.service;
 
 import static course.dv.webmd.dao.AnswersDAO.getQuestionIdsBasedOnQueryingAnswerContent;
+import static course.dv.webmd.dao.TopicQuestionCountDAO.getQuestionCount;
 import static course.dv.webmd.dao.TopicsDAO.getTopicForAQuestion;
-import static course.dv.webmd.dao.TopicQuestionCountDAO.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -14,6 +11,8 @@ import java.util.Map;
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
+
+import course.dv.webmd.common.WebmdJavaUtils;
 /**
  * This class will be used when a user clicks on a question from the list of questions
  * listed after user selects a topic from Topic bubble.
@@ -23,32 +22,6 @@ import org.springframework.stereotype.Service;
  */
 @Service("recommendTopicsBasedOnClikedQuestionService")
 public class RecommendTopicsBasedOnClikedQuestionService {
-	
-	private static Set<String> stopWords = new HashSet<String>();
-	
-	private static void getStopWords(String filepath) throws IOException
-	{
-		File file = null;
-		FileReader fr = null;
-		String currentLine = "";
-		file = new File(filepath, "stopwordslist.txt");
-		fr = new FileReader(file.getAbsoluteFile());
-		
-        BufferedReader br= new BufferedReader(fr);
-        while ((currentLine = br.readLine()) != null){
-        	stopWords.add(currentLine);
-        }
-        br.close();
-        fr.close();
-	}
-	
-	private static String removeStopWords(String question)
-	{	
-		for(String stopWord : stopWords){
-		    question = question.replaceAll(" "+ stopWord + " ", " ");
-		}
-		return question;
-	}
 	
 	/**
 	 * This method takes question title, removes stop words and fetches recomendedQuestions.
@@ -63,10 +36,10 @@ public class RecommendTopicsBasedOnClikedQuestionService {
 	 * @throws IOException
 	 */
 	public  Map<String, Integer> getTopicsBasedOnClickedQuestions(String questionTitle, String filepath) throws IOException {
-		//initial set up
-		getStopWords(filepath);
-		//removeStopWords
-		String keyWords = removeStopWords(questionTitle);
+		
+		WebmdJavaUtils.populateStopWords(filepath);
+		String keyWords = WebmdJavaUtils.removeStopWords(questionTitle);
+		
 		Set<String> recomendedQuestions = getQuestionIdsBasedOnQueryingAnswerContent(keyWords);
 		Set<String> recomendedTopics = new HashSet<String>();
 		for(String questionId : recomendedQuestions) {

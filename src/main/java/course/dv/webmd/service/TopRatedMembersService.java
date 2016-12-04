@@ -1,6 +1,6 @@
 package course.dv.webmd.service;
 
-import static course.dv.webmd.common.SortMapByValue.sortByValue;
+import static course.dv.webmd.common.WebmdJavaUtils.sortByValue;
 import static course.dv.webmd.dao.MembersDAO.getMemberForMemberId;
 import static course.dv.webmd.dao.TopicQuestionAnswerMemberDAO.getAllAnswersForAQuestion;
 import static course.dv.webmd.dao.TopicQuestionAnswerMemberDAO.getAllQuestionsForTopic;

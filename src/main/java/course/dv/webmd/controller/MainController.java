@@ -16,9 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import course.dv.webmd.common.GenerateJsonFile;
 import course.dv.webmd.model.Answer;
+import course.dv.webmd.model.ConceptMapObject;
 import course.dv.webmd.model.Member;
 import course.dv.webmd.service.AnswerService;
 import course.dv.webmd.service.RecommendTopicsBasedOnClikedQuestionService;
+import course.dv.webmd.service.SearchTopQuestionsKeywordsForAQueryService;
 import course.dv.webmd.service.TopQuestionsForATopicService;
 import course.dv.webmd.service.TopRatedMembersService;
 
@@ -33,6 +35,10 @@ public class MainController {
 	@Autowired
 	RecommendTopicsBasedOnClikedQuestionService recommendTopicsBasedOnClikedQuestionService;
 
+	@Autowired
+	SearchTopQuestionsKeywordsForAQueryService searchTopQuestionsKeywordsForAQueryService;
+	
+	
 	String filepath;
 
 	@RequestMapping(value = { "/", "/welcome**", "/logout" }, method = RequestMethod.GET)
@@ -204,6 +210,19 @@ public class MainController {
 	 String json = GenerateJsonFile.generateJsonForQuestions(map);
 	 ModelAndView model = new ModelAndView();
 	 model.addObject("json",json);
+	 model.setViewName("topicAnswers");
+	 return model;
+	 }
+	 
+	 @RequestMapping(value = "search", method = RequestMethod.GET)
+	 public ModelAndView test2(HttpServletRequest request, String searchKeywords) throws Exception {
+	 filepath = request.getSession().getServletContext().getRealPath("/resources/json");
+	 Set<ConceptMapObject> setOfConceptMapObjects = searchTopQuestionsKeywordsForAQueryService.getTopQuestionForQuery(searchKeywords, filepath);
+	 
+	 //TODO - Harsh will use this setOfConceptMapObjects to create json array and display concept map.
+	 //NOTE: Currently, I have not limited the number of objects that should be returned from SearchTopQuestionsKeywordsForAQueryService. 
+	 
+	 ModelAndView model = new ModelAndView();
 	 model.setViewName("topicAnswers");
 	 return model;
 	 }

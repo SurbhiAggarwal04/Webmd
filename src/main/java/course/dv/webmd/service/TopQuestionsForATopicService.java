@@ -1,7 +1,7 @@
 package course.dv.webmd.service;
 
 import static course.dv.webmd.dao.TopicQuestionAnswerMemberDAO.*;
-import static course.dv.webmd.common.SortMapByValue.*;
+import static course.dv.webmd.common.WebmdJavaUtils.*;
 
 import java.util.HashMap;
 import java.util.Map;
