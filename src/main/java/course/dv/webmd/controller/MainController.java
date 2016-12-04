@@ -222,17 +222,24 @@ public class MainController {
 	 return model;
 	 }
 	 
-	 @RequestMapping(value = "search", method = RequestMethod.GET)
-	 public ModelAndView test2(HttpServletRequest request, String searchKeywords) throws Exception {
+	 @RequestMapping(value = "searchQuestion", method = RequestMethod.GET)
+	 public ModelAndView searchQuestion(HttpServletRequest request, @RequestParam("searchKeyword") String searchKeyword) throws Exception {
 	 filepath = request.getSession().getServletContext().getRealPath("/resources/json");
-	 Set<ConceptMapObject> setOfConceptMapObjects = searchTopQuestionsKeywordsForAQueryService.getTopQuestionForQuery(searchKeywords, filepath);
-	 
-	 //TODO - Harsh will use this setOfConceptMapObjects to create json array and display concept map.
-	 //NOTE: Currently, I have not limited the number of objects that should be returned from SearchTopQuestionsKeywordsForAQueryService. 
-	 
+	 Set<ConceptMapObject> setOfConceptMapObjects = searchTopQuestionsKeywordsForAQueryService.getTopQuestionForQuery(searchKeyword, filepath);
 	 ModelAndView model = new ModelAndView();
-	 model.setViewName("topicAnswers");
+	 model.setViewName("search");
+	 model.addObject("setOfConceptMapObjects",setOfConceptMapObjects);
 	 return model;
 	 }
+	 
+	 @RequestMapping(value = "search", method = RequestMethod.GET)
+	 public ModelAndView search(HttpServletRequest request, String searchKeywords) throws Exception {
+	 ModelAndView model = new ModelAndView();
+	 model.addObject("pageTitle", "Search");
+	 model.setViewName("search");
+	 model.addObject("setOfConceptMapObjects",null);
+	 return model;
+	 }
+
 
 }
