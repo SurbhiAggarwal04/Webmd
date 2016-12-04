@@ -73,14 +73,14 @@
 		<!-- header -->
 		<jsp:include page="header.jsp"></jsp:include>
 
-		<div id="page-wrapper" style="margin-top: 0px">
+		<div id="page-wrapper" style="margin-top: 0px;background-color: #222;">
 
 			<div class="container-fluid">
 
 				<!-- Page Heading -->
 
 				<div>
-					<h3 class="page-header" style="margin-top: 0%">${pageTitle}</h3>
+					<h4 class="page-header" style="margin-top: 0%;color: white">${pageTitle}</h4>
 					<div class="col-md-4">
 						<script>
 						var margin = {top: 10, right: 50, bottom: 20, left: 300};

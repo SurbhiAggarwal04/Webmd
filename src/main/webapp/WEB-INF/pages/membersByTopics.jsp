@@ -10,7 +10,6 @@
 <head>
 <style type="text/css">
 #mainBubble {
-	
 	font: 10px sans-serif;
 	height: 100%;
 	position: relative;
@@ -96,17 +95,24 @@
 		<!-- header -->
 		<jsp:include page="header.jsp"></jsp:include>
 
-		<div id="page-wrapper" style="margin-top: 0px;">
-			<h3 class="page-header" style="margin-top: 0%">${pageTitle}</h3>
-		</div>
+		<div id="page-wrapper"
+			style="margin-top: 0px; background-color: #222;">
+			<a
+				href="${pageContext.request.contextPath}/${url}"
+				style="margin-top: 0%; color: white;float: left;">Back</a><br>
 
-		<div class="container-fluid">
+			<h4 class="page-header"
+				style="margin-top: 0%; text-align: left; float: left; color: white">${pageTitle}</h4>
+			<h4 class="page-header"
+				style="margin-top: 0%; text-align: right; float: right;; color: white">Top
+				Rated Members</h4>
+			<br> <br> <br>
+			<div class="container-fluid">
 
-			<!-- Page Heading -->
+				<!-- Page Heading -->
 
-			
 
-				<div class="col-md-4"></div>
+				<div class="col-md-4">hgjhuiyhujjhu</div>
 				<div id="mainBubble">
 					<svg class="mainBubbleSVG" width="100%" height="100%">
 								<text id="bubbleItemNote" x="10" y="501.79999999999995"
@@ -353,14 +359,14 @@
     window.onresize = resetBubbles;
 </script>
 
-			
+
+
+
+			</div>
+			<!-- /.row -->
 
 
 		</div>
-		<!-- /.row -->
-
-
-
 
 		<!-- /.container-fluid -->
 

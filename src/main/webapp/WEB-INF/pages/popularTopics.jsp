@@ -77,15 +77,17 @@
 		<!-- header -->
 		<jsp:include page="header.jsp"></jsp:include>
 
-		<div id="page-wrapper" style="margin-top: 0px">
+		<div id="page-wrapper"
+			style="margin-top: 0px; background-color: #222;">
 
 			<div class="container-fluid">
 
 				<!-- Page Heading -->
-				<h3 class="page-header" style="margin-top: 0%">${pageTitle}</h3>
+				<a href="${pageContext.request.contextPath}/topicsByPopularity"
+					style="margin-top: 0%; color: white;">Back</a>
+				<h3 class="page-header" style="margin-top: 0%; color: white">${pageTitle}</h3>
 				<div class="col-md-4">
 					<script>
-
 						var margin = {
 							top : 0,
 							right : 0,
@@ -160,12 +162,21 @@
 													.on(
 															"click",
 															function(d) {
-												                d3.selectAll("#tag"+d.id) 
-											                    .transition().duration(100)         
-											                    .style("opacity", 0.3);
+																d3
+																		.selectAll(
+																				"#tag"
+																						+ d.id)
+																		.transition()
+																		.duration(
+																				100)
+																		.style(
+																				"opacity",
+																				0.3);
 
 																var url = "${pageContext.request.contextPath}/getQuestions?csv=${csv}&id="
-																		+ d.id+"&name="+d.name;
+																		+ d.id
+																		+ "&name="
+																		+ d.name;
 																$(location)
 																		.attr(
 																				'href',
@@ -204,11 +215,9 @@
 															});
 										});
 						<c:if test="${not empty id}">
-		                d3.selectAll("#tag"+"${id}") 
-	                    .transition()         
-	                    .style("opacity", 0);
-					</c:if>
-
+						d3.selectAll("#tag" + "${id}").transition().style(
+								"opacity", 0);
+						</c:if>
 					</script>
 				</div>
 			</div>
@@ -231,14 +240,16 @@
 	</div>
 	<!-- /#wrapper -->
 	<c:if test="${not empty questionMap}">
-	<div style="padding-left: 17%; display: relative; margin-top: -15%">
-	 <h4 style="color:white">${id} Questions</h4>
-	 <hr>
-		<c:forEach items="${questionMap}" var="question">
-			<a href="${pageContext.request.contextPath}/getAnswers?id=${question.key}&name=${question.value}" style="color: gray">${question.value}</a>
+		<div style="padding-left: 17%; display: relative; margin-top: -15%">
+			<h4 style="color: white">${name}Questions</h4>
 			<hr>
-		</c:forEach>
-	</div>
+			<c:forEach items="${questionMap}" var="question">
+				<a
+					href="${pageContext.request.contextPath}/getAnswers?id=${question.key}&name=${question.value}&topicId=${id}&topicName=${name}&csv=${csv}"
+					style="color: gray">${question.value}</a>
+				<hr>
+			</c:forEach>
+		</div>
 	</c:if>
 
 	<!-- jQuery -->

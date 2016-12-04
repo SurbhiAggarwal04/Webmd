@@ -72,7 +72,7 @@ public class MainController {
 
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "topicPopularity.csv");
-		model.addObject("pageTitle", "Welcome");
+		model.addObject("pageTitle", "Topics by Popularity");
 		model.setViewName("welcome");
 		return model;
 
@@ -133,6 +133,7 @@ public class MainController {
 	public ModelAndView memberMostPopularTopics() {
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "MostPopular.csv");
+		model.addObject("url", "memberMostPopularTopics");
 		model.addObject("pageTitle", "Most Popular Topics");
 		model.setViewName("memberPopularTopics");
 		return model;
@@ -143,6 +144,7 @@ public class MainController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "LeastPopular.csv");
 		model.addObject("pageTitle", "Least Popular Topics");
+		model.addObject("url", "memberLeastPopularTopics");
 		model.setViewName("memberPopularTopics");
 		return model;
 	}
@@ -152,6 +154,7 @@ public class MainController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("csv", "MediocrePopular.csv");
 		model.addObject("pageTitle", "Mediocre Popular Topics");
+		model.addObject("url", "memberMediocrePopularTopics");
 		model.setViewName("memberPopularTopics");
 		return model;
 	}
@@ -163,7 +166,8 @@ public class MainController {
 		Map<String, String> questionMap = topQuestionsForATopicService.getTopFifteenQuestionsForATopic(id);
 		model.addObject("questionMap", questionMap);
 		model.addObject("csv", csv);
-		model.addObject("id", name);
+		model.addObject("name", name);
+		model.addObject("id", id);
 		String pageTitle="";
 		if(csv.contains("Most"))pageTitle="Most Popular Topics";
 		if(csv.contains("Least"))pageTitle="Least Popular Topics";
@@ -175,7 +179,7 @@ public class MainController {
 
 	@RequestMapping(value = "getAnswers", method = RequestMethod.GET)
 	public ModelAndView getAnswers(HttpServletRequest request, @RequestParam("name") String name,
-			@RequestParam("id") String id) throws IOException {
+			@RequestParam("id") String id,@RequestParam("topicId") String topicId,@RequestParam("topicName") String topicName,@RequestParam("csv") String csv) throws IOException {
 		 filepath = request.getSession().getServletContext().getRealPath("/resources/json");
 		 Map<String, Integer> map =recommendTopicsBasedOnClikedQuestionService.getTopicsBasedOnClickedQuestions(name,filepath);
 		 String json = GenerateJsonFile.generateJsonForQuestions(map);
@@ -183,7 +187,10 @@ public class MainController {
 		 Set<Answer> answerSet = answerService.getAnswersForAQuestionId(id);
 		 ModelAndView model = new ModelAndView();
 		 model.addObject("answerSet", answerSet);
-		 model.addObject("questionName", name);
+		 model.addObject("topicId", topicId);
+		 model.addObject("topicName", topicName);
+		 model.addObject("name", name);
+		 model.addObject("csv", csv);
 		 model.addObject("pageTitle", name + " Answers");
 		 model.addObject("json",json);
 		 model.setViewName("topicAnswers");
@@ -192,13 +199,14 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "membersByTopics", method = RequestMethod.GET)
-	public ModelAndView membersByTopics(HttpServletRequest request, @RequestParam("id") String topic) {
+	public ModelAndView membersByTopics(HttpServletRequest request,@RequestParam("url") String url, @RequestParam("id") String topic,@RequestParam("name") String topicName) {
 		filepath = request.getSession().getServletContext().getRealPath("/resources/json");
 		Map<String, Integer> p = TopRatedMembersService.createMemberDictionaryFromQuestionAnswers(topic);
 		Map<Member, Integer> map = TopRatedMembersService.getTopRatedMembersData(p);
 		GenerateJsonFile.generateJsonFile(map, filepath);
 		ModelAndView model = new ModelAndView();
-		model.addObject("pageTitle", "Top Rated Members");
+		model.addObject("pageTitle", "Topic: "+topicName);
+		model.addObject("url", url);
 		model.setViewName("membersByTopics");
 		return model;
 	}
