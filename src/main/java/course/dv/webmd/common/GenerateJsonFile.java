@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
 import course.dv.webmd.model.ConceptMapObject;
 import course.dv.webmd.model.Member;
 
+@SuppressWarnings("unchecked")
 public class GenerateJsonFile {
 
 	public static void generateJsonFile(Map<Member, Integer> map, String filePath){
@@ -88,7 +89,8 @@ public class GenerateJsonFile {
 		return jObj.toJSONString().substring(1, jObj.toJSONString().length() - 1);
 	}
 
-	@SuppressWarnings("unchecked")
+	
+	@SuppressWarnings("unused")
 	public static String generateJsonForConceptMap(Set<ConceptMapObject> set) {
 		JSONArray output = new JSONArray();
 		JSONObject jObj = new JSONObject();
@@ -105,7 +107,8 @@ public class GenerateJsonFile {
 				try {
 					Integer.parseInt(each);
 				} catch (Exception e) {
-					aa.add(each);
+					if(each.matches("[a-zA-Z]+"))
+						aa.add(each);
 				}
 			}
 			innerChildArray.addAll(aa);
