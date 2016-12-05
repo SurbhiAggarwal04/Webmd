@@ -163,8 +163,8 @@ text {
 						
 					</c:if>
  --%>
- 			<c:if test="${empty setOfConceptMapObjects}">
-				<span style="color: white">No Results Found!</span>
+ 			<c:if test="${not empty errorMessage}">
+				<span style="color: white">${errorMessage}</span>
 			</c:if>
 			<c:if test="${not empty setOfConceptMapObjects}">
 				<script>
