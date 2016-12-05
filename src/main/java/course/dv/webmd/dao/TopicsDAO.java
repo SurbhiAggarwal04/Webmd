@@ -61,7 +61,29 @@ public class TopicsDAO {
 				.execute()
 				.actionGet();
 		for (SearchHit hit : response.getHits()) {
-			return hit.field("topicId").getValue();
+			String topicId = hit.field("topicId").getValue();
+			String topicName = getTopicNameFromId(topicId);
+			return topicId+"-"+topicName;
+//			return hit.field("topicId").getValue() + "-"+ hit.field("topicName").getValue();
+		}
+		return null;
+	}
+	
+	/**
+	 * Finds a topic name for a topic id.
+	 * @param topicId
+	 * @return
+	 */
+	public static String getTopicNameFromId(String topicId) {
+		SearchResponse response = client.prepareSearch("webmd")
+				.setTypes("topics2")
+				.setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+				.setQuery(QueryBuilders.termQuery("topicId", topicId))
+				.addFields("topicId","topicName")
+				.execute()
+				.actionGet();
+		for (SearchHit hit : response.getHits()) {
+			return hit.field("topicName").getValue();
 		}
 		return null;
 	}
