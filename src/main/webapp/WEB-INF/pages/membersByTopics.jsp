@@ -114,7 +114,7 @@
 			<!-- <div class="col-md-4"> -->
 			<span style="color: white;">Below chart is the visualization
 				of active members for the aforementioned topic, wherein each bubble
-				gives the information on member's name, typs, follower number,
+				gives the information on member's name, type, follower number,
 				summation of helpful vote number !!! <br>
 			<br><span style="color: gray"> Note : Member Helpful Vote is the 
 					summation of helpful votes of all the answers posted by the member.</span>

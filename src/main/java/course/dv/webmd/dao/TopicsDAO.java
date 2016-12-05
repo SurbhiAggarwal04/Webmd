@@ -64,7 +64,6 @@ public class TopicsDAO {
 			String topicId = hit.field("topicId").getValue();
 			String topicName = getTopicNameFromId(topicId);
 			return topicId+"-"+topicName;
-//			return hit.field("topicId").getValue() + "-"+ hit.field("topicName").getValue();
 		}
 		return null;
 	}
