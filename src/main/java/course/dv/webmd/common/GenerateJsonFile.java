@@ -3,12 +3,15 @@ package course.dv.webmd.common;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import course.dv.webmd.model.ConceptMapObject;
 import course.dv.webmd.model.Member;
 
 public class GenerateJsonFile {
@@ -66,14 +69,14 @@ public class GenerateJsonFile {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}  
-			 
+
 		}
 	}
-	
+
 	public static String generateJsonForQuestions(Map<String, Integer> map) {
 		JSONArray innerChildArray = new JSONArray();
 		JSONObject jObj = new JSONObject();
-		
+
 		for(Entry<String, Integer> entry : map.entrySet()){
 			JSONObject innerObject = new JSONObject();
 			innerObject.put("text", entry.getKey());
@@ -82,5 +85,26 @@ public class GenerateJsonFile {
 		}
 		jObj.put("items", innerChildArray);		
 		return jObj.toJSONString().substring(1, jObj.toJSONString().length() - 1);
+	}
+
+	public static String generateJsonForConceptMap(Set<ConceptMapObject> set) {
+		JSONArray output = new JSONArray();
+		JSONObject jObj = new JSONObject();
+		JSONObject innerObject = new JSONObject();
+		JSONObject outerObject = new JSONObject();
+		Iterator<ConceptMapObject> it = set.iterator();
+
+		while(it.hasNext()){
+			JSONArray innerChildArray = new JSONArray();
+			JSONArray outerChildArray = new JSONArray();
+			innerChildArray.add(it.next().getKeywords().replaceAll(" ", ","));
+			outerChildArray.add(it.next().getQuestionId());
+			outerChildArray.add(innerChildArray);
+			outerChildArray.add(it.next().getQuestionTitle());
+			output.add(outerChildArray);
+		}
+
+		System.out.println(output.toJSONString());
+		return output.toJSONString();
 	}
 }
