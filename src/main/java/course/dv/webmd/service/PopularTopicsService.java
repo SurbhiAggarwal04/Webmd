@@ -6,9 +6,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
+import org.springframework.stereotype.Service;
+
 import course.dv.webmd.dao.TopicQuestionCountDAO;
 import course.dv.webmd.dao.TopicsDAO;
 
+@Service("popularTopicsService")
 public class PopularTopicsService {
 
 	static Map<String, Long> topicCountMap = new TreeMap<>();

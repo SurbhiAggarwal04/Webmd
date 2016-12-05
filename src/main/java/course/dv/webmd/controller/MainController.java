@@ -186,7 +186,6 @@ public class MainController {
 		Map<String, Integer> map = recommendTopicsBasedOnClikedQuestionService.getTopicsBasedOnClickedQuestions(name,
 				filepath);
 		String json = GenerateJsonFile.generateJsonForQuestions(map);
-		System.out.println(json);
 		Set<Answer> answerSet = answerService.getAnswersForAQuestionId(id);
 		ModelAndView model = new ModelAndView();
 		model.addObject("answerSet", answerSet);

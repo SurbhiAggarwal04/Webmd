@@ -43,10 +43,13 @@ public class RecommendTopicsBasedOnClikedQuestionService {
 		Set<String> recomendedQuestions = getQuestionIdsBasedOnQueryingAnswerContent(keyWords);
 		Set<String> recomendedTopics = new HashSet<String>();
 		for(String questionId : recomendedQuestions) {
-			recomendedTopics.add(getTopicForAQuestion(questionId));
+			String recommendedTopic=getTopicForAQuestion(questionId);
+			if(recommendedTopic!=null)
+			recomendedTopics.add(recommendedTopic);
 		}
 		Map<String, Integer> recomendedTopicsQuestionCount = new HashMap<String, Integer>();
 		for(String topic : recomendedTopics) {
+			System.out.println(topic);
 			String idName[]=topic.split("-");
 			String topicId=idName[0];
 			if(topicId != null && !topicId.equals("null"))
