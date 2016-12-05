@@ -48,9 +48,14 @@ public class GenerateJsonFile {
 
 				innerChildArray.add(innerChild);
 			}
-			outerChild.put("children", innerChildArray);
-			outerChild.put("name", entry.getKey().getMemberName());
-			outerChildArray.add(outerChild);
+			String name=entry.getKey().getMemberName();
+			if(name!=null && !name.trim().equals(""))
+			{
+				outerChild.put("children", innerChildArray);
+				outerChild.put("name", name);				
+				outerChildArray.add(outerChild);
+			}
+			
 
 		}
 		jObj.put("children", outerChildArray);
