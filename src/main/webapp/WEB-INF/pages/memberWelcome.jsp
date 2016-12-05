@@ -81,6 +81,16 @@
 
 				<div>
 					<h4 class="page-header" style="margin-top: 0%;color: white">${pageTitle}</h4>
+										<span style="color: white">Various topics discussed on the
+						Webmd site has been categorized into:
+						<ul>
+							<li>Most Popular Topics ( No of Questions >= 125 )</li>
+							<li>Mediocre Topics ( No of Questions < 125 and >=40 )</li>
+							<li>Least Popular Topics ( No of Questions <40 )</li>
+						</ul>
+					</span>
+
+					
 					<div class="col-md-4">
 						<script>
 						var margin = {top: 10, right: 50, bottom: 20, left: 300};

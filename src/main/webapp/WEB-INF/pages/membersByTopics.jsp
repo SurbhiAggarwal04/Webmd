@@ -97,9 +97,8 @@
 
 		<div id="page-wrapper"
 			style="margin-top: 0px; background-color: #222;">
-			<a
-				href="${pageContext.request.contextPath}/${url}"
-				style="margin-top: 0%; color: white;float: left;">Back</a><br>
+			<a href="${pageContext.request.contextPath}/${url}"
+				style="margin-top: 0%; color: white; float: left;">Back</a><br>
 
 			<h4 class="page-header"
 				style="margin-top: 0%; text-align: left; float: left; color: white">${pageTitle}</h4>
@@ -107,19 +106,27 @@
 				style="margin-top: 0%; text-align: right; float: right;; color: white">Top
 				Rated Members</h4>
 			<br> <br> <br>
-			<div class="container-fluid">
+			<!-- <div class="container-fluid"> -->
 
-				<!-- Page Heading -->
+			<!-- Page Heading -->
 
 
-				<div class="col-md-4">hgjhuiyhujjhu</div>
-				<div id="mainBubble">
-					<svg class="mainBubbleSVG" width="100%" height="100%">
+			<!-- <div class="col-md-4"> -->
+			<span style="color: white;">Below chart is the visualization
+				of active members for the aforementioned topic, wherein each bubble
+				gives the information on member's name, typs, follower number,
+				summation of helpful vote number !!! <br>
+			<br><span style="color: gray"> Note : Member Helpful Vote is the 
+					summation of helpful votes of all the answers posted by the member.</span>
+			</span>
+			<!-- </div> -->
+			<div id="mainBubble">
+				<svg class="mainBubbleSVG" width="100%" height="100%">
 								<text id="bubbleItemNote" x="10" y="501.79999999999995"
-							font-size="12" dominant-baseline="middle"
-							alignment-baseline="middle" style="fill: rgb(136, 136, 136);"></text></svg>
-				</div>
-				<script>
+						font-size="12" dominant-baseline="middle"
+						alignment-baseline="middle" style="fill: rgb(136, 136, 136);"></text></svg>
+			</div>
+			<script>
    var w = window.innerWidth*0.68*1.2;
    var h = Math.ceil(w*0.7);
    var oR = 0;
@@ -362,7 +369,7 @@
 
 
 
-			</div>
+			<!-- </div> -->
 			<!-- /.row -->
 
 

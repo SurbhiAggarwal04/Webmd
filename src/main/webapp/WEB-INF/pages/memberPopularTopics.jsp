@@ -65,8 +65,7 @@
 <link
 	href="${pageContext.request.contextPath}/resources/adminfont-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<style type="text/css">
-</style>
+
 </head>
 
 <body>

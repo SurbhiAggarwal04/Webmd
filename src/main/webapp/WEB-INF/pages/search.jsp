@@ -85,7 +85,7 @@
 <script type="text/javascript">
 	function formSubmit() {
 		if (document.getElementById("searchKeyword").value != '') {
-			document.getElementById('searchForm').action = "${pageContext.request.contextPath}/searchQuestion";
+			document.getElementById('searchForm').action = "${pageContext.request.contextPath}/searchKeyword";
 			document.getElementById("searchForm").submit();
 		}
 

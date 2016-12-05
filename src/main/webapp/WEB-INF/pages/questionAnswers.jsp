@@ -124,7 +124,7 @@
 <style>
 .bubbleChart {
 	min-width: 100px;
-	max-width: 500px;
+	max-width: 700px;
 	height: 700px;
 	margin: 0 auto;
 }
@@ -183,24 +183,21 @@
 
 				<!-- Page Heading -->
 
-				<a
-					href="${pageContext.request.contextPath}/getQuestions?&id=${topicId}&name=${topicNname}&csv=${csv}"
-					style="margin-top: 0%; color: white;">Back</a>
+			<a href="${pageContext.request.contextPath}/searchKeyword?searchKeyword=${searchKeyword}" style="margin-top: 0%; color: white;">Back</a>
 
-				<h4 class="page-header" style="color: white;">Question :
-					${name}</h4>
+				<h4 class="page-header" style="color: white;">Question
+					: ${name}</h4>
 				<h5 class="page-header" style="color: white;">Top Rated Answers</h5>
 
 				<c:if test="${not empty answerSet}">
 
 					<c:forEach items="${answerSet}" var="answer">
-						<span style="color: white;">${answer.getAnswerContent()}</span>
-						<br>
-						<br>
+						<span style="color: white; ">${answer.getAnswerContent()}</span>
+						<br><br>
 						<a class="btn btn-default glyphicon glyphicon-hand-right"></a>
-						<span style="color: fuchsia;">Vote
+						<span style="color: fuchsia;; ">Vote
 							${answer.getAnswerVoteNum()} </span>
-						<span style="color: white"> | </span>
+						<span style=" color: white"> | </span>
 						<span style="color: olive;"> Helpful Vote
 							${answer.getAnswerHelpfulNum()}</span>
 						<br>
@@ -208,11 +205,11 @@
 					</c:forEach>
 				</c:if>
 
-				<hr>
-					<span style="color: white"><h4>Below is the recommended topics
-						figure, use the <a href="${pageContext.request.contextPath}/search">search questions</a> feature to search for respective
-						topic questions !!!</h4></span>
+
+				<div class="col-md-4">
 					<div class="bubbleChart"></div>
+
+				</div>
 
 
 

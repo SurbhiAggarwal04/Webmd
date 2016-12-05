@@ -65,8 +65,13 @@
 <link
 	href="${pageContext.request.contextPath}/resources/adminfont-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<style type="text/css">
-</style>
+<script type="text/javascript">
+window.onload = function() {
+	  var WH = $(window).height();  
+	  var SH = $('body').prop("scrollHeight");
+	  $('html, body').stop().animate({scrollTop: SH-WH}, 1000);
+	};
+</script>
 </head>
 
 <body>
@@ -241,7 +246,7 @@
 	<!-- /#wrapper -->
 	<c:if test="${not empty questionMap}">
 		<div style="padding-left: 17%; display: relative; margin-top: -15%">
-			<h4 style="color: white">${name}Questions</h4>
+			<h4 style="color: white">${name} Questions</h4>
 			<hr>
 			<c:forEach items="${questionMap}" var="question">
 				<a

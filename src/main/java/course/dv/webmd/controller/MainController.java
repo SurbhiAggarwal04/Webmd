@@ -37,8 +37,7 @@ public class MainController {
 
 	@Autowired
 	SearchTopQuestionsKeywordsForAQueryService searchTopQuestionsKeywordsForAQueryService;
-	
-	
+
 	String filepath;
 
 	@RequestMapping(value = { "/", "/welcome**", "/logout" }, method = RequestMethod.GET)
@@ -168,10 +167,13 @@ public class MainController {
 		model.addObject("csv", csv);
 		model.addObject("name", name);
 		model.addObject("id", id);
-		String pageTitle="";
-		if(csv.contains("Most"))pageTitle="Most Popular Topics";
-		if(csv.contains("Least"))pageTitle="Least Popular Topics";
-		if(csv.contains("Mediocre"))pageTitle= "Mediocre Popular Topics";
+		String pageTitle = "";
+		if (csv.contains("Most"))
+			pageTitle = "Most Popular Topics";
+		if (csv.contains("Least"))
+			pageTitle = "Least Popular Topics";
+		if (csv.contains("Mediocre"))
+			pageTitle = "Mediocre Popular Topics";
 		model.addObject("pageTitle", pageTitle);
 		model.setViewName("popularTopics");
 		return model;
@@ -179,67 +181,92 @@ public class MainController {
 
 	@RequestMapping(value = "getAnswers", method = RequestMethod.GET)
 	public ModelAndView getAnswers(HttpServletRequest request, @RequestParam("name") String name,
-			@RequestParam("id") String id,@RequestParam("topicId") String topicId,@RequestParam("topicName") String topicName,@RequestParam("csv") String csv) throws IOException {
-		 filepath = request.getSession().getServletContext().getRealPath("/resources/json");
-		 Map<String, Integer> map =recommendTopicsBasedOnClikedQuestionService.getTopicsBasedOnClickedQuestions(name,filepath);
-		 String json = GenerateJsonFile.generateJsonForQuestions(map);
-		 System.out.println(json);
-		 Set<Answer> answerSet = answerService.getAnswersForAQuestionId(id);
-		 ModelAndView model = new ModelAndView();
-		 model.addObject("answerSet", answerSet);
-		 model.addObject("topicId", topicId);
-		 model.addObject("topicName", topicName);
-		 model.addObject("name", name);
-		 model.addObject("csv", csv);
-		 model.addObject("pageTitle", name + " Answers");
-		 model.addObject("json",json);
-		 model.setViewName("topicAnswers");
-		 return model;
+			@RequestParam("id") String id, @RequestParam("topicId") String topicId,
+			@RequestParam("topicName") String topicName, @RequestParam("csv") String csv) throws IOException {
+		filepath = request.getSession().getServletContext().getRealPath("/resources/json");
+		Map<String, Integer> map = recommendTopicsBasedOnClikedQuestionService.getTopicsBasedOnClickedQuestions(name,
+				filepath);
+		String json = GenerateJsonFile.generateJsonForQuestions(map);
+		System.out.println(json);
+		Set<Answer> answerSet = answerService.getAnswersForAQuestionId(id);
+		ModelAndView model = new ModelAndView();
+		model.addObject("answerSet", answerSet);
+		model.addObject("topicId", topicId);
+		model.addObject("topicName", topicName);
+		model.addObject("name", name);
+		model.addObject("csv", csv);
+		model.addObject("pageTitle", name + " Answers");
+		model.addObject("json", json);
+		model.setViewName("topicAnswers");
+		return model;
 
 	}
 
 	@RequestMapping(value = "membersByTopics", method = RequestMethod.GET)
-	public ModelAndView membersByTopics(HttpServletRequest request,@RequestParam("url") String url, @RequestParam("id") String topic,@RequestParam("name") String topicName) {
+	public ModelAndView membersByTopics(HttpServletRequest request, @RequestParam("url") String url,
+			@RequestParam("id") String topic, @RequestParam("name") String topicName) {
 		filepath = request.getSession().getServletContext().getRealPath("/resources/json");
 		Map<String, Integer> p = TopRatedMembersService.createMemberDictionaryFromQuestionAnswers(topic);
 		Map<Member, Integer> map = TopRatedMembersService.getTopRatedMembersData(p);
 		GenerateJsonFile.generateJsonFile(map, filepath);
 		ModelAndView model = new ModelAndView();
-		model.addObject("pageTitle", "Topic: "+topicName);
+		model.addObject("pageTitle", "Topic: " + topicName);
 		model.addObject("url", url);
 		model.setViewName("membersByTopics");
 		return model;
 	}
 
-	 @RequestMapping(value = "test", method = RequestMethod.GET)
-	 public ModelAndView test(HttpServletRequest request) throws IOException {
-	 filepath = request.getSession().getServletContext().getRealPath("/resources/json");
-	 Map<String, Integer> map =recommendTopicsBasedOnClikedQuestionService.getTopicsBasedOnClickedQuestions("How do I take Celebrex",filepath);
-	 String json = GenerateJsonFile.generateJsonForQuestions(map);
-	 ModelAndView model = new ModelAndView();
-	 model.addObject("json",json);
-	 model.setViewName("topicAnswers");
-	 return model;
-	 }
-	 
-	 @RequestMapping(value = "searchQuestion", method = RequestMethod.GET)
-	 public ModelAndView searchQuestion(HttpServletRequest request, @RequestParam("searchKeyword") String searchKeyword) throws Exception {
-	 filepath = request.getSession().getServletContext().getRealPath("/resources/json");
-	 Set<ConceptMapObject> setOfConceptMapObjects = searchTopQuestionsKeywordsForAQueryService.getTopQuestionForQuery(searchKeyword, filepath);
-	 ModelAndView model = new ModelAndView();
-	 model.setViewName("search");
-	 model.addObject("setOfConceptMapObjects",setOfConceptMapObjects);
-	 return model;
-	 }
-	 
-	 @RequestMapping(value = "search", method = RequestMethod.GET)
-	 public ModelAndView search(HttpServletRequest request, String searchKeywords) throws Exception {
-	 ModelAndView model = new ModelAndView();
-	 model.addObject("pageTitle", "Search");
-	 model.setViewName("search");
-	 model.addObject("setOfConceptMapObjects",null);
-	 return model;
-	 }
+	@RequestMapping(value = "test", method = RequestMethod.GET)
+	public ModelAndView test(HttpServletRequest request) throws IOException {
+		filepath = request.getSession().getServletContext().getRealPath("/resources/json");
+		Map<String, Integer> map = recommendTopicsBasedOnClikedQuestionService
+				.getTopicsBasedOnClickedQuestions("How do I take Celebrex", filepath);
+		String json = GenerateJsonFile.generateJsonForQuestions(map);
+		ModelAndView model = new ModelAndView();
+		model.addObject("json", json);
+		model.setViewName("topicAnswers");
+		return model;
+	}
 
+	@RequestMapping(value = "searchKeyword", method = RequestMethod.GET)
+	public ModelAndView searchQuestion(HttpServletRequest request, @RequestParam("searchKeyword") String searchKeyword)
+			throws Exception {
+		filepath = request.getSession().getServletContext().getRealPath("/resources/json");
+		Set<ConceptMapObject> setOfConceptMapObjects = searchTopQuestionsKeywordsForAQueryService
+				.getTopQuestionForQuery(searchKeyword, filepath);
+		ModelAndView model = new ModelAndView();
+		model.setViewName("search");
+		model.addObject("setOfConceptMapObjects", setOfConceptMapObjects);
+		model.addObject("searchKeyword", searchKeyword);
+		return model;
+	}
+
+	@RequestMapping(value = "search", method = RequestMethod.GET)
+	public ModelAndView search(HttpServletRequest request, String searchKeywords) throws Exception {
+		ModelAndView model = new ModelAndView();
+		model.addObject("pageTitle", "Search");
+		model.setViewName("search");
+		model.addObject("setOfConceptMapObjects", null);
+		return model;
+	}
+
+	@RequestMapping(value = "getQuestionAnswers", method = RequestMethod.GET)
+	public ModelAndView getAnswers(HttpServletRequest request, @RequestParam("name") String name,@RequestParam("id") String id,@RequestParam("searchKeyword") String searchKeyword) throws IOException {
+		filepath = request.getSession().getServletContext().getRealPath("/resources/json");
+		Map<String, Integer> map = recommendTopicsBasedOnClikedQuestionService.getTopicsBasedOnClickedQuestions(name,
+				filepath);
+		String json = GenerateJsonFile.generateJsonForQuestions(map);
+		System.out.println(json);
+		Set<Answer> answerSet = answerService.getAnswersForAQuestionId(id);
+		ModelAndView model = new ModelAndView();
+		model.addObject("answerSet", answerSet);
+		model.addObject("searchKeyword", searchKeyword);
+		model.addObject("name", name);
+		model.addObject("pageTitle", name + " Answers");
+		model.addObject("json", json);
+		model.setViewName("topicAnswers");
+		return model;
+
+	}
 
 }
