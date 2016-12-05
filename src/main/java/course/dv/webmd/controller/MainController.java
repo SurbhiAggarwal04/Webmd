@@ -253,8 +253,9 @@ public class MainController {
 			filepath = request.getSession().getServletContext().getRealPath("/resources/json");
 			Map<String, Integer> p = TopRatedMembersService.createMemberDictionaryFromQuestionAnswers(topic);
 			Map<Member, Integer> map = TopRatedMembersService.getTopRatedMembersData(p);
-			GenerateJsonFile.generateJsonFile(map, filepath);
+			String jsonString = GenerateJsonFile.generateJsonFile(map);
 			model.addObject("pageTitle", "Topic: " + topicName);
+			model.addObject("json", jsonString);
 			model.addObject("url", url);
 			model.setViewName("membersByTopics");
 		} catch (Exception e) {

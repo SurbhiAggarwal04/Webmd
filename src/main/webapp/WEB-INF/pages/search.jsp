@@ -252,8 +252,8 @@ var color = d3.scale.linear()
     .clamp(true);
 
 var diameter = 960;
-var rect_width = 50;
-var rect_height = 14;
+var rect_width = 55;
+var rect_height = 16;
 
 var link_width = "1px"; 
 

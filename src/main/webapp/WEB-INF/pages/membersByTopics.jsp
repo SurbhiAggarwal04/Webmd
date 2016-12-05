@@ -115,8 +115,8 @@
 			<span style="color: white;">Below chart is the visualization
 				of active members for the aforementioned topic, wherein each bubble
 				gives the information on member's name, type, follower number,
-				summation of helpful vote number !!! <br>
-			<br><span style="color: gray"> Note : Member Helpful Vote is the 
+				summation of helpful vote number !!! <br> <br>
+			<span style="color: gray"> Note : Member Helpful Vote is the
 					summation of helpful votes of all the answers posted by the member.</span>
 			</span>
 			<!-- </div> -->
@@ -151,9 +151,7 @@
     .style("fill", "#888888")
     .text(function(d) {return "";});   
  
- 
-    d3.json("${jsonFile}", function(error, root) {
-        console.log(error);
+ 	var root = ${json};
      
         var bubbleObj = svg.selectAll(".topBubble")
                 .data(root.children)
@@ -211,7 +209,6 @@
                 .style("opacity",0.5)
                 .style("fill", "#eee")
             .on("mouseover", function(d,i) {
-              //window.alert("say something");
               var noteText = "";
               if (d.note == null || d.note == "") {
                 noteText = d.address;
@@ -238,8 +235,6 @@
         }
  
          
-        }); 
- 
     resetBubbles = function () {
       w = window.innerWidth*0.68*1.2;
       oR = w/(1+3*nTop);
