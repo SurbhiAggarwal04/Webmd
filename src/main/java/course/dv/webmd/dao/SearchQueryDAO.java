@@ -58,13 +58,15 @@ public class SearchQueryDAO {
 			int count = 1;
 			for(String each : rawKeywordsArray) {
 				if(count == rawKeywordsArray.length) {
-					keywords.append("\"" + each + "\"");
+					/*keywords.append("\"" + each + "\"");*/
+					keywords.append(each);
 				} else {
-					keywords.append("\"" + each + "\"" + ",");
+					keywords.append(each + ",");
 				}
 				count++;
 			}
 			obj.setKeywords(keywords.toString());
+			
 			result.add(obj);
 		}
 		return result;

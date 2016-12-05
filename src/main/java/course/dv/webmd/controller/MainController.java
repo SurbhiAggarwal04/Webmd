@@ -232,7 +232,9 @@ public class MainController {
 		filepath = request.getSession().getServletContext().getRealPath("/resources/json");
 		Set<ConceptMapObject> setOfConceptMapObjects = searchTopQuestionsKeywordsForAQueryService
 				.getTopQuestionForQuery(searchKeyword, filepath);
+		String jsonString = GenerateJsonFile.generateJsonForConceptMap(setOfConceptMapObjects);
 		ModelAndView model = new ModelAndView();
+		model.addObject("json", jsonString);
 		model.setViewName("search");
 		model.addObject("setOfConceptMapObjects", setOfConceptMapObjects);
 		model.addObject("searchKeyword", searchKeyword);
