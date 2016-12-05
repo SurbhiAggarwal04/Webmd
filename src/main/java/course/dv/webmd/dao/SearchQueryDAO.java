@@ -46,10 +46,25 @@ public class SearchQueryDAO {
 			ConceptMapObject obj = new ConceptMapObject();
 			obj.setQuestionId(hit.field("questionId").getValue());
 			obj.setQuestionTitle(hit.field("questionTitle").getValue());
-			
+
 			WebmdJavaUtils.populateStopWords(filePath);
-			obj.setKeywords(WebmdJavaUtils.removeStopWords(obj.getQuestionTitle())); 
-			
+			String rawKeywords = WebmdJavaUtils.removeStopWords(obj.getQuestionTitle());
+
+			rawKeywords = rawKeywords.replace("!", "").replace("\"", "").replace("\'", ""); //add more special symbols if necessary
+
+			String[] rawKeywordsArray = rawKeywords.split(" ");
+			StringBuilder keywords = new StringBuilder();
+
+			int count = 1;
+			for(String each : rawKeywordsArray) {
+				if(count == rawKeywordsArray.length) {
+					keywords.append("\"" + each + "\"");
+				} else {
+					keywords.append("\"" + each + "\"" + ",");
+				}
+				count++;
+			}
+			obj.setKeywords(keywords.toString());
 			result.add(obj);
 		}
 		return result;

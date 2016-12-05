@@ -306,9 +306,7 @@ going
 good
 goods
 got
-
 great
-
 greater
 greatest
 group
@@ -352,7 +350,6 @@ kind
 knew
 know
 known
-
 knows
 large
 largely
@@ -505,9 +502,7 @@ these
 they
 thing
 things
-
 think
-
 thinks
 this
 those
@@ -537,5 +532,3 @@ use
 used
 uses
 very
-.
-,

@@ -12,6 +12,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class WebmdJavaUtils {
 
@@ -77,13 +79,19 @@ public class WebmdJavaUtils {
 	 * @param String
 	 * @return String
 	 */
-	public static String removeStopWords(String question)
+	public static String removeStopWords(String string)
 	{
 		if(stopWords != null) {
 			for(String stopWord : stopWords){
-				question = question.replaceAll(" "+ stopWord + " ", " ");
+				if(stopWord.equals("")) continue;
+				Pattern p = Pattern.compile("\\b"+stopWord+"\\b", Pattern.CASE_INSENSITIVE);
+				Matcher m = p.matcher(string);
+				while (m.find()) {
+					string = m.replaceAll("");
+				}
 			}
 		}
-		return question;
+		string = string.trim().replaceAll(" +", " ");
+		return string;
 	}
 }
