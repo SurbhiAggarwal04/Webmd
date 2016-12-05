@@ -124,7 +124,7 @@
 <style>
 .bubbleChart {
 	min-width: 100px;
-	max-width: 700px;
+	max-width: 500px;
 	height: 700px;
 	margin: 0 auto;
 }
@@ -206,10 +206,10 @@
 				</c:if>
 
 
-				<div class="col-md-4">
+				
 					<div class="bubbleChart"></div>
 
-				</div>
+				
 
 
 

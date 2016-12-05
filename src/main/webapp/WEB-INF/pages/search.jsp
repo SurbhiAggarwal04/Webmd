@@ -148,8 +148,10 @@ text {
 						placeholder="Enter keywords" style="width: 400px" />
 					<button class="glyphicon glyphicon-search" onclick="formSubmit();"
 						style="height: 28px"></button>
+						<span style="color: white;">&nbsp; &nbsp;&nbsp;   Example keywords: drugs, cough, fever, pregnancy etc.</span>
 
 				</form>
+				<br>				
 			</div>
 			<br> <br>
 			<%-- 					<c:if test="${not empty setOfConceptMapObjects}">
@@ -161,6 +163,9 @@ text {
 						
 					</c:if>
  --%>
+ 			<c:if test="${empty setOfConceptMapObjects}">
+				<span style="color: white">No Results Found!</span>
+			</c:if>
 			<c:if test="${not empty setOfConceptMapObjects}">
 				<script>
 
@@ -247,7 +252,7 @@ var color = d3.scale.linear()
     .clamp(true);
 
 var diameter = 960;
-var rect_width = 40;
+var rect_width = 50;
 var rect_height = 14;
 
 var link_width = "1px"; 
@@ -363,7 +368,18 @@ inode.append('rect')
     .attr('width', rect_width)
     .attr('height', rect_height)
     .attr('id', function(d) { return d.id; })
-    .attr('fill', function(d) { return get_color(d.name); });
+    .attr('fill', function(d) { return get_color(d.name); })
+    .on("click",function(d){
+		var url = "${pageContext.request.contextPath}/getQuestionAnswers?searchKeyword=${searchKeyword}&id="+d.name+"&name="+d.click;
+
+	$(location)
+			.attr(
+					'href',
+					url);
+	window.location = url;
+
+    	
+    })
   
 inode.append("text")
 	.attr('id', function(d) { return d.id + '-txt'; })
@@ -413,6 +429,7 @@ function mouseout(d)
 
 
 			</c:if>
+
 
 
 

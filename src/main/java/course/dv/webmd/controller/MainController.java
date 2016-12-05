@@ -264,7 +264,7 @@ public class MainController {
 		model.addObject("name", name);
 		model.addObject("pageTitle", name + " Answers");
 		model.addObject("json", json);
-		model.setViewName("topicAnswers");
+		model.setViewName("questionAnswers");
 		return model;
 
 	}

@@ -211,7 +211,7 @@
 				<hr>
 					<span style="color: white"><h4>Below is the recommended topics
 						figure, use the <a href="${pageContext.request.contextPath}/search">search questions</a> feature to search for respective
-						topic questions !!!</h4></span>
+						topic questions !</h4></span>
 					<div class="bubbleChart"></div>
 
 
